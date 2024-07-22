@@ -1,0 +1,37 @@
+site_name: Memory and Architecture
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline 
+        name: Switch to dark mode
+      primary: grey
+      accent: purple 
+    - scheme: slate 
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode    
+      primary: grey
+      accent: lime
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/shingaridavesh
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/davesh-shingari-68800053/
+
+copyright: |
+  &copy; 2024 <a href="https://github.com/shingaridavesh"  target="_blank" rel="noopener">Davesh Shingari</a>
