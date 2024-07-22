@@ -1,4 +1,6 @@
 site_name: Memory and Architecture
+site_author: 'Davesh Shingari'
+site_url: 'https://shingaridavesh.github.io/memoryandarchitecture/'
 theme:
   name: material
   features:
@@ -28,6 +30,13 @@ theme:
 
 markdown_extensions:
   - attr_list
+
+google_analytics:
+  - 'UA-XXXXXXXX-X'
+  - 'auto'
+
+extra:
+  disqus: 'shingaridavesh'
   
 extra:
   social:
