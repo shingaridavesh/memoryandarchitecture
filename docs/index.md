@@ -1,17 +1,3 @@
 # Memory and Architecture
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
-
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+This is just a website to share my learnings on Memory and Architecture. Some of this stuff is pretty simple and basic, and some of this is something which took me years to understand. Memory has evolved to a complex beast with lot of cool and incredible features, but when you are starting out it can be overwhelming to understand motivation and concepts behind these new features. So this is my attempt to help my fellow engineers with that. Feel free to message me if you see any mistake.
