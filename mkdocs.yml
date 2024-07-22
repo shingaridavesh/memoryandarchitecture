@@ -26,6 +26,9 @@ theme:
       primary: grey
       accent: lime
 
+markdown_extensions:
+  - attr_list
+  
 extra:
   social:
     - icon: fontawesome/brands/github-alt
