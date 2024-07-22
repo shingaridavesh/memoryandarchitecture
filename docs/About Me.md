@@ -1,0 +1,2 @@
+I am Davesh Shingari, currently working as a Senior Engineer at ARM. I work primarily on Memory Bringup and Validation. I have been with ARM for past 1.5 years. Before that I worked at Marvell Semiconductor on Memory Bringup & Validation. I have experience of working on DDR3, DDR4, DDR5, LPDDR4/4x, LPDDR5/5x.
+Apart from work, I enjoy landscape photography, hiking and backpacking. Feel free to email me at "shingaridavesh@gmail.com" to connect with me.
