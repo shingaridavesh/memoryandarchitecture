@@ -1,6 +1,8 @@
 #DDR5
 
 ##New Features
+###Burst Length
+DDR5 supports BL16 as native option. It also supports BC8 OTF, Fixed BL32, BL32 OTF (OTF = On the Fly). In comparison, DDR4 used BL8 as native option but also supported Fixed BC4, BC4 OTF and BL8 OTF.
 
 ##Trainings
 ###Command Bus Training
