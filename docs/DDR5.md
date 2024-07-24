@@ -4,6 +4,7 @@
 ###Higher Speed
 ###Lower Voltage
 ###Pin
+
 ####Power
 |  Pins  |      DDR4      |   DDR5    |   Comments    |
 | :--------: |:-------------:| :---------:|:---------:|
@@ -12,6 +13,17 @@
 | VSS | GND |     GND | Ground |
 | VSSQ |   GND    |      Not Present | DQ Ground |
 | VPP | 2.5V |     1.8V | DRAM Activating Power Supply |
+
+####Clock, Command and Control
+|  Pins  |      DDR4      |   DDR5    |   Comments    |
+| :--------: |:-------------:| :---------:|:---------:|
+| CK_t, CK_c  | Present |     Present | Differential Clocks |
+| CKE |   Present    |       Not Present | Clock Enable |
+| CS_n | Present |     Not Present | Chip Select |
+| Command Address |   A0-A17    |      CA0-CA13 |  |
+| ACT_n |   Present    |      Not Present | Activation Command Input |
+| Bank Group | BG0-BG1 |     Not Present | Bank Group |
+| Bank Address | BA0-BA1 |     Not Present | Bank Address |
 
 ###DIMM Architecture
 ###Burst Length
