@@ -47,6 +47,16 @@
 | ALERT_n |   Present    |      Not Present | Data Bus Inversion |
 | RESET_n | Present |     Present |  |
 
+####DIMM Pins
+|  Pins  |      DDR4      |   DDR5    |   Comments    |
+| :--------: |:-------------:| :---------:|:---------:|
+| VTT  | Present |     Present |  |
+| VDDSPD |   Present    |       Present |  |
+| V_12, V_BULK | Present |     Present |  |
+| SCL |   Present    |      Present |  |
+| SDA |   Present    |      Present |  |
+| SA | Present |     Present |  |
+
 ###DIMM Architecture
 ###Burst Length
 DDR5 supports BL16 as native option. It also supports BC8 OTF, Fixed BL32, BL32 OTF (OTF = On the Fly). In comparison, DDR4 used BL8 as native option but also supported Fixed BC4, BC4 OTF and BL8 OTF.
