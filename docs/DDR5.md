@@ -5,13 +5,13 @@
 ###Lower Voltage
 ###Pin
 ####Power
-|  Pins  |      DDR4      |   DDR5    |
-| :--------: |:-------------:| :---------:|
-| VDDQ - DQ Power Supply | 1.2V |     1.1V |
-| VDD - Core Power Supply |   1.2V    |       1.1V |
-| VSS - Ground| GND |     GND |
-| VSSQ - DQ Ground |   GND    |      Not Present |
-| VPP - DRAM Activating Power Supply | 2.5V |     1.8V |
+|  Pins  |      DDR4      |   DDR5    |   Comments    |
+| :--------: |:-------------:| :---------:|:---------:|
+| VDDQ  | 1.2V |     1.1V | DQ Power Supply |
+| VDD |   1.2V    |       1.1V | Core Power Supply |
+| VSS | GND |     GND | Ground |
+| VSSQ |   GND    |      Not Present | DQ Ground |
+| VPP | 2.5V |     1.8V | DRAM Activating Power Supply |
 
 ###DIMM Architecture
 ###Burst Length
