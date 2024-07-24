@@ -5,7 +5,7 @@
 ###Lower Voltage
 ###Pin
 
-####Power
+####Power and VREF
 |  Pins  |      DDR4      |   DDR5    |   Comments    |
 | :--------: |:-------------:| :---------:|:---------:|
 | VDDQ  | 1.2V |     1.1V | DQ Power Supply |
@@ -13,6 +13,7 @@
 | VSS | GND |     GND | Ground |
 | VSSQ |   GND    |      Not Present | DQ Ground |
 | VPP | 2.5V |     1.8V | DRAM Activating Power Supply |
+| VREFCA | External |     Internally Generated | Reference Volatge for CA lines |
 
 ####Clock, Command and Control
 |  Pins  |      DDR4      |   DDR5    |   Comments    |
@@ -24,6 +25,8 @@
 | ACT_n |   Present    |      Not Present | Activation Command Input |
 | Bank Group | BG0-BG1 |     Not Present | Bank Group |
 | Bank Address | BA0-BA1 |     Not Present | Bank Address |
+| CAI | Not Present |     Present | Command Address Mirroring |
+| ODT | Present |     Not Present | On-Die Termination Pin |
 
 ####Data, Data Strobes, Data Mask
 |  Pins  |      DDR4      |   DDR5    |   Comments    |
@@ -34,7 +37,15 @@
 | DM_n |   A0-A17    |      CA0-CA13 | Data Mask |
 | DBI_n |   Present    |      Not Present | Data Bus Inversion |
 
-
+####Miscellaneous
+|  Pins  |      DDR4      |   DDR5    |   Comments    |
+| :--------: |:-------------:| :---------:|:---------:|
+| ZQ  | Present |     Present | Data |
+| LBDQ |   Not Present    |       Present | Loopback Data Output |
+| LBDQS | Not Present |     Not Present | Loopback Data Strobe |
+| TEN |   Present    |      Present | Connectivity Test Mode |
+| ALERT_n |   Present    |      Not Present | Data Bus Inversion |
+| RESET_n | Present |     Present |  |
 
 ###DIMM Architecture
 ###Burst Length
