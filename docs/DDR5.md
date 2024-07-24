@@ -25,6 +25,17 @@
 | Bank Group | BG0-BG1 |     Not Present | Bank Group |
 | Bank Address | BA0-BA1 |     Not Present | Bank Address |
 
+####Data, Data Strobes, Data Mask
+|  Pins  |      DDR4      |   DDR5    |   Comments    |
+| :--------: |:-------------:| :---------:|:---------:|
+| DQ  | Present |     Present | Data |
+| DQS_t, DQS_c, <br> DQSU_t, DQSU_c <br> DQSL_t, DQSL_c |   Present    |       Present | Data Strobe |
+| TDQS_t, TDQS_c | Present |     Not Present | Termination Data Strobe |
+| DM_n |   A0-A17    |      CA0-CA13 | Data Mask |
+| DBI_n |   Present    |      Not Present | Data Bus Inversion |
+
+
+
 ###DIMM Architecture
 ###Burst Length
 DDR5 supports BL16 as native option. It also supports BC8 OTF, Fixed BL32, BL32 OTF (OTF = On the Fly). In comparison, DDR4 used BL8 as native option but also supported Fixed BC4, BC4 OTF and BL8 OTF.
