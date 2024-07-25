@@ -9,14 +9,14 @@
 ###Pin
 
 ####Power and VREF
-|  Pins  ||      DDR1      |   DDR2    |      DDR3      |      DDR4      |   DDR5    |   Comments    |
-| :--------: |:-------------:| :---------:|:---------:|:--------: |:-------------:| :---------:|
+|  Pins  |      DDR1      |   DDR2    |      DDR3      |      DDR4      |   DDR5    |   Comments    |
+| :--------: |:-------------:| :---------:| :---------:| :--------: | :-------------:| :---------:|
 | VDDQ  | 2.5V | 1.8V | 1.5V | 1.2V | 1.1V | DQ Power Supply |
 | VDD | 2.5V| 1.8V| 1.5V | 1.2V | 1.1V | Core Power Supply |
 | VSS | GND| GND | GND | GND | GND | Ground |
 | VSSQ | GND| GND | GND | GND | Not Present | DQ Ground |
 | VDDL | Not Present | 1.8V | Not Present | Not Present | Not Present | DLL Power Supply |
-| VSSDL | Not Present | GND | Not Present | Not Present | Not Present |DLL Ground |
+| VSSDL | Not Present | GND | Not Present | Not Present | Not Present | DLL Ground |
 | VPP | Not Present | Not Present | Not Present | 2.5V | 1.8V | DRAM Activating Power Supply |
 | VREF | Present | Present | Not Present | Not Present | Not Present | Reference Voltage used for both CA and DQ lines |    
 | VREFCA | Not Present | Not Present | Present | Present | Present | Reference Volatge for Control, Command and Address lines |
