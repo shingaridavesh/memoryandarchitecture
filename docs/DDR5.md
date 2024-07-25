@@ -9,14 +9,18 @@
 ###Pin
 
 ####Power and VREF
-|  Pins  |      DDR4      |   DDR5    |   Comments    |
-| :--------: |:-------------:| :---------:|:---------:|
-| VDDQ  | 1.2V |     1.1V | DQ Power Supply |
-| VDD |   1.2V    |       1.1V | Core Power Supply |
-| VSS | GND |     GND | Ground |
-| VSSQ |   GND    |      Not Present | DQ Ground |
-| VPP | 2.5V |     1.8V | DRAM Activating Power Supply |
-| VREFCA | External |     Internally Generated | Reference Volatge for CA lines |
+|  Pins  ||      DDR1      |   DDR2    |      DDR3      |      DDR4      |   DDR5    |   Comments    |
+| :--------: |:-------------:| :---------:|:---------:|:--------: |:-------------:| :---------:|
+| VDDQ  | 2.5V | 1.8V | 1.5V | 1.2V | 1.1V | DQ Power Supply |
+| VDD | 2.5V| 1.8V| 1.5V | 1.2V | 1.1V | Core Power Supply |
+| VSS | GND| GND | GND | GND | GND | Ground |
+| VSSQ | GND| GND | GND | GND | Not Present | DQ Ground |
+| VDDL | Not Present | 1.8V | Not Present | Not Present | Not Present | DLL Power Supply |
+| VSSDL | Not Present | GND | Not Present | Not Present | Not Present |DLL Ground |
+| VPP | Not Present | Not Present | Not Present | 2.5V | 1.8V | DRAM Activating Power Supply |
+| VREF | Present | Present | Not Present | Not Present | Not Present | Reference Voltage used for both CA and DQ lines |    
+| VREFCA | Not Present | Not Present | Present | Present | Present | Reference Volatge for Control, Command and Address lines |
+| VREFDQ | Not Present | Not Present | Present | Not Present | Not Present | Reference Volatge for Data lines |
 
 ####Clock, Command and Control
 |  Pins  |      DDR4      |   DDR5    |   Comments    |
@@ -75,6 +79,7 @@ Present in both DDR4 and DDR5.
 ####VDDQ, VSSQ
 DDR IO Power and Ground for Data Group Signals.
 VDDQ is present in both DDR4 and DDR5. However, VSSQ is not mentioned in DDR5 JEDEC spec.
+VSSQ is separate from VSS for improved noise immunity.
 
 ####VPP
 1. VPP is the DRAM Activation Power Supply.  
@@ -85,13 +90,17 @@ VDDQ is present in both DDR4 and DDR5. However, VSSQ is not mentioned in DDR5 JE
 2. DR4 use POD for DQ and SSTL for CA, and VREFCA is external pin and VREFDQ is internally generated.  
 3. DDR5 uses POD for both DQ and CA, and VREFDQ and VREFCA is internally generated.  
 
-####Clock, Command and Control
+###Clock, Command and Control
 
-####Data, Data Strobes, Data Mask
+###Data, Data Strobes, Data Mask
 
-####Miscellaneous
+###Miscellaneous
 
-####DIMM Pins
+####ZQ
+1. ZQ pin is present in all DDR3, DDR4 and DDR5.
+2. It is tied to 
+
+###DIMM Pins
 
 
 
