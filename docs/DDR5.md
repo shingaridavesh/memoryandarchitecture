@@ -51,10 +51,10 @@ Following image shows the Core vs IO block on DDR4
 7. It should be noted that when VREFCA is externally provided then it should be maintained at all times (including Self Refresh) and when VREFDQ is externally provided then it should be maintained at all times (excluding Self Refresh). If there is single external VREF pin then it should always be maintained since it is shared by CA and DQ.
 
 ####Clock, Command and Control
-|  Pins  |      DDR4      |   DDR5    |   Comments    |
-| :--------: |:-------------:| :---------:|:---------:|
-| CK_t, CK_c  | Present |     Present | Differential Clocks |
-| CKE |   Present    |       Not Present | Clock Enable |
+|  Pins  |      DDR1      |   DDR2    |      DDR3      |      DDR4      |   DDR5    |   Comments    |
+| :--------: |:-------------:| :---------:| :---------:| :--------: | :-------------:| :---------:|
+| CK_t/CK, CK_c/CK#  | CK, CK# | CK, CK# | CK, CK# | CK_t, CK_c| CK_t, CK_c | Differential Clocks |
+| CKE | Present | Present | Present | Present | Not Present | Clock Enable |
 | CS_n | Present |     Not Present | Chip Select |
 | Command Address |   A0-A17    |      CA0-CA13 |  |
 | ACT_n |   Present    |      Not Present | Activation Command Input |
@@ -62,6 +62,18 @@ Following image shows the Core vs IO block on DDR4
 | Bank Address | BA0-BA1 |     Not Present | Bank Address |
 | CAI | Not Present |     Present | Command Address Mirroring |
 | ODT | Present |     Not Present | On-Die Termination Pin |
+
+####CK_t,CK_c (or CK,CK#) - Differential Clocks
+1. On DDR1, DDR2, DDR3 they use CK,CK# but DDR4, DDR5 uses CK_t,CK_c (True and Complement).
+2. They are differential clock inputs and all address and control signals are sampled on crossing of the positive edge of CK_t(CK) and negative edge of CK_c(CK#).
+3. On DDR1, DDR2 - output data (DQ and DQS) is referenced to crossing of CK & CK#. On DDR3 - output data strobe (DQS) is referebced to crossing of CK & CK#.
+4. Data is not referenced to clocks but is referenced to the Data Strobe (DQS_t,DQS_c)
+
+####CKE - Clock Enable
+1. CKE is not present on DDR5 but is presnet on all previous generations of DDRs.
+2. CKE HIGH activates and CKE LOW deactivates the internal clock, input buffers and output drivers. So you can understand that on DDRs where CKE is used, it should remain high throughout the Read, Write operations.
+3. CKE is also used for Power Down and Self Refresh operations. Taking CKE LOW provides Precharge PD, Active PD, Self Refresh operations.
+4. CKE is synchrnous for PDE and PDX and SRE. CKE is asynchronous for SRX.
 
 ####Data, Data Strobes, Data Mask
 |  Pins  |      DDR4      |   DDR5    |   Comments    |
