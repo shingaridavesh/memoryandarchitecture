@@ -11,9 +11,9 @@
 ####Power and VREF
 |  Pins  |      DDR1      |   DDR2    |      DDR3      |      DDR4      |   DDR5    |   Comments    |
 | :--------: |:-------------:| :---------:| :---------:| :--------: | :-------------:| :---------:|
-| VDDQ  | 2.5V | 1.8V | 1.5V | 1.2V | 1.1V | DQ Power Supply |
 | VDD | 2.5V| 1.8V| 1.5V | 1.2V | 1.1V | Core Power Supply |
 | VSS | GND| GND | GND | GND | GND | Ground |
+| VDDQ  | 2.5V | 1.8V | 1.5V | 1.2V | 1.1V | DQ Power Supply |
 | VSSQ | GND| GND | GND | GND | Not Present | DQ Ground |
 | VDDL | Not Present | 1.8V | Not Present | Not Present | Not Present | DLL Power Supply |
 | VSSDL | Not Present | GND | Not Present | Not Present | Not Present | DLL Ground |
@@ -21,6 +21,26 @@
 | VREF | Present | Present | Not Present | Not Present | Not Present | Reference Voltage used for both CA and DQ lines |    
 | VREFCA | Not Present | Not Present | Present | Present | Present | Reference Volatge for Control, Command and Address lines |
 | VREFDQ | Not Present | Not Present | Present | Not Present | Not Present | Reference Volatge for Data lines |
+
+#####VDD, VSS - DRAM Core Power Supply and Ground.  
+1. This is used to power the core block logic in the DRAM for eg. Address Decoder, Banks etc.<br>
+2. As you can observe that with each generation, Voltage has been decreased leading to better power saving.
+
+#####VDDQ, VSSQ - DRAM DQ Power Supply and Ground.
+1. This is separate from VDD and VSS because isolating them improves noise immunity.<br>
+2. This is used to power the IO blocks which include the receiver, drivers etc.
+
+Following image shows the Core vs IO block on DDR4 (Taken from Micron DDR4 MT40A512M16)
+
+
+####VPP
+1. VPP is the DRAM Activation Power Supply.  
+2. Up until DDR3, we had charge pump inside the DRAM devices but they were inefficient. So from DDR4 onwards, we have charge pump inside the DDR devices which are used to supplu power when activation command is issued.
+
+####VREFDQ and VREFCA
+1. DDR3 uses SSTL for both DQ and CA lines, and they use an external VREFDQ and VREFCA reference voltage which is VDD/2.  
+2. DR4 use POD for DQ and SSTL for CA, and VREFCA is external pin and VREFDQ is internally generated.  
+3. DDR5 uses POD for both DQ and CA, and VREFDQ and VREFCA is internally generated.  
 
 ####Clock, Command and Control
 |  Pins  |      DDR4      |   DDR5    |   Comments    |
