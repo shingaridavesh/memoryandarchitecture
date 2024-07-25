@@ -30,8 +30,9 @@
 1. This is separate from VDD and VSS because isolating them improves noise immunity.<br>
 2. This is used to power the IO blocks which include the receiver, drivers etc.
 
-Following image shows the Core vs IO block on DDR4 (Taken from Micron DDR4 MT40A512M16)
-
+Following image shows the Core vs IO block on DDR4
+> **Taken from Micron DDR4 MT40A512M16 - 512 Meg x 16 Functional Block Diagram**
+> ![zoomify](images/IMG_9292.png){: small"}
 
 ####VPP
 1. VPP is the DRAM Activation Power Supply.  
