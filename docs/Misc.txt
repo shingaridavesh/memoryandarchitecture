@@ -1,0 +1,28 @@
+{signal: [
+  {name: 'CK', wave: '0.1.0.1.0'},
+  {name: 'CKE', wave: '0....1.0'},
+  {name: 'CS#', wave: '..1..0.x'},
+   ['DDR1 ACTIVATE',
+  {name: 'RAS#', wave: '..1..0.x'},
+  {name: 'CAS#', wave: '..0..1.x'},
+  {name: 'WE#', wave: '..0..1.x'},
+  {name: "A0-A12", wave: "x....2.x",data: ["RA"]},
+  {name: "BA0, BA1", wave: "x....2.x",data: ["BA"]}
+   ],
+  ['DDR1 READ',
+  {name: 'RAS#', wave: '..0..1.x'},
+  {name: 'CAS#', wave: '..1..0.x'},
+  {name: 'WE#', wave: '..0..1.x'},
+  {name: "A0-A12", wave: "x....2.x",data: ["CA"]},
+  {name: "BA0, BA1", wave: "x....2.x",data: ["BA"]}
+   ],
+  ['DDR1 WRITE',
+  {name: 'RAS#', wave: '..0..1.x'},
+  {name: 'CAS#', wave: '..1..0.x'},
+  {name: 'WE#', wave: '..1..0.x'},
+  {name: "A0-A12", wave: "x....2.x",data: ["CA"]},
+  {name: "BA0, BA1", wave: "x....2.x",data: ["BA"]}
+   ]
+]}
+
+
