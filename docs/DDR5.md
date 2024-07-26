@@ -34,14 +34,14 @@ Following image shows the Core vs IO block on DDR4
 > **Taken from Micron DDR4 MT40A512M16 - 512 Meg x 16 Functional Block Diagram**
 > ![zoomify](images/Core_vs_IO.png){: small"}
 
-####VDDL, VSSDL - DLL Power Supplu and Ground
+#####VDDL, VSSDL - DLL Power Supplu and Ground
 1. These pins are only used on DDR2. I am not shure why they were explicitly created on DDR2 and then removed on DDR3. But they are used for DLL and is 1.8V on DDR2.
    
-####VPP - DRAM Activation Power Supply.  
+#####VPP - DRAM Activation Power Supply.  
 1. Up until DDR3, we had charge pump inside the DRAM devices but they were inefficient. So from DDR4 onwards, we have charge pump inside the DDR devices which are used to supply power when activation command is issued.
 2. VPP is the power supply used by the charge pump when it received activation command.
 
-####VREF, VREFDQ and VREFCA
+#####VREF, VREFDQ and VREFCA
 1. DDR1 uses SSTL_2 for both CA and DQ, and external VREF pin provides SSTL_2 reference volatge for both CA and DQ.
 2. DDR2 uses SSTL_18 for both CA and DQ, and external VREF pin provides SSTL_18 reference voltage for both CA and DQ.
 3. DDR3 uses SSTL_15 for both CA and DQ lines, and  external VREFCA and VREFDQ pins provide SSTL_15 reference voltage for CA and DQ respectively.
