@@ -40,6 +40,21 @@ extra:
       link: https://github.com/shingaridavesh
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/davesh-shingari-68800053/
+  analytics: 
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target="_blank" rel="noopener">feedback form</a>.      
 
 copyright: |
   &copy; 2024 <a href="https://github.com/shingaridavesh"  target="_blank" rel="noopener">Davesh Shingari</a>
