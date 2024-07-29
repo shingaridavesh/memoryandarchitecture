@@ -1,35 +1,54 @@
-Wavedrom Drawing for DDR1/DDR2/DDR3 Activate/Write/Read
+DDR1/DDR2 ACTIVATE
 {signal: [
   {name: 'CK', wave: '0.1.0'},
   {name: 'CKE', wave: '01.0'},
   {name: 'CS#', wave: 'x0.x'},
-   ['DDR1/2/3 ACTIVATE',
   {name: 'RAS#', wave: 'x0.x'},
   {name: 'CAS#', wave: 'x1.x'},
   {name: 'WE#', wave: 'x1.x'},
   {name: "A0-An", wave: "x2.x",data: ["RA"]},
   {name: "BA0-BAn", wave: "x2.x",data: ["BA"]}
-   ],
-  ['DDR1/2/3 READ',
+],
+head:{
+   text:'DDR1/DDR2 ACTIVATE',
+   tick:0,
+   every:1
+}}
+
+DDR1/DDR2 READ
+{signal: [
+  {name: 'CK', wave: '0.1.0'},
+  {name: 'CKE', wave: '01.0'},
+  {name: 'CS#', wave: 'x0.x'},
   {name: 'RAS#', wave: 'x1.x'},
   {name: 'CAS#', wave: 'x0.x'},
   {name: 'WE#', wave: 'x1.x'},
   {name: "A0-An", wave: "x2.x",data: ["CA"]},
   {name: "BA0-BAn", wave: "x2.x",data: ["BA"]}
-   ],
-  ['DDR1/2/3 WRITE',
+],
+head:{
+   text:'DDR1/DDR2 READ',
+   tick:0,
+   every:1
+}}
+
+DDR1/DDR2 WRITE
+{signal: [
+  {name: 'CK', wave: '0.1.0'},
+  {name: 'CKE', wave: '01.0'},
+  {name: 'CS#', wave: 'x0.x'},
   {name: 'RAS#', wave: 'x1.x'},
   {name: 'CAS#', wave: 'x0.x'},
   {name: 'WE#', wave: 'x0.x'},
   {name: "A0-An", wave: "x2.x",data: ["CA"]},
   {name: "BA0-BAn", wave: "x2.x",data: ["BA"]}
-   ]
 ],
 head:{
-   text:'DDR1/DDR2/DDR3 ACT, RD, WR',
+   text:'DDR1/DDR2 WRITE',
    tick:0,
    every:1
 }}
+
 
 DDR3 ACTIVATE
 {signal: [
