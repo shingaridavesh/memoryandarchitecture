@@ -32,3 +32,69 @@ head:{
 }}
 
 
+DDR4 ACTIVATE
+{signal: [
+  {name: 'CK', wave: '0.1.0'},
+  {name: 'CKE', wave: '01.0'},
+  {name: 'CS#', wave: 'x0.x'},
+  {name: 'ACT#', wave: 'x0.x'},
+  {name: 'RAS_n/A16', wave: 'x2.x', data: ["RA"]},
+  {name: 'CAS_n/A15', wave: 'x2.x', data: ["RA"]},
+  {name: 'WE_n/A14', wave: 'x2.x', data: ["RA"]},
+  {name: 'BC_n/A12', wave: 'x2.x', data: ["RA"]},
+  {name: 'A[13,11]', wave: 'x2.x', data: ["RA"]},
+  {name: 'AP/A10', wave: 'x2.x', data: ["RA"]},
+  {name: "A0-A9", wave: "x2.x",data: ["RA"]},
+  {name: "BG0-BGn", wave: "x2.x",data: ["BG"]},
+  {name: "BA0-BAn", wave: "x2.x",data: ["BA"]}
+],
+head:{
+   text:'DDR4 ACTIVATE',
+   tick:0,
+   every:1
+}}
+
+DDR4 READ
+{signal: [
+  {name: 'CK', wave: '0.1.0'},
+  {name: 'CKE', wave: '01.0'},
+  {name: 'CS#', wave: 'x0.x'},
+  {name: 'ACT#', wave: 'x1.x'},
+  {name: 'RAS_n/A16', wave: 'x1.x'},
+  {name: 'CAS_n/A15', wave: 'x0.x'},
+  {name: 'WE_n/A14', wave: 'x1.x'},
+  {name: 'BC_n/A12', wave: 'x2.x', data: ["VALID"]},
+  {name: 'A[13,11]', wave: 'x2.x', data: ["VALID"]},
+  {name: 'AP/A10', wave: 'x0.x'},
+  {name: "A0-A9", wave: "x2.x",data: ["CA"]},
+  {name: "BG0-BGn", wave: "x2.x",data: ["BG"]},
+  {name: "BA0-BAn", wave: "x2.x",data: ["BA"]}
+],
+head:{
+   text:'DDR4 READ',
+   tick:0,
+   every:1
+}}
+
+DDR4 WRITE
+{signal: [
+  {name: 'CK', wave: '0.1.0'},
+  {name: 'CKE', wave: '01.0'},
+  {name: 'CS#', wave: 'x0.x'},
+  {name: 'ACT#', wave: 'x1.x'},
+  {name: 'RAS_n/A16', wave: 'x1.x'},
+  {name: 'CAS_n/A15', wave: 'x0.x'},
+  {name: 'WE_n/A14', wave: 'x0.x'},
+  {name: 'BC_n/A12', wave: 'x2.x', data: ["VALID"]},
+  {name: 'A[13,11]', wave: 'x2.x', data: ["VALID"]},
+  {name: 'AP/A10', wave: 'x0.x'},
+  {name: "A0-A9", wave: "x2.x",data: ["CA"]},
+  {name: "BG0-BGn", wave: "x2.x",data: ["BG"]},
+  {name: "BA0-BAn", wave: "x2.x",data: ["BA"]}
+],
+head:{
+   text:'DDR4 WRITE',
+   tick:0,
+   every:1
+}}
+
