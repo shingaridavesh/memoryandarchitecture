@@ -31,6 +31,66 @@ head:{
    every:1
 }}
 
+DDR3 ACTIVATE
+{signal: [
+  {name: 'CK', wave: '0.1.0'},
+  {name: 'CKE', wave: '01.0'},
+  {name: 'CS#', wave: 'x0.x'},
+  {name: 'RAS#', wave: 'x0.x'},
+  {name: 'CAS#', wave: 'x1.x'},
+  {name: 'WE#', wave: 'x1.x'},
+  {name: "An", wave: "x2.x",data: ["RA"]},
+  {name: "A12", wave: "x2.x",data: ["RA"]},
+  {name: "A10", wave: "x2.x",data: ["RA"]},
+  {name: "A0-A9,A11", wave: "x2.x",data: ["RA"]},
+  {name: "BA0-BA2", wave: "x2.x",data: ["BA"]}
+],
+head:{
+   text:'DDR3 ACTIVATE',
+   tick:0,
+   every:1
+}}
+
+
+DDR3 READ
+{signal: [
+  {name: 'CK', wave: '0.1.0'},
+  {name: 'CKE', wave: '01.0'},
+  {name: 'CS#', wave: 'x0.x'},
+  {name: 'RAS#', wave: 'x1.x'},
+  {name: 'CAS#', wave: 'x0.x'},
+  {name: 'WE#', wave: 'x1.x'},
+  {name: "An", wave: "x2.x",data: ["RFU"]},
+  {name: "A12", wave: "x2.x",data: ["V"]},
+  {name: "A10", wave: "x0.x"},
+  {name: "A0-A9,A11", wave: "x2.x",data: ["CA"]},
+  {name: "BA0-BA2", wave: "x2.x",data: ["BA"]}
+],
+head:{
+   text:'DDR3 READ',
+   tick:0,
+   every:1
+}}
+
+DDR3 WRITE
+{signal: [
+  {name: 'CK', wave: '0.1.0'},
+  {name: 'CKE', wave: '01.0'},
+  {name: 'CS#', wave: 'x0.x'},
+  {name: 'RAS#', wave: 'x1.x'},
+  {name: 'CAS#', wave: 'x0.x'},
+  {name: 'WE#', wave: 'x0.x'},
+  {name: "An", wave: "x2.x",data: ["RFU"]},
+  {name: "A12", wave: "x2.x",data: ["V"]},
+  {name: "A10", wave: "x0.x"},
+  {name: "A0-A9,A11", wave: "x2.x",data: ["CA"]},
+  {name: "BA0-BA2", wave: "x2.x",data: ["BA"]}
+],
+head:{
+   text:'DDR3 WRITE',
+   tick:0,
+   every:1
+}}
 
 DDR4 ACTIVATE
 {signal: [
