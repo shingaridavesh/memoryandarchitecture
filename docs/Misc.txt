@@ -96,17 +96,17 @@ DDR4 ACTIVATE
 {signal: [
   {name: 'CK', wave: '0.1.0'},
   {name: 'CKE', wave: '01.0'},
-  {name: 'CS#', wave: 'x0.x'},
-  {name: 'ACT#', wave: 'x0.x'},
+  {name: 'CS_n', wave: 'x0.x'},
+  {name: 'ACT_n', wave: 'x0.x'},
   {name: 'RAS_n/A16', wave: 'x2.x', data: ["RA"]},
   {name: 'CAS_n/A15', wave: 'x2.x', data: ["RA"]},
   {name: 'WE_n/A14', wave: 'x2.x', data: ["RA"]},
   {name: 'BC_n/A12', wave: 'x2.x', data: ["RA"]},
-  {name: 'A[13,11]', wave: 'x2.x', data: ["RA"]},
+  {name: 'A[17,13,11]', wave: 'x2.x', data: ["RA"]},
   {name: 'AP/A10', wave: 'x2.x', data: ["RA"]},
   {name: "A0-A9", wave: "x2.x",data: ["RA"]},
-  {name: "BG0-BGn", wave: "x2.x",data: ["BG"]},
-  {name: "BA0-BAn", wave: "x2.x",data: ["BA"]}
+  {name: "BG0-BG1", wave: "x2.x",data: ["BG"]},
+  {name: "BA0-BA1", wave: "x2.x",data: ["BA"]}
 ],
 head:{
    text:'DDR4 ACTIVATE',
@@ -118,17 +118,17 @@ DDR4 READ
 {signal: [
   {name: 'CK', wave: '0.1.0'},
   {name: 'CKE', wave: '01.0'},
-  {name: 'CS#', wave: 'x0.x'},
-  {name: 'ACT#', wave: 'x1.x'},
+  {name: 'CS_n', wave: 'x0.x'},
+  {name: 'ACT_n', wave: 'x1.x'},
   {name: 'RAS_n/A16', wave: 'x1.x'},
   {name: 'CAS_n/A15', wave: 'x0.x'},
   {name: 'WE_n/A14', wave: 'x1.x'},
   {name: 'BC_n/A12', wave: 'x2.x', data: ["VALID"]},
-  {name: 'A[13,11]', wave: 'x2.x', data: ["VALID"]},
+  {name: 'A[17,13,11]', wave: 'x2.x', data: ["VALID"]},
   {name: 'AP/A10', wave: 'x0.x'},
   {name: "A0-A9", wave: "x2.x",data: ["CA"]},
-  {name: "BG0-BGn", wave: "x2.x",data: ["BG"]},
-  {name: "BA0-BAn", wave: "x2.x",data: ["BA"]}
+  {name: "BG0-BG1", wave: "x2.x",data: ["BG"]},
+  {name: "BA0-BA1", wave: "x2.x",data: ["BA"]}
 ],
 head:{
    text:'DDR4 READ',
@@ -140,17 +140,17 @@ DDR4 WRITE
 {signal: [
   {name: 'CK', wave: '0.1.0'},
   {name: 'CKE', wave: '01.0'},
-  {name: 'CS#', wave: 'x0.x'},
-  {name: 'ACT#', wave: 'x1.x'},
+  {name: 'CS_n', wave: 'x0.x'},
+  {name: 'ACT_n', wave: 'x1.x'},
   {name: 'RAS_n/A16', wave: 'x1.x'},
   {name: 'CAS_n/A15', wave: 'x0.x'},
   {name: 'WE_n/A14', wave: 'x0.x'},
   {name: 'BC_n/A12', wave: 'x2.x', data: ["VALID"]},
-  {name: 'A[13,11]', wave: 'x2.x', data: ["VALID"]},
+  {name: 'A[17,13,11]', wave: 'x2.x', data: ["VALID"]},
   {name: 'AP/A10', wave: 'x0.x'},
   {name: "A0-A9", wave: "x2.x",data: ["CA"]},
-  {name: "BG0-BGn", wave: "x2.x",data: ["BG"]},
-  {name: "BA0-BAn", wave: "x2.x",data: ["BA"]}
+  {name: "BG0-BG1", wave: "x2.x",data: ["BG"]},
+  {name: "BA0-BA1", wave: "x2.x",data: ["BA"]}
 ],
 head:{
    text:'DDR4 WRITE',
@@ -161,7 +161,7 @@ head:{
 DDR5 ACTIVATE
 {signal: [
   {name: 'CK', wave: '010101010'},
-  {name: 'CS#', wave: '1.0.1....'},
+  {name: 'CS_n', wave: '1.0.1....'},
   {name: 'CA0', wave: '1.0.2.1.', data: ["R4"]},
   {name: 'CA1', wave: '1.0.2.1.', data: ["R5"]},
   {name: 'CA2-CA3',  wave: '1.2.2.1.', data: ["R0-R1","R6-R7"]},
@@ -184,7 +184,7 @@ head:{
 DDR5 READ
 {signal: [
   {name: 'CK', wave: '010101010'},
-  {name: 'CS#', wave: '1.0.1....'},
+  {name: 'CS_n', wave: '1.0.1....'},
   {name: 'CA0', wave: '1...2.1.', data: ["C2"]},
   {name: 'CA1', wave: '1.0.2.1.', data: ["C3"]},
   {name: 'CA2-CA3',  wave: '1...2.1.', data: ["C4-C5"]},
@@ -208,7 +208,7 @@ head:{
 DDR5 WRITE
 {signal: [
   {name: 'CK', wave: '010101010'},
-  {name: 'CS#', wave: '1.0.1....'},
+  {name: 'CS_n', wave: '1.0.1....'},
   {name: 'CA0', wave: '1...2.1.', data: ["V"]},
   {name: 'CA1', wave: '1.0.2.1.', data: ["C3"]},
   {name: 'CA2-CA3',  wave: '1...2.1.', data: ["C4-C5"]},
