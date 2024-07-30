@@ -6,4 +6,4 @@
 | Operating Voltage(V)  | 2.5 | 1.8 | 1.5 | 1.2 | 1.1 |
 | Banks(Overall)  | 4 | 4,8 | 8 | 16 | 32 |
 | Bank Groups  | NA | NA | NA | 4 | 8 |
-
+| Bank Groups  | NA | NA | NA | 4 | 8 |
