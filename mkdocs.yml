@@ -75,3 +75,23 @@ extra:
 
 copyright: |
   &copy; 2024 <a href="https://github.com/shingaridavesh"  target="_blank" rel="noopener">Davesh Shingari</a>
+
+# Page tree
+nav:
+  - Home: index.md
+  - DDR Types:
+    - DDR Types/index.md
+    - Pins: DDR Types/Pins.md
+    - Training: DDR Types/Training.md
+    - Extensions:
+      - setup/extensions/index.md
+      - Python Markdown: setup/extensions/python-markdown.md
+      - Python Markdown Extensions: setup/extensions/python-markdown-extensions.md
+  - DDR4:
+    - DDR4/index.md
+  - DDR5:
+    - DDR5/index.md
+  - LPDDR4:
+    - LPDDR4/index.md
+  - LPDDR5:
+    - LPDDR5/index.md
