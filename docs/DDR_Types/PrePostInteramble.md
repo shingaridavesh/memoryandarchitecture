@@ -7,12 +7,12 @@ Before we have a valida data transaction whether we have a Read or Write operati
 
 ##Differences
 
-|  Types  |      DDR1      |   DDR2    |      DDR3      |      DDR4      |   DDR5    |  
-| :--------: |:-------------:| :---------:| :---------:| :--------: | :-------------:|
-| Read Premable | 2002| 2006 | 2010 | 1 tCK, 2 tCK | 1 tCK, 2 tCK, 3 tCK, 4 tCK |
-| Read Postamble | 128Mb-1Gb| 128Mb-4Gb | 512Mb-8Gb | 0.5 tCK | 0.5 tCK, 1.5 tCK |
-| Write Preamble  | 200-400 | 400-800 | 800-2133 | 1 tCK, 2 tCK | 2 tCK, 3 tCK, 4 tCK |
-| Write Postamble  | 2.5 | 1.8 | 1.5 | 0.5 tCK | 0.5 tCK, 1.5 tCK |
+|  Types  |      DDR1      |   DDR2    |      DDR3      |      DDR4      |   DDR5    | Comment | 
+| :--------: |:-------------:| :---------:| :---------:| :--------: | :-------------:| :-------------:|
+| Read Premable | 1 tCK | 1 tCK | 1 tCK | 1 tCK, 2 tCK | 1 tCK, 2 tCK, 3 tCK, 4 tCK | Not 100% sure about DDR1, DDR2 |
+| Read Postamble | 0.5 tCK| 0.5 tCK | 0.5 tCK | 0.5 tCK | 0.5 tCK, 1.5 tCK | Not 100% sure about DDR1, DDR2 |
+| Write Preamble  | 0.25 tCK | 0.25 tCK | 1 tCK | 1 tCK, 2 tCK | 2 tCK, 3 tCK, 4 tCK | Not 100% sure about DDR1, DDR2 |
+| Write Postamble  | 0.5 tCK | 0.5 tCK | 0.5 tCK | 0.5 tCK | 0.5 tCK, 1.5 tCK | Not 100% sure about DDR1, DDR2 |
 
 ##DDR4
 1. On DDR4 we have option to choose from 2 settings for Read/Write Preamble, whereas Read/Write Postamble is fixed.  
@@ -27,12 +27,10 @@ Before we have a valida data transaction whether we have a Read or Write operati
 
 ###Read Preamble
 1. DDR5 supports 5 different type of Read Preamble Settings.
-
 |  Function  |      Register Type      |   Operand    |      Data      |      Comment      |  
 | :--------: |:-------------:| :---------:| :---------:| :--------: |
 | Read Preamble | R/W| OP[2:0] | 000B: 1 tCK - 10 Pattern <br> 001B: 2 tCK - 0010 Pattern <br> 010B: 3 tCK - 1110 Pattern (DDR4 Style) <br> 011B: 3 tCK - 000010 Pattern <br> 100B: 4 tCK - 00001010 Pattern <br> 101B: Reserved <br>110B: Reserved <br>111B: Reserved| | 
-
-2. These settings can be set through MR8 OP[2:0]
+2. These settings can be set through MR8 OP[2:0].
 
 ###Write Preamble
 
