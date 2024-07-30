@@ -35,6 +35,11 @@ Before we have a valida data transaction whether we have a Read or Write operati
 
 * Read Preamble can be set through MR8 OP[2:0], and Read Postamble can be set through MR8 OP[6].
 
+> **Read Preamble Types with Postamble=0.5 tCK**
+> ![zoomify](../images/DDR_Types/Read_Pre_Post_1.png)
+> **Read Preamble Types with Postamble=1.5 tCK**
+> ![zoomify](../images/DDR_Types/Read_Pre_Post_2.png)
+
 ###Write Preamble and Postamble
 * DDR5 supports 3 different type of Write Preamble and 2 different types of Write Postamble.
 
@@ -44,3 +49,8 @@ Before we have a valida data transaction whether we have a Read or Write operati
 | Write Postamble | MR8 | OP[7] | 0B: 0.5 tCK - 0 Pattern <br> 1B: 1.5 tCK - 000 Pattern | | 
 
 * Write Preamble can be set through MR8 OP[4:3]], and Write Postamble can be set through MR8 OP[7].
+
+> **Write Preamble Types with Postamble=0.5 tCK**
+> ![zoomify](../images/DDR_Types/Write_Pre_Post_1.png)
+> **Write Preamble Types with Postamble=1.5 tCK**
+> ![zoomify](../images/DDR_Types/Write_Pre_Post_2.png)
