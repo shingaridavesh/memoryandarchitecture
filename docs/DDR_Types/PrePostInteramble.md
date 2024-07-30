@@ -1,9 +1,9 @@
 #Preamble, Postamble and Interamble
 
 Before we have a valida data transaction whether we have a Read or Write operation, we need a  DQS Data Strobe, given DQ Data gets latched on DQS Data Strobe. A typical Read/Write transaction consists of __DQS Preamble__ + __DQS Toggling__ + __DQS Postamble__.  
-1. __DQS Preamble__: Preamble provides a timing window for the receiving device to enable its receivers while a known/valid level is present on the DQS Data Strobe signal, this avoiding a false trigger of the receiver.  
-2. __DQS Toggling__: Following Preamble, DQS Data Strobe toggles for the duration of data burst (which will be Burst Length). DQS toggles at same frequency as the clock (atleast as of release of DDR5). __NOTE:__ on LPDDR5/5x we have WCK which act as a strobe and toggles at different frequency as clock.  
-3. __DQS Postamble__: Postamble is the valid DQS Data Strobe transitions following the DQS toggling.
+* __DQS Preamble__: Preamble provides a timing window for the receiving device to enable its receivers while a known/valid level is present on the DQS Data Strobe signal, this avoiding a false trigger of the receiver.  
+* __DQS Toggling__: Following Preamble, DQS Data Strobe toggles for the duration of data burst (which will be Burst Length). DQS toggles at same frequency as the clock (atleast as of release of DDR5). __NOTE:__ on LPDDR5/5x we have WCK which act as a strobe and toggles at different frequency as clock.  
+* __DQS Postamble__: Postamble is the valid DQS Data Strobe transitions following the DQS toggling.
 
 ##Differences
 
@@ -15,8 +15,8 @@ Before we have a valida data transaction whether we have a Read or Write operati
 | Write Postamble  | 0.5 tCK | 0.5 tCK | 0.5 tCK | 0.5 tCK | 0.5 tCK, 1.5 tCK | Not 100% sure about DDR1, DDR2 |
 
 ##DDR4
-1. On DDR4 we have option to choose from 2 settings for Read/Write Preamble, whereas Read/Write Postamble is fixed.  
-2. Read & Write Preamble can be chosen from MR4 and has option of 1 tCK and 2 tCK. The 1 tCK preamble applies to all speed, whereas 2 tCK preamble is valid for DDR4-2400/2666/3200.
+* On DDR4 we have option to choose from 2 settings for Read/Write Preamble, whereas Read/Write Postamble is fixed.  
+* Read & Write Preamble can be chosen from MR4 and has option of 1 tCK and 2 tCK. The 1 tCK preamble applies to all speed, whereas 2 tCK preamble is valid for DDR4-2400/2666/3200.
 
 ###Preamble
 
@@ -26,19 +26,21 @@ Before we have a valida data transaction whether we have a Read or Write operati
 2. Reason for long Preamble and Postamble is to help with ISI on DQS at beginning of each burst, given we have more ISI at higher speeds at which DDR5 operate.  
 
 ###Read Preamble and Postamble
-1. DDR5 supports 5 different type of Read Preamble and 2 different types of Read Postamble.
+* DDR5 supports 5 different type of Read Preamble and 2 different types of Read Postamble.
 
 |  Function  |      Mode Register      |   Operand    |      Data      |      Comment      |  
 | :--------: |:-------------:| :---------:| :---------:| :--------: |
 | Read Preamble | MR8 | OP[2:0] | 000B: 1 tCK - 10 Pattern <br> 001B: 2 tCK - 00 10 Pattern <br> 010B: 2 tCK - 11 10 Pattern (DDR4 Style) <br> 011B: 3 tCK - 00 00 10 Pattern <br> 100B: 4 tCK - 00 00 10 10 Pattern <br> 101B: Reserved <br>110B: Reserved <br>111B: Reserved| | 
 | Read Postamble | MR8 | OP[6] | 0B: 0.5 tCK - 0 Pattern <br> 1B: 1.5 tCK - 010 Pattern | | 
-2. Read Preamble can be set through MR8 OP[2:0], and Read Postamble can be set through MR8 OP[6].
+
+* Read Preamble can be set through MR8 OP[2:0], and Read Postamble can be set through MR8 OP[6].
 
 ###Write Preamble and Postamble
-1. DDR5 supports 3 different type of Write Preamble and 2 different types of Write Postamble.
+* DDR5 supports 3 different type of Write Preamble and 2 different types of Write Postamble.
 
 |  Function  |      Mode Register      |   Operand    |      Data      |      Comment      |  
 | :--------: |:-------------:| :---------:| :---------:| :--------: |
 | Write Preamble | MR8 | OP[4:3] | 00B: Reserved <br> 01B: 2 tCK - 00 10 Pattern (Default) <br> 10B: 3 tCK - 00 00 10 Pattern <br> 11B: 4 tCK - 00 00 10 10 Pattern | | 
 | Write Postamble | MR8 | OP[7] | 0B: 0.5 tCK - 0 Pattern <br> 1B: 1.5 tCK - 000 Pattern | | 
-2. Write Preamble can be set through MR8 OP[4:3]], and Write Postamble can be set through MR8 OP[7].
+
+* Write Preamble can be set through MR8 OP[4:3]], and Write Postamble can be set through MR8 OP[7].
