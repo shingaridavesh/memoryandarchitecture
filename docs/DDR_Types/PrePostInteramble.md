@@ -29,6 +29,8 @@ Before we have a valida data transaction whether we have a Read or Write operati
 1. DDR5 supports 5 different type of Read Preamble and 2 different types of Read Postamble.
 |  Function  |      Mode Register      |   Operand    |      Data      |      Comment      |  
 | :--------: |:-------------:| :---------:| :---------:| :--------: |
+|  Function  |      Mode Register      |   Operand    |      Data      |      Comment      |  
+
 | Read Preamble | MR8 | OP[2:0] | 000B: 1 tCK - 10 Pattern <br> 001B: 2 tCK - 00 10 Pattern <br> 010B: 2 tCK - 11 10 Pattern (DDR4 Style) <br> 011B: 3 tCK - 00 00 10 Pattern <br> 100B: 4 tCK - 00 00 10 10 Pattern <br> 101B: Reserved <br>110B: Reserved <br>111B: Reserved| | 
 | Read Postamble | MR8 | OP[6] | 0B: 0.5 tCK - 0 Pattern <br> 1B: 1.5 tCK - 010 Pattern | | 
 2. Read Preamble can be set through MR8 OP[2:0], and Read Postamble can be set through MR8 OP[6].
