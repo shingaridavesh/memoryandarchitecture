@@ -95,3 +95,7 @@ nav:
     - LPDDR4/index.md
   - LPDDR5:
     - LPDDR5/index.md
+  - Trainings:
+    - Trainings/index.md
+  - About Me:
+    - About Me.md
