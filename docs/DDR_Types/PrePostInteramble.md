@@ -30,14 +30,7 @@ Before we have a valida data transaction whether we have a Read or Write operati
 
 |  Function  |      Register Type      |   Operand    |      Data      |      Comment      |  
 | :--------: |:-------------:| :---------:| :---------:| :--------: |
-| Read Preamble | R/W| OP[2:0] | 000B: 1 tCK - 10 Pattern <br> 
-001B: 2 tCK - 0010 Pattern <br> 
-010B: 3 tCK - 1110 Pattern (DDR4 Style) <br> 
-011B: 3 tCK - 000010 Pattern <br> 
-100B: 4 tCK - 00001010 Pattern <br> 
-101B: Reserved <br>
-110B: Reserved <br>
-111B: Reserved| | 
+| Read Preamble | R/W| OP[2:0] | 000B: 1 tCK - 10 Pattern <br> 001B: 2 tCK - 0010 Pattern <br> 010B: 3 tCK - 1110 Pattern (DDR4 Style) <br> 011B: 3 tCK - 000010 Pattern <br> 100B: 4 tCK - 00001010 Pattern <br> 101B: Reserved <br>110B: Reserved <br>111B: Reserved| | 
 
 2. These settings can be set through MR8 OP[2:0]
 
