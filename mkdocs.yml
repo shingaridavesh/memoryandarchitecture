@@ -98,6 +98,7 @@ nav:
     - ZQ Calibration: Trainings/ZQCalibration.md
     - Command Bus Training: Trainings/CommandBus.md
     - Write Leveling: Trainings/WriteLeveling.md
+    - Read Gate Training: Trainings/ReadGate.md
     - Read Training: Trainings/ReadTraining.md
     - Vref Read: Trainings/VrefRead.md
     - Vref Write: Trainings/VrefWrite.md
