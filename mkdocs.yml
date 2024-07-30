@@ -80,13 +80,9 @@ copyright: |
 nav:
   - Home: index.md
   - DDR Types:
-    - DDR Types/index.md
-    - Pins: DDR Types/Pins.md
-    - Training: DDR Types/Training.md
-    - Extensions:
-      - setup/extensions/index.md
-      - Python Markdown: setup/extensions/python-markdown.md
-      - Python Markdown Extensions: setup/extensions/python-markdown-extensions.md
+    - DDR_Types/index.md
+    - Pins: DDR_Types/Pins.md
+    - Training: DDR_Types/Training.md
   - DDR4:
     - DDR4/index.md
   - DDR5:
