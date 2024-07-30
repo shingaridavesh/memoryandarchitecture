@@ -83,7 +83,13 @@ nav:
   - Home: index.md
   - DDR Types:
     - DDR_Types/index.md
+    - Evolution: DDR_Types/Evolution.md
+    - Organization: DDR_Types/Organization.md
+    - Burst Length: DDR_Types/BurstLength.md
     - Pins: DDR_Types/Pins.md
+    - Preamble, Postamble & Interamble: DDR_Types/PrePostInteramble.md
+    - Refresh: DDR_Types/Refresh.md
+    - Power Modes: DDR_Types/PowerModes.md
     - Training: DDR_Types/Training.md
   - DDR4:
     - DDR4/index.md
