@@ -28,7 +28,7 @@ Before we have a valida data transaction whether we have a Read or Write operati
 ###Read Preamble
 1. DDR5 supports 5 different type of Read Preamble Settings.
 |  Function  |      Register Type      |   Operand    |      Data      |      Comment      |  
-| :--------: |:-------------:| :---------:| :---------:| :--------: | :-------------:|
+| :--------: |:-------------:| :---------:| :---------:| :--------: |
 | Read Preamble | R/W| OP[2:0] | 000B: 1 tCK - 10 Pattern <br> 
 001B: 2 tCK - 0010 Pattern <br> 
 010B: 3 tCK - 1110 Pattern (DDR4 Style) <br> 
