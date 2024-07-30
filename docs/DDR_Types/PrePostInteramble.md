@@ -32,7 +32,6 @@ Before we have a valida data transaction whether we have a Read or Write operati
 | :--------: |:-------------:| :---------:| :---------:| :--------: |
 | Read Preamble | MR8 | OP[2:0] | 000B: 1 tCK - 10 Pattern <br> 001B: 2 tCK - 00 10 Pattern <br> 010B: 2 tCK - 11 10 Pattern (DDR4 Style) <br> 011B: 3 tCK - 00 00 10 Pattern <br> 100B: 4 tCK - 00 00 10 10 Pattern <br> 101B: Reserved <br>110B: Reserved <br>111B: Reserved| | 
 | Read Postamble | MR8 | OP[6] | 0B: 0.5 tCK - 0 Pattern <br> 1B: 1.5 tCK - 010 Pattern | | 
-
 2. Read Preamble can be set through MR8 OP[2:0], and Read Postamble can be set through MR8 OP[6].
 
 ###Write Preamble and Postamble
@@ -42,5 +41,4 @@ Before we have a valida data transaction whether we have a Read or Write operati
 | :--------: |:-------------:| :---------:| :---------:| :--------: |
 | Write Preamble | MR8 | OP[4:3] | 00B: Reserved <br> 01B: 2 tCK - 00 10 Pattern (Default) <br> 10B: 3 tCK - 00 00 10 Pattern <br> 11B: 4 tCK - 00 00 10 10 Pattern | | 
 | Write Postamble | MR8 | OP[7] | 0B: 0.5 tCK - 0 Pattern <br> 1B: 1.5 tCK - 000 Pattern | | 
-
 2. Write Preamble can be set through MR8 OP[4:3]], and Write Postamble can be set through MR8 OP[7].
