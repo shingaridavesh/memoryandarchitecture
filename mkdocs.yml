@@ -95,10 +95,13 @@ nav:
     - LPDDR5/index.md
   - Trainings:
     - Trainings/index.md
+    - ZQ Calibration: Trainings/ZQCalibration.md
     - Command Bus Training: Trainings/CommandBus.md
     - Write Leveling: Trainings/WriteLeveling.md
     - Read Training: Trainings/ReadTraining.md
     - Vref Read: Trainings/VrefRead.md
     - Vref Write: Trainings/VrefWrite.md
+    - DFE: Trainings/DFE.md
+    - Read Latency: Trainings/ReadLatency.md
   - About Me:
     - About Me.md
