@@ -1,9 +1,10 @@
 #Preamble, Postamble and Interamble
 
-Before we have a valida data transaction whether we have a Read or Write operation, we need a  DQS Data Strobe, given DQ Data gets latched on DQS Data Strobe. A typical Read/Write transaction consists of __DQS Preamble__ + __DQS Toggling__ + __DQS Postamble__.  
-* __DQS Preamble__: Preamble provides a timing window for the receiving device to enable its receivers while a known/valid level is present on the DQS Data Strobe signal, this avoiding a false trigger of the receiver.  
-* __DQS Toggling__: Following Preamble, DQS Data Strobe toggles for the duration of data burst (which will be Burst Length). DQS toggles at same frequency as the clock (atleast as of release of DDR5). __NOTE:__ on LPDDR5/5x we have WCK which act as a strobe and toggles at different frequency as clock.  
-* __DQS Postamble__: Postamble is the valid DQS Data Strobe transitions following the DQS toggling.
+Before we have a valida data transaction whether we have a Read or Write operation, we need a  DQS Data Strobe, given DQ Data gets latched on DQS Data Strobe. A typical Read/Write transaction consists of __DQS Preamble__ + __DQS Toggling__ + __DQS Postamble__. 
+
+*  __DQS Preamble__: Preamble provides a timing window for the receiving device to enable its receivers while a known/valid level is present on the DQS Data Strobe signal, this avoiding a false trigger of the receiver.  
+*  __DQS Toggling__: Following Preamble, DQS Data Strobe toggles for the duration of data burst (which will be Burst Length). DQS toggles at same frequency as the clock (atleast as of release of DDR5). __NOTE:__ on LPDDR5/5x we have WCK which act as a strobe and toggles at different frequency as clock.  
+*  __DQS Postamble__: Postamble is the valid DQS Data Strobe transitions following the DQS toggling.
 
 ##Differences
 
@@ -71,10 +72,26 @@ Consider back to back Read operations and the timing between 2 Read operation is
 > **Read Interamble with No Gap (Source: Micron DDR5 Datasheet)**
 > ![zoomify](../images/DDR_Types/RD_Interamble_0_Gap.png)
 
-
 > **Read Interamble with 1 CLK Gap (Source: Micron DDR5 Datasheet)**
 > ![zoomify](../images/DDR_Types/RD_Interamble_1_Gap.png)
 
-
 > **Read Interamble with 2 CLK Gap (Source: Micron DDR5 Datasheet)**
 > ![zoomify](../images/DDR_Types/RD_Interamble_2_Gap.png)
+
+> **Read Interamble with 5 CLK Gap (Source: Micron DDR5 Datasheet)**
+> ![zoomify](../images/DDR_Types/RD_Interamble_5_Gap.png)
+
+####Write Interamble
+Consider back to back Write operations and the timing between 2 Write operation is tCCD (technically tCCD_S or tCCD_L). The minimum time is BL/2, given it takes BL/2 clock cycles for one burst to finish, before second burst can start. So if we consider this scenario, then we will have something as follows:
+
+> **Write Interamble with No Gap (Source: Micron DDR5 Datasheet)**
+> ![zoomify](../images/DDR_Types/WR_Interamble_0_Gap.png)
+
+> **Write Interamble with 1 CLK Gap (Source: Micron DDR5 Datasheet)**
+> ![zoomify](../images/DDR_Types/WR_Interamble_1_Gap.png)
+
+> **Write Interamble with 2 CLK Gap (Source: Micron DDR5 Datasheet)**
+> ![zoomify](../images/DDR_Types/WR_Interamble_2_Gap.png)
+
+> **Write Interamble with 5 CLK Gap (Source: Micron DDR5 Datasheet)**
+> ![zoomify](../images/DDR_Types/WR_Interamble_5_Gap.png)
