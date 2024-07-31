@@ -22,8 +22,8 @@ Before we have a valida data transaction whether we have a Read or Write operati
 
 
 ##DDR5
-1. On DDR5, we have longer DQS Preambles and Postambles for Reads and Writes.  
-2. Reason for long Preamble and Postamble is to help with ISI on DQS at beginning of each burst, given we have more ISI at higher speeds at which DDR5 operate.  
+* On DDR5, we have longer DQS Preambles and Postambles for Reads and Writes.  
+* Reason for long Preamble and Postamble is to help with ISI on DQS at beginning of each burst, given we have more ISI at higher speeds at which DDR5 operate.  
 
 ###Read Preamble and Postamble
 * DDR5 supports 5 different type of Read Preamble and 2 different types of Read Postamble.
@@ -35,9 +35,9 @@ Before we have a valida data transaction whether we have a Read or Write operati
 
 * Read Preamble can be set through MR8 OP[2:0], and Read Postamble can be set through MR8 OP[6].
 
-> **Read Preamble Types with Postamble=0.5 tCK**
+> **Read Preamble Types with Postamble=0.5 tCK (Source: Micron DDR5 Datasheet)**
 > ![zoomify](../images/DDR_Types/Read_Pre_Post_1.png)
-> **Read Preamble Types with Postamble=1.5 tCK**
+> **Read Preamble Types with Postamble=1.5 tCK (Source: Micron DDR5 Datasheet)**
 > ![zoomify](../images/DDR_Types/Read_Pre_Post_2.png)
 
 ###Write Preamble and Postamble
@@ -50,7 +50,20 @@ Before we have a valida data transaction whether we have a Read or Write operati
 
 * Write Preamble can be set through MR8 OP[4:3]], and Write Postamble can be set through MR8 OP[7].
 
-> **Write Preamble Types with Postamble=0.5 tCK**
+> **Write Preamble Types with Postamble=0.5 tCK (Source: Micron DDR5 Datasheet)**
 > ![zoomify](../images/DDR_Types/Write_Pre_Post_1.png)
-> **Write Preamble Types with Postamble=1.5 tCK**
+> **Write Preamble Types with Postamble=1.5 tCK (Source: Micron DDR5 Datasheet)**
 > ![zoomify](../images/DDR_Types/Write_Pre_Post_2.png)
+
+###Read and Write Interamble
+
+* As you would have observed that DDR5 has long Preambles and at higher speeds, we do use longer Preamble. But with longer Preamble, when we have back to back transaction, then we will have performance loss because of bubbles created by first transaction Postamble + second transaction Preamble.
+* To combat this DDR5 has concept of Interamble. __Intermable__ happens when DQS Postamble of first burst is allowed to overlap with DQS Preamble of second burst.
+
+__NOTE__: Interamble happens only when 2 transactions are of same type and same rank, which makes sense because DQS will be driven by Controller/PHY incase of Write and will be driven by DDR incase of Read. So valid cases where Interamble happens are:  
+* Read-gap-Read, Read-gap-gap-Read etc.  
+* Write-gap-Write, Write-gap-gap-Write etc.  
+We will look at the examples for these scenarios.
+
+####Read Interamble
+Consider back to back Read operations and the timing between 2 Read operation is tCCD (technically tCCD_S or tCCD_L). The minimum time is BL/2, given it takes BL/2 clock cycles for one burst to finish, before second burst can start. So if we consider this scenario, then we will have something as follows:
