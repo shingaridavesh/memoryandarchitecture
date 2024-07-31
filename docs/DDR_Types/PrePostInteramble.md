@@ -67,3 +67,14 @@ We will look at the examples for these scenarios.
 
 ####Read Interamble
 Consider back to back Read operations and the timing between 2 Read operation is tCCD (technically tCCD_S or tCCD_L). The minimum time is BL/2, given it takes BL/2 clock cycles for one burst to finish, before second burst can start. So if we consider this scenario, then we will have something as follows:
+
+> **Read Interamble with No Gap (Source: Micron DDR5 Datasheet)**
+> ![zoomify](../images/DDR_Types/RD_Interamble_0_Gap.png)
+
+
+> **Read Interamble with 1 CLK Gap (Source: Micron DDR5 Datasheet)**
+> ![zoomify](../images/DDR_Types/RD_Interamble_1_Gap.png)
+
+
+> **Read Interamble with 2 CLK Gap (Source: Micron DDR5 Datasheet)**
+> ![zoomify](../images/DDR_Types/RD_Interamble_2_Gap.png)
