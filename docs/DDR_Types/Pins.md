@@ -22,7 +22,7 @@
 
 Following image shows the Core vs IO block on DDR4
 > **Taken from Micron DDR4 MT40A512M16 - 512 Meg x 16 Functional Block Diagram**
-> ![zoomify](images/Core_vs_IO.png){: small"}
+> ![zoomify](../images/Core_vs_IO.png){: small"}
 
 #####VDDL, VSSDL - DLL Power Supplu and Ground
 1. These pins are only used on DDR2. I am not shure why they were explicitly created on DDR2 and then removed on DDR3. But they are used for DLL and is 1.8V on DDR2.
