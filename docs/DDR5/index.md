@@ -2,6 +2,7 @@
 
 ##Higher Speed
 Data Rates have been increased from DDR4 to DDR5. This leads to increased performance and bandwidth.
+
 |  Feature  |      DDR4      |   DDR5    |    
 | :--------: |:-------------:| :---------:|
 | Data Rate | 1600-3200 MT/s | 3200-6400 MT/s <br> Latest JEDEC specs have increased it to 8800 MT/s | 
@@ -10,6 +11,7 @@ Data Rates have been increased from DDR4 to DDR5. This leads to increased perfor
 
 ##Lower Voltage
 Voltages have been decreased from DDR4 to DDR5. This leads to lower power on DDR5 as compared to DDR4.
+
 |  Feature  |      DDR4      |   DDR5    |    
 | :--------: |:-------------:| :---------:|
 | VDD | 1.2V | 1.1V | 
@@ -19,12 +21,14 @@ Voltages have been decreased from DDR4 to DDR5. This leads to lower power on DDR
 
 ##Densities
 DDR5 devices have more densinites as compared to DDR4, meaning more memory.
+
 |  Feature  |      DDR4      |   DDR5    |    
 | :--------: |:-------------:| :---------:|
 | Density | 2Gb-16Gb| 8Gb-64Gb | 
 
 ##Prefetch
 Prefetch width has increased on DDR5. DDR3 & DDR4 didnt change Prefetch width but DDR4 introduced concept of Bank Group. But DDR5 has increased Prefetch width. This enables higher data rates while keeping internal core clock similar to DDR4.
+
 |  Feature  |      DDR4      |   DDR5    |    
 | :--------: |:-------------:| :---------:|
 | Prefetch | 8n| 16n | 
