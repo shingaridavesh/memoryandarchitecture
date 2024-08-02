@@ -108,3 +108,4 @@ Following image shows the Core vs IO block on DDR4
 | SCL |   Present    |      Present |  |
 | SDA |   Present    |      Present |  |
 | SA | Present |     Present |  |
+
