@@ -66,6 +66,9 @@ extra:
     - icon: fontawesome/brands/linkedin
       link: https://www.linkedin.com/in/davesh-shingari-68800053/
   analytics: 
+    analytics:
+      provider: google
+      property: G-60309362
     feedback:
       title: Was this page helpful?
       ratings:
