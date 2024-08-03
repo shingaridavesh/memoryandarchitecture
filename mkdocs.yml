@@ -100,6 +100,13 @@ nav:
     - Refresh: DDR_Types/Refresh.md
     - Power Modes: DDR_Types/PowerModes.md
     - Training: DDR_Types/Training.md
+  - Memory Basics:
+    - Memory_Basics/index.md
+    - Memory Operation: DDR_Types/Operation.md
+    - RAS, CAS, WE and ACT: DDR_Types/RASCASWE.md
+    - Timings: DDR_Types/Timings.md
+    - LPDDRs are Low Power: DDR_Types/LPDDRs.md
+    - Need of DLL: DDR_Types/DLLs.md
   - DDR4:
     - DDR4/index.md
   - DDR5:

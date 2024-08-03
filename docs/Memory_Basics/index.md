@@ -1,0 +1,1 @@
+In this section we cover some basic concepts which are critical to understand DRAM operation.
