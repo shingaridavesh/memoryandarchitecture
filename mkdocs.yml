@@ -102,6 +102,7 @@ nav:
     - Training: DDR_Types/Training.md
   - Memory Basics:
     - Memory_Basics/index.md
+    - Memory Organization: Memory_Basics/Organization.md
     - Memory Operation: Memory_Basics/Operation.md
     - RAS, CAS, WE and ACT: Memory_Basics/RASCASWE.md
     - Timings: Memory_Basics/Timings.md
