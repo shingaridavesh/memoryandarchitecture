@@ -1,8 +1,8 @@
 
-|  Types  |      DDR1      |   DDR2    |      DDR3      |      DDR4      |   DDR5    | Comment | 
-| :--------: |:-------------:| :---------:| :---------:| :--------: | :-------------:| :-------------:|
+|  Types  |      DDR1      |   DDR2    |      DDR3      |      DDR4      |   DDR5    |
+| :--------: |:-------------| :---------| :---------| :-------- | :-------------| 
 | Refresh Command |  |  |  |  | * Refresh All (REF~ab~) <br> * Refresh Management All (RFM~ab~) <br> * Refresh Same Bank (REF~sb~) <br> * Refresh Management Same Bank (RFM~sb~)|  |
-| Refresh Features |  |  |  |  | Refresh Modes - Normal and Fine Granularity <br> Refresh Management|  |
+| Refresh Features |  |  |  |  | Refresh Modes - Normal and Fine Granularity <br> Refresh Management <br> Directed Refresh Management (DRFM) - Optional| 
 
 Refresh Management (RFM)
 
@@ -15,3 +15,4 @@ MR58
 | RFM Required | R | OP[0] | 0B: Refresh Management not required <br> 1B: Refresh Management required|
 | Rolling Accumulated ACT <br> Initial Management Threshold (RAAIMT) | R | OP[4:1] | 0000B- 0011B: RFU <br> 0100B: 32 (Normal), 16 (FGR) <br> 0101B: 40 (Normal), 20 (FGR) <br> ... <br> 1001B: 72 (Normal), 36 (FGR) <br> 1010B: 80 (Normal), 40 (FGR) <br> 1011B-1111B: RFU|
 | Rolling Accumulated ACT  <br> Maximum Management Threshold (RAAMMT) | R | OP[7:5] | 000B-010B: RFU <br> 011B: 3x (Normal), 6x (FGR) <br> 100B: 4x (Normal), 8x (FGR) <br> 101B: 5x (Normal), 10x (FGR) <br> 110B: 6x (Normal), 12x (FGR) <br> 111B: RFU |
+
