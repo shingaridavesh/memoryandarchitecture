@@ -11,13 +11,13 @@ So to summarize we can cateorize the actions into 2 steps:
    b. Along with that we need to tell the DRAM Column Address, Bank Number and Bank Group (if applicable)  
    
 > **DDR1/DDR2 Activation, Read and Write**
-> ![zoomify](images/DDR1_DDR2_ACT_RD_WR.png)
+> ![zoomify](../images/DDR1_DDR2_ACT_RD_WR.png)
 
 > **DDR3 Activation, Read and Write**
-> ![zoomify](images/DDR3_ACT_RD_WR.png)
+> ![zoomify](../images/DDR3_ACT_RD_WR.png)
 
 > **DDR4 Activation, Read and Write**
-> ![zoomify](images/DDR4_ACT_RD_WR.png)
+> ![zoomify](../images/DDR4_ACT_RD_WR.png)
 
 > **DDR5 Activation, Read and Write**
-> ![zoomify](images/DDR5_ACT_RD_WR.png)
+> ![zoomify](../images/DDR5_ACT_RD_WR.png)
