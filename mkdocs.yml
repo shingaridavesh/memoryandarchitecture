@@ -90,16 +90,18 @@ copyright: |
 # Page tree
 nav:
   - Home: index.md
-  - DDR Types:
-    - DDR_Types/index.md
-    - Evolution: DDR_Types/Evolution.md
-    - Organization: DDR_Types/Organization.md
-    - Burst Length: DDR_Types/BurstLength.md
-    - Pins: DDR_Types/Pins.md
-    - Preamble, Postamble & Interamble: DDR_Types/PrePostInteramble.md
-    - Refresh: DDR_Types/Refresh.md
-    - Power Modes: DDR_Types/PowerModes.md
-    - Training: DDR_Types/Training.md
+  - DDR Features:
+    - DDR_Features/index.md
+    - Evolution: DDR_Features/Evolution.md
+    - Organization: DDR_Features/Organization.md
+    - Burst Length: DDR_Features/BurstLength.md
+    - Pins: DDR_Features/Pins.md
+    - Preamble, Postamble & Interamble: DDR_Features/PrePostInteramble.md
+    - Refresh: DDR_Features/Refresh.md
+    - Power Modes: DDR_Features/PowerModes.md
+    - Training: DDR_Features/Training.md
+    - DFE: DDR_Features/DFE.md
+    - Loopback Mode: DDR_Features/Loopback.md
   - Memory Basics:
     - Memory_Basics/index.md
     - Memory Organization: Memory_Basics/Organization.md
