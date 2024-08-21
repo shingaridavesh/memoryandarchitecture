@@ -3,6 +3,12 @@
 Loopback is a feature present on DDR5, which allows DRAM device to feed a received signal/data back out to external receiver. This allows to monitor the signal/data that was just sent to DRAM without having to store the data in the DRAM or use read operations to retreive data which was sent to DRAM device.
 
 **Why is Loopback needed?**<br>
+To characterize the receiver, we could use simple procedure of Writing, then Reading and comparing the data. But DDR5 JEDEC spec mentions Bit Error Rate (BER) of 1E^-16^, which translates to 0.0000000000000001 i.e. there is 1 bit error when you transmit 1000000000000000 bits. But there is problem when dealing with this low BER.
+* There is not enough memory depth to store all 1E^16 bits of data. 1E^16^ translates to roughly 1164153 GB memory which is way larger than memory size.<br>
+* Even if we had the memory, the time which it will take to perform such large amount od data Writes/Reads will be long.<br>
+* Since amount of time to perform multiple Writes/Reads is much longer than DRAM refresh interval, memory controller will also have to manage Refreshes during testing to ensure retention.<br>
+* Because of memory size limitation and time constraint, we need to use smaller data set of different patterns which means limited patterns, hence limited probability that they will cause necessary Inter Symbol Interference (ISI), thus reducing chances of error at the receiver.<br>
+All these factors underscore the importance of Loopback. Loopback is needed to characterize the Receiuver without limitation and complexities of traditional validation methods.
 
 **How does Loopback work?**<br>
 Loopback is turned OFF by default and needs to enabled by Mode Register. Once enabled loopback in DRAM device requires data to be send to Loopback path bfeore sending it to the DRAM core so that no Read/Write command is required. Here is my understanding of how Loopback path looks like at high level.
