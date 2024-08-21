@@ -27,7 +27,7 @@ Loopback is turned OFF by default i.e. both outputs are disabled. Default state 
 Loopback can be enabled by MR53 OP[4:0]. When MR53 OP[4:0] is set to anything other than default **0000B: Loopback Disabled**, LBDQS and LBDQ pins transition from RTT_OFF to device drive state.<br>
 
 |  Loopback Mode  |      LBDQS      |   LBDQ    | 
-| :--------: |:-------------:| :---------:| :---------| 
+| :--------: |:-------------:| :---------:|
 | Disable | RTT Loopback (MR36 OP[2:0]) | RTT Loopback (MR36 OP[2:0]) | 
 | Enable | Selected Phase (MR53 OP[6:5]) | Selected Phase and DQ (MR53 OP[6:5] & OP[4:0]) | 
 
