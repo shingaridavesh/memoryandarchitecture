@@ -8,7 +8,7 @@ How does Loopback work?
 
 
 |  Function  |      Mode Register      |   Operand    |      Data      | 
-| :--------: |:-------------:| :---------:| :---------| :--------: |
+| :--------: |:-------------:| :---------:| :---------| 
 | Loopback Output Select | MR53 | OP[4:0] | 00000B: Loopback Disabled (Default) <br> 00001B: Loopback DML (X8 and X16 only)  <br> 00010B: Loopback DMU (X16 only)  <br> 00011B: Vendor Specific <br> 00100B: Vendor Specific <br> 00101B: RFU <br> ...thru <br> 01111B: RFU <br> 10000B: Loopback DQL0 <br> 10001B: Loopback DQL1 <br> 10010B: Loopback DQL2 <br> 10011B: Loopback DQL3 <br> 10100B: Loopback DQL4 (X8 and X16 only) <br> 10101B: Loopback DQL5 (X8 and X16 only) <br> 10110B: Loopback DQL6 (X8 and X16 only) <br> 10111B: Loopback DQL7 (X8 and X16 only) <br> 11000B: Loopback DQU0 (X16 only) <br> 11001B: Loopback DQU1 (X16 only) <br> 11010B: Loopback DQU2 (X16 only) <br> 11011B: Loopback DQU3 (X16 only) <br> 11100B: Loopback DQU4 (X16 only) <br> 11101B: Loopback DQU5 (X16 only) <br> 11110B: Loopback DQU6 (X16 only) <br> 11111B: Loopback DQU7 (X16 only) |
 | Loopback Select Phase | MR53 | OP[6:5] | 00B: Loopback Select Phase A <br> 01B: Loopback Select Phase B (4-way and 2-way interleave only) <br> 10B: Loopback Select Phase C (4-way interleave only) <br> 11B: Loopback Select Phase D (4-way interleave only) |
 | Loopback Output Mode | MR53 | OP[7] | 0B: Normal Output (Default) <br> 1B: Write Burst Output |
