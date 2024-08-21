@@ -12,10 +12,15 @@ All these factors underscore the importance of Loopback. Loopback is needed to c
 
 **How does Loopback work?**<br>
 To support Loopback, DDR5 provides 2 single ended pins:
-1. LBDQS
-2. LBDQ
+1. LBDQS - Loopback Strobe
+2. LBDQ - Loopback Data
 
-Loopback is turned OFF by default and needs to enabled by Mode Register. Once enabled loopback in DRAM device requires data to be send to Loopback path bfeore sending it to the DRAM core so that no Read/Write command is required. Here is my understanding of how Loopback path looks like at high level.
+Loopback is turned OFF by default i.e. both outputs are disabled. Default state for Loopback is RTT_OFF, designated by MR36 OP[2:0] as shown below. When loopback is disabled then both LBDOQS and LBDQ pins are either at Hi-Z or Termination mode defined by MR36.
+|  Function  |      Mode Register      |   Operand    |      Data      | 
+| :--------: |:-------------:| :---------:| :---------| 
+| RTT Loopback | MR36 | OP[2:0] | 000B: RTT_OFF Default <br> 001B: RFU <br> 010B: RFU <br> 011B: RFU <br> 100B: RFU <br> 101B: RZQ/5 (48) <br> 110B: RFU <br> 111B: RFU |
+
+Once enabled loopback in DRAM device requires data to be send to Loopback path bfeore sending it to the DRAM core so that no Read/Write command is required. Here is my understanding of how Loopback path looks like at high level.
 
 
 |  Function  |      Mode Register      |   Operand    |      Data      | 
