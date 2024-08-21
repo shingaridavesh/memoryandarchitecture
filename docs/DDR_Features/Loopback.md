@@ -14,7 +14,7 @@ To characterize the receiver, we could use simple procedure of Writing, then Rea
 All these factors underscore the importance of Loopback. Loopback is needed to characterize the Receiuver without limitation and complexities of traditional validation methods.
 
 **How does Loopback work?**<br>
-To support Loopback, DDR5 provides 2 single ended pins:
+To support Loopback, DDR5 provides 2 single ended pins:<br>
 1. LBDQS - Loopback Strobe<br>
 2. LBDQ - Loopback Data<br>
 
@@ -24,7 +24,16 @@ Loopback is turned OFF by default i.e. both outputs are disabled. Default state 
 | :--------: |:-------------:| :---------:| :---------| 
 | RTT Loopback | MR36 | OP[2:0] | 000B: RTT_OFF Default <br> 001B: RFU <br> 010B: RFU <br> 011B: RFU <br> 100B: RFU <br> 101B: RZQ/5 (48) <br> 110B: RFU <br> 111B: RFU |
 
+Loopback can be enabled by MR53 OP[4:0]. When MR53 OP[4:0] is set to anything other than default **0000B: Loopback Disabled**, LBDQS and LBDQ pins transition from RTT_OFF to device drive state.<br>
+
+|  Loopback Mode  |      LBDQS      |   LBDQ    | 
+| :--------: |:-------------:| :---------:| :---------| 
+| Disable | RTT Loopback (MR36 OP[2:0]) | RTT Loopback (MR36 OP[2:0]) | 
+| Enable | Selected Phase (MR53 OP[6:5]) | Selected Phase and DQ (MR53 OP[6:5] & OP[4:0]) | 
+
 Once enabled loopback in DRAM device requires data to be send to Loopback path bfeore sending it to the DRAM core so that no Read/Write command is required. Here is my understanding of how Loopback path looks like at high level.
+
+Insert Image
 
 
 |  Function  |      Mode Register      |   Operand    |      Data      | 
