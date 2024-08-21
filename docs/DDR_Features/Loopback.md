@@ -1,10 +1,11 @@
 
-What is Loopback?
+**What is Loopback?**<br>
 Loopback is a feature present on DDR5, which allows DRAM device to feed a received signal/data back out to external receiver. This allows to monitor the signal/data that was just sent to DRAM without having to store the data in the DRAM or use read operations to retreive data which was sent to DRAM device.
 
-Why is Loopback needed?
+**Why is Loopback needed?**<br>
 
-How does Loopback work?
+**How does Loopback work?**<br>
+Loopback is turned OFF by default and needs to enabled by Mode Register. Once enabled loopback in DRAM device requires data to be send to Loopback path bfeore sending it to the DRAM core so that no Read/Write command is required. Here is my understanding of how Loopback path looks like at high level.
 
 
 |  Function  |      Mode Register      |   Operand    |      Data      | 
