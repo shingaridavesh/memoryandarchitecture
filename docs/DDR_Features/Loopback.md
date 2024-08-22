@@ -1,8 +1,8 @@
 
-**What is Loopback?**<br>
+##What is Loopback?
 Loopback is a feature present on DDR5, which allows DRAM device to feed a received signal/data back out to external receiver. This allows to monitor the signal/data that was just sent to DRAM without having to store the data in the DRAM or use read operations to retreive data which was sent to DRAM device.
 
-**Why is Loopback needed?**<br>
+##Why is Loopback needed?
 To characterize the receiver, we could use simple procedure of Writing, then Reading and comparing the data. But DDR5 JEDEC spec mentions Bit Error Rate (BER) of 1E^-16^, which translates to 0.0000000000000001 i.e. there is 1 bit error when you transmit 1000000000000000 bits. But there is problem when dealing with this low BER.
 
 - There is not enough memory depth to store all 1E^16 bits of data. 1E^16^ translates to roughly 1164153 GB memory which is way 
@@ -14,7 +14,7 @@ to manage Refreshes during testing to ensure retention.<br>
 patterns, hence limited probability that they will cause necessary Inter Symbol Interference (ISI), thus reducing chances of error at the receiver.<br>
 All these factors underscore the importance of Loopback. Loopback is needed to characterize the Receiuver without limitation and complexities of traditional validation methods.
 
-**How does Loopback work?**<br>
+##How does Loopback work?
 To support Loopback, DDR5 provides 2 single ended pins:<br>
 1. LBDQS - Loopback Strobe<br>
 2. LBDQ - Loopback Data<br>
@@ -48,3 +48,26 @@ Insert Image
 * NOTE 3 Phase A through D selects which bit in the multiplexer is being selected for Loopback output
 * NOTE 4 This configures the DRAM Loopback output to either send data out every time the DQS toggles in Normal Output Mode, or to only send data out when enabled by the Write command, so that only write burst data is send out via Loopback.
 * NOTE 5 The DM function shall be enabled (MR5:OP[5]=1) when loopback output from the DML or DMU pin is selected for Loopback measurement (MR53:OP[4:0]=00001B or 00010B).
+
+##Loopback Modes
+There are 2 modes supported on DDR5.
+
+1. Normal Output (Default)
+2. Write Burst Output
+
+The modes are selected through MR53 OP[7].
+|  Function  |      Mode Register      |   Operand    |      Data      | 
+| :--------: |:-------------:| :---------:| :---------| 
+| Loopback Output Mode | MR53 | OP[7] | **0B:** Normal Output (Default) <br> **1B:** Write Burst Output |
+
+###Normal Output
+
+* In Normal Output mode, selected DM/DQ is captured with every DQS_t/DQS_c toggle for selected Loopback Phase.
+
+###Write Burst
+
+* In Write Burst Output mode, selected DM/DQ is captured with DQS_t/DQS_c toggle for selected Loopback Phase, when qualified by Write Enable (WE). This means that data is only captured during Write burst and not during Preamble/Postamble. Other way to say, Loopback data is only generated during the write burst, so it is effectively masked for the DQS toggles during the preamble or postamble.
+
+##Loopback Example
+
+Insert Image
