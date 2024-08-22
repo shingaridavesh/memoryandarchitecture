@@ -42,6 +42,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 plugins:
+   - drawio_file
    - glightbox:
        touchNavigation: true
        loop: false
@@ -58,6 +59,7 @@ plugins:
        background: white
        shadow: true
        manual: false
+  
 
 extra:
   social:
