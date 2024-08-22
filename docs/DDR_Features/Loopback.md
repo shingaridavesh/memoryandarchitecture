@@ -34,7 +34,7 @@ Loopback can be enabled by MR53 OP[4:0]. When MR53 OP[4:0] is set to anything ot
 
 Once enabled loopback in DRAM device requires data to be send to Loopback path bfeore sending it to the DRAM core so that no Read/Write command is required. Here is my understanding of how Loopback path looks like at high level.
 
-![](../images/drawio/4_way_interleave_loopback.drawio)
+![](../images/loopback/4_way_interleave_loopback.drawio)
 
 
 |  Function  |      Mode Register      |   Operand    |      Data      | 
