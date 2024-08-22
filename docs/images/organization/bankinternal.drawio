@@ -967,6 +967,9 @@
         <mxCell id="gft17bMY0GECLjVTUZjr-371" value="&lt;b&gt;BITLINE&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="780" y="777" width="60" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="gft17bMY0GECLjVTUZjr-439" value="(c) shingaridavesh@gmail.com" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=36;fontColor=#f8f7f7;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="50" y="590" width="740" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
