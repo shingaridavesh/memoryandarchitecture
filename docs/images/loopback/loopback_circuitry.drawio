@@ -421,6 +421,24 @@
         <mxCell id="T2pULhz_JpJforPPxwNP-89" value="4 Way Interleaved Circuit (for each DQ)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="150" y="339.8" width="480" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="T2pULhz_JpJforPPxwNP-93" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1040" y="496" as="sourcePoint" />
+            <mxPoint x="1100" y="496" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2pULhz_JpJforPPxwNP-94" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="1040" y="522.58" as="sourcePoint" />
+            <mxPoint x="1100" y="522.58" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="T2pULhz_JpJforPPxwNP-95" value="LBDQS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1100" y="480" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="T2pULhz_JpJforPPxwNP-96" value="LBDQ" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="1100" y="508" width="90" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
