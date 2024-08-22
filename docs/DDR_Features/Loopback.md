@@ -36,6 +36,8 @@ Once enabled loopback in DRAM device requires data to be send to Loopback path b
 
 ![](../images/loopback/4_way_interleave_loopback.drawio)
 
+![](../images/loopback/loopback_circuitry.drawio)
+
 
 |  Function  |      Mode Register      |   Operand    |      Data      | 
 | :--------: |:-------------:| :---------:| :---------| 
