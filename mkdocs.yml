@@ -42,7 +42,7 @@ markdown_extensions:
   - pymdownx.tilde
 
 plugins:
-   - drawio_file
+   - drawio-exporter
    - glightbox:
        touchNavigation: true
        loop: false
