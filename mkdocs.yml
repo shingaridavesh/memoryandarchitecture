@@ -42,8 +42,8 @@ markdown_extensions:
   - pymdownx.tilde
 
 plugins:
-   - drawio-exporter
-   - glightbox:
+    - drawio-exporter
+    - glightbox:
        touchNavigation: true
        loop: false
        effect: zoom
