@@ -56,6 +56,7 @@ There are 2 modes supported on DDR5.
 2. Write Burst Output
 
 The modes are selected through MR53 OP[7].
+
 |  Function  |      Mode Register      |   Operand    |      Data      | 
 | :--------: |:-------------:| :---------:| :---------| 
 | Loopback Output Mode | MR53 | OP[7] | **0B:** Normal Output (Default) <br> **1B:** Write Burst Output |
@@ -63,6 +64,9 @@ The modes are selected through MR53 OP[7].
 ###Normal Output
 
 * In Normal Output mode, selected DM/DQ is captured with every DQS_t/DQS_c toggle for selected Loopback Phase.
+* Only DSEL and MRW commands are applied at command pins during Normal Output Mode. Write commands are not allowed at this time. So the purpose of this mode is for Controller/PHY to send custom test patterns on the DQ/DM while DQS_t/DQS_c is being toggled and sampling them on loopback pins. Since MRW is allowed, Phase and Pins can be changed.
+* During this mode DQS_t/DQS_c must be continuously driven during Loopback operation (Hi-Z not allowed). This doesn't mean that DQS_t/DQS_c needs to be toggled. It can be High/Low, which is valid (just like DQS_t/DQS_c is during some Preamble/Postamble modes). But the DQ/DM will only be sampled when DQS_t/DQS_c is sampled.
+* RESET is required to exit Loopback Normal Output Mode.
 
 ###Write Burst
 
