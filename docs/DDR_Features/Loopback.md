@@ -38,7 +38,7 @@ Once enabled loopback in DRAM device requires data to be send to Loopback path b
 
 ![](../images/loopback/loopback_circuitry.drawio)
 
-![](../images/loopback/loopback_timing.drawio)
+
 
 
 |  Function  |      Mode Register      |   Operand    |      Data      | 
@@ -75,7 +75,17 @@ The modes are selected through MR53 OP[7].
 ###Write Burst
 
 * In Write Burst Output mode, selected DM/DQ is captured with DQS_t/DQS_c toggle for selected Loopback Phase, when qualified by Write Enable (WE). This means that data is only captured during Write burst and not during Preamble/Postamble. Other way to say, Loopback data is only generated during the write burst, so it is effectively masked for the DQS toggles during the preamble or postamble.
+* No nee for RESET to exit Loopback Write Burst Output Mode.
 
 ##Loopback Example
 
-Insert Image
+So to put everyything together, when Loopback is disabled, then LBDQS and LBDQ is terminated to RTT Loopback. Once enabled, we will see the selected Phase of the selected DM/DQ pin on the LBDQS and LBDQ pin after tLBDLY pin.
+
+|  Loopback Mode  |      LBDQS      |   LBDQ    | 
+| :--------: |:-------------:| :---------:|
+| Disable | RTT Loopback (MR36 OP[2:0]) | RTT Loopback (MR36 OP[2:0]) | 
+| Enable | Selected Phase (MR53 OP[6:5]) | Selected Phase and DQ (MR53 OP[6:5] & OP[4:0]) | 
+
+Following image shows the scenario where we are observing a selected DQ for Phase A and Phase B. You can observe that signal/data is visible on LBDQS & LBDQ after tLBDLY. Also the signal/data is edge aligned (like Read) and LBDQS needs to be shifted/delayed by observer to center latch the data for Setup/Hold time.
+
+![](../images/loopback/loopback_timing.drawio)
