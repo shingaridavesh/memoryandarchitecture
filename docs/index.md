@@ -6,5 +6,5 @@ If I was you and getting started, this is how I would approach:
 
 * What is DRAM?  
 * Memory Organization 
-* Basic Operation - Activate, Write, Read
+* Basic Operation - Activate, Write, Read, Precharge
 * CAS, RAS, WE

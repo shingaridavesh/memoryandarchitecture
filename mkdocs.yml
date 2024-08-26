@@ -112,6 +112,7 @@ nav:
     - Training: DDR_Features/Training.md
     - DFE: DDR_Features/DFE.md
     - Loopback Mode: DDR_Features/Loopback.md
+    - ECC: DDR_Features/ECC.md
   - DDR4:
     - DDR4/index.md
   - DDR5:
