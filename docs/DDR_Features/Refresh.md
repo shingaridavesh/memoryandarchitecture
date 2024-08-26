@@ -1,7 +1,7 @@
 
 |  Types  |      DDR1      |   DDR2    |      DDR3      |      DDR4      |   DDR5    |
 | :--------: |:-------------| :---------| :---------| :-------- | :-------------| 
-| Refresh Command | <ul><li>Auto Refresh</li></ul> | <ul><li>Refresh</li></ul> | <ul><li>Refresh</li></ul> |  <ul><li>Refresh</li></ul> | * Refresh All (REF~ab~) * Refresh Management All (RFM~ab~) * Refresh Same Bank (REF~sb~) * Refresh Management Same Bank (RFM~sb~)|
+| Refresh Command | <ul><li>Auto Refresh</li></ul> | <ul><li>Refresh</li></ul> | <ul><li>Refresh</li></ul> |  <ul><li>Refresh</li></ul> | * Refresh All (REF~ab~)<br> * Refresh Management All (RFM~ab~)<br> * Refresh Same Bank (REF~sb~)<br> * Refresh Management Same Bank (RFM~sb~)|
 | Refresh Features |  |  |  |  | <ul><li>Refresh Modes - Normal and Fine Granularity</li><li>Refresh Management</li><li>Directed Refresh Management (DRFM) - Optional</li></ul>| 
 
 Refresh Management (RFM)
