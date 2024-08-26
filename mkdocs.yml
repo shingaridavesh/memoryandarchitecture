@@ -92,6 +92,14 @@ copyright: |
 # Page tree
 nav:
   - Home: index.md
+  - Memory Basics:
+    - Memory_Basics/index.md
+    - Memory Organization: Memory_Basics/Organization.md
+    - Memory Operation: Memory_Basics/Operation.md
+    - RAS, CAS, WE and ACT: Memory_Basics/RASCASWE.md
+    - Timings: Memory_Basics/Timings.md
+    - LPDDRs are Low Power: Memory_Basics/LPDDRs.md
+    - Need of DLL: Memory_Basics/DLLs.md
   - DDR Features:
     - DDR_Features/index.md
     - Evolution: DDR_Features/Evolution.md
@@ -104,14 +112,6 @@ nav:
     - Training: DDR_Features/Training.md
     - DFE: DDR_Features/DFE.md
     - Loopback Mode: DDR_Features/Loopback.md
-  - Memory Basics:
-    - Memory_Basics/index.md
-    - Memory Organization: Memory_Basics/Organization.md
-    - Memory Operation: Memory_Basics/Operation.md
-    - RAS, CAS, WE and ACT: Memory_Basics/RASCASWE.md
-    - Timings: Memory_Basics/Timings.md
-    - LPDDRs are Low Power: Memory_Basics/LPDDRs.md
-    - Need of DLL: Memory_Basics/DLLs.md
   - DDR4:
     - DDR4/index.md
   - DDR5:
