@@ -34,6 +34,16 @@ Manual ECS Operation
     | :--------: |:-------------:| :---------:| :---------:|  :---------:| :---------:|  :---------:| :---------:|  :---------:| :---------:| 
     | Manual ECS Operation | ECS |  0|0|0|0|1|1|0|0| 
 
-Number of Operations needed for
-8Gb = 8 x 1024 x 1024 x 1024 x 8 = 2^3 x 2^10 x 2^10 x 2^10  = 2^33 bits
-It works on 128 bits i.e. 2^7. So total operations needed = 2^33 / 2^7 = 2^26
+
+###ECS Statistics
+
+We understand that for ECS operation, DRAM internally operates on 128 data bits, which means in a single ECS operation it works on 2^7 bits. No if we know the density of the device, we can determine how many operations it will take to perform ECS for entire device.
+
+|  Size(Gb)  |     Size(b)      | Number of Operations = Size/128b| 
+| :--------: |:-------------:| :---------:| 
+| 8Gb | 8 x 1024 x 1024 x 1024 = 2^3 x 2^10 x 2^10 x 2^10  = 2^33  |  2^33 / 2^7 = 2^26|
+| 16Gb | 16 x 1024 x 1024 x 1024 = 2^4 x 2^10 x 2^10 x 2^10  = 2^34  |  2^34 / 2^7 = 2^27|
+| 24Gb | 24 x 1024 x 1024 x 1024 = 2^3 x 3 x 2^10 x 2^10 x 2^10  = 2^33 x 3  |  2^33 x 3 / 2^7 = 2^27 x 1.5|
+| 32Gb | 32 x 1024 x 1024 x 1024 = 2^5 x 2^10 x 2^10 x 2^10  = 2^35  |  2^35 / 2^7 = 2^28|
+| 64Gb | 64 x 1024 x 1024 x 1024 = 2^6 x 2^10 x 2^10 x 2^10  = 2^36  |  2^36 / 2^7 = 2^29|
+
