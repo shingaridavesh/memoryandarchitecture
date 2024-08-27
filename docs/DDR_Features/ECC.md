@@ -59,7 +59,7 @@ Now to compute how long will ECS take, we need to consider JEDEC recommendation.
 | 64Gb | 2^29  |  86400 / 2^29 = **0.161ms**|
 
 ####ECS Tracking
-Along with ECS feature, DDR5 also provides **Tracking** feature, thats why JEDEC calls it ECC **Transparency** and Error Scrub, because it is transparent to the user about how many error DRAM device is encountering and correcting.
+Along with ECS feature, DDR5 also provides **Tracking** feature, thats why JEDEC calls it "ECC **Transparency** and Error Scrub", because it is transparent to the user about how many error DRAM device is encountering and correcting.
 
 There are 2 options which can be selected by MR14 OP[5], to be tracked by error counter.
 
@@ -77,5 +77,19 @@ Once you have chosen what you want to track, tracked errors are present at MR20.
 | :--------: |:-------------:| :---------:| :---------| 
 | Error Count EC[7:0] | MR20 | OP[7:0] | Contains the error count range data |
 
-> :memo: **NOTE**
-Incase it is 3DS-DDR5 stack device, then the errors correspond to CID chosen through MR14 OP[3:0] field.
+**NOTE**: Incase it is 3DS-DDR5 stack device, then the errors correspond to CID chosen through MR14 OP[3:0] field.
+
+#####ECC Row Count Error
+
+#####ECC Code Word Error
+
+* In this mode, Error Count increments each time a code word with check bit errors is detected. 
+* After all code words - on all rows, banks, bank groups have ECS performed, result in loaded into MR20, subject to error threshold reporting.
+* Once the Error Count has been transferred to MR20, it gets reset.
+
+
+|  Function  |     Mode Register     |OP7|OP6|OP5|OP4|OP3|OP2|OP1|OP0| 
+| :--------: |:-------------:| :---------:| :---------:|  :---------:| :---------:|  :---------:| :---------:|  :---------:| :---------:| 
+| Max Row Error Address R[7:0] | MR16 |  R7|R6|R5|R4|R3|R2|R1|R0| 
+| Max Row Error Address R[15:8] | MR17 |  R15|R14|R13|R12|R11|R10|R9|R8|
+| Max Row Error Address R[17:16],BA[1:0],BG[2:0] | MR18 |  RFU|BG2|BG1|BG0|BA1|BA0|R17|R16| 
