@@ -35,7 +35,7 @@ Manual ECS Operation
     | Manual ECS Operation | ECS |  0|0|0|0|1|1|0|0| 
 
 
-###ECS Statistics
+####ECS Statistics
 
 We understand that for ECS operation, DRAM internally operates on 128 data bits, which means in a single ECS operation it works on 2^7 bits. No if we know the density of the device, we can determine how many operations it will take to perform ECS for entire device.
 
@@ -58,3 +58,24 @@ Now to compute how long will ECS take, we need to consider JEDEC recommendation.
 | 32Gb | 2^28  |  86400 / 2^28 = **0.322ms**|
 | 64Gb | 2^29  |  86400 / 2^29 = **0.161ms**|
 
+####ECS Tracking
+Along with ECS feature, DDR5 also provides **Tracking** feature, thats why JEDEC calls it ECC **Transparency** and Error Scrub, because it is transparent to the user about how many error DRAM device is encountering and correcting.
+
+There are 2 options which can be selected by MR14 OP[5], to be tracked by error counter.
+
+* Track either number of rows with errors **OR**
+* Track code words with errors
+
+
+|  Function  |      Mode Register      |   Operand    |      Data      | 
+| :--------: |:-------------:| :---------:| :---------| 
+| Code Word/Row Count | MR14 | OP[5] | **0B:** ECS counts Rows with errors <br> **1B:** ECS counts Code words with errors |
+
+Once you have chosen what you want to track, tracked errors are present at MR20.
+
+|  Function  |      Mode Register      |   Operand    |      Data      | 
+| :--------: |:-------------:| :---------:| :---------| 
+| Error Count EC[7:0] | MR20 | OP[7:0] | Contains the error count range data |
+
+> :memo: **NOTE**
+Incase it is 3DS-DDR5 stack device, then the errors correspond to CID chosen through MR14 OP[3:0] field.
