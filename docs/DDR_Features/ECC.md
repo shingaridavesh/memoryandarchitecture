@@ -3,12 +3,31 @@
 | :--------: |:-------------| :---------| :---------| :-------- | :-------------|
 | ECC | Not Present| Not Present | Not Present | Not Present | * On-Die ECC <br> * ECC Error Check and Scrub (ECS)|
 
+##ECC Types
+
+Before we dive into ECC we need to understand different types of ECC present on DDR devices. I would broadly classify the ECC into 2 categories:
+
+* Channel Level ECC
+* Device Level ECC
+
+###Channel Level ECC
 
 ![](../images/ecc/inlinesidebankecc.drawio)
 
 ##DDR5
 
+On DDR5 there are 2 ECC features present at **Device** level:
+
+* On-Die ECC
+* ECC Transparency and Error Scrub
+
+I will give a high level overview here but will look into more detail in their respective section.
+
+* **On-Die ECC** improves the data integrity within the device (not channel/DIMM). DDR5 device internally computes and store 8 bit ECC check bits for every 128 data bits. This is computed and stored during Writes, and is used during Reads for correcting error (if any). This feature just corrects the error when Read operation is performed and it doesnt correct data in the data array.
+* **ECC Transparency and Error Scrub** is a feature which enables device to internally read data bits, correct single bit errors (using check bits) and write back corrected data bits to the data array, and also provides transparency about the error it encountered through Mode Registers.
+
 ###On-Die ECC
+
 
 ###ECC Transparency and Error Scrub
 
