@@ -28,6 +28,7 @@ I will give a high level overview here but will look into more detail in their r
 
 ###On-Die ECC
 
+![](../images/ecc/inlineecc.drawio)
 
 ###ECC Transparency and Error Scrub
 
