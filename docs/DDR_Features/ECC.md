@@ -42,8 +42,11 @@ DDR5 uses 8 bits ECC check bit which are generated for each 128 data bits. To un
 * But when we have x4 device, internally only 64 bits are fetched, so we need additional 64 bits. DDR5 devices fetches additional section of device array to provide additional 64 bits and computes the 8 bit ECC check bits. 
 * In case of x16 devices, DDR5 internally fetches 256 bits, so 2 8-bit ECC check bits is generated and stored/checked. the 2 8-bit ECC check bits are checked separately and in parallel.
 
-
 ![](../images/ecc/inlineecc.drawio)
+
+####On-Die ECC Operation
+
+![](../images/ecc/ondieeccoperation.drawio)
 
 ###ECC Transparency and Error Scrub
 
