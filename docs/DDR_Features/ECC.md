@@ -28,6 +28,21 @@ I will give a high level overview here but will look into more detail in their r
 
 ###On-Die ECC
 
+DDR5 devices generates ECC internally and has logic to compute ECC code and store these codes inside the DDR5 device (this space is not included in specified memory density of the device). This code is generated and stored during Write operation and is computed again during Read to check data integrity. If there is single bit error, it is corrected by DDR5 device itself at device level.
+
+DDR5 uses 8 bits ECC check bit which are generated for each 128 data bits. To understand this, lets revisit the Prefetch width for different DDR5 devices.
+
+|  Devices  |      Prefetch (16)      |   
+| :--------: |:-------------:| 
+| x4 | 64 bit | 
+| x8 | 128 bit | 
+| x16 | 256 bit | 
+
+* So from this you can understand that on x8 device, whenever we perform a operation, internally 128 bits are fetched and 8 bit ECC check bits will be computed and stored/checked depending on WR/RD operation. 
+* But when we have x4 device, internally only 64 bits are fetched, so we need additional 64 bits. DDR5 devices fetches additional section of device array to provide additional 64 bits and computes the 8 bit ECC check bits. 
+* In case of x16 devices, DDR5 internally fetches 256 bits, so 2 8-bit ECC check bits is generated and stored/checked. the 2 8-bit ECC check bits are checked separately and in parallel.
+
+
 ![](../images/ecc/inlineecc.drawio)
 
 ###ECC Transparency and Error Scrub
