@@ -46,7 +46,7 @@ DDR5 uses 8 bits ECC check bit which are generated for each 128 data bits. To un
 
 ####On-Die ECC Operation
 
-![](../images/ecc/ondieeccoperation.drawio)
+![](../images/ecc/ondieeccoperationread.drawio)
 
 ###ECC Transparency and Error Scrub
 
