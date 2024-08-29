@@ -59,7 +59,10 @@ To understand ECC operation, you need to understand what Parity and Syndrome is.
 
 #####Read Operation
 
-* During Read operation, On-Die ECC will correct any 1-bit error
+* During Read operation, On-Die ECC will correct any 1-bit error before sending data back to controller. It should be noted that corrected data wont be updated in memeory data array.
+* During Read, data being read and check bits are fed into Syndrome generator. Depending on the ECC logic implementation by DRAM vendor, Syndrome generated will be used to correct any single bit error, if any. 
+* Just like how we saw for x4 devices above, we will fetch additional 64 bits to complete the 128 bits and then operation will be performed.
+* For x16 devices, there will be 2 operations happening simultaneously in parallel. One set of 128 bits will be mapped to DQ[0:7] and other 128 bits will be mapped to DQ[8:15].
 
 ![](../images/ecc/ondieeccread.drawio)
 
