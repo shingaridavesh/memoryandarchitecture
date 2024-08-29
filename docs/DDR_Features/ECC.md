@@ -46,7 +46,20 @@ DDR5 uses 8 bits ECC check bit which are generated for each 128 data bits. To un
 
 ####On-Die ECC Operation
 
+To understand ECC operation, you need to understand what Parity and Syndrome is. If you need a quick recap, I would hghly recommend this video "https://www.youtube.com/watch?v=z89uW4eCRx0".
+
+#####Write Operation
+
+* During Write operation, ECC check bits will be computed and stored in a separate region of the memory.
+* For a x8 device, it is pretty straightforward. Given BL16, we will receive 16 x 8 = 128 bits of data. Given On-Die ECC on DDR5 operates on 128 bits, this is perfect. ECC Check Bit Generator will generate the 8-bit Check Bits and store it along with the data.
+* For a x4 device it becomes little more interesting. On x4 device, we will be receving 64 bits of data, so we will need additional 64 bits of data to compute the 8-bit Check Bits. This is done by Read-Modify-Write operation. Device will first perform internal read (to get additional 64 bits of data) and correct if there are any errors. Then this corrected data will be merged with incoming 64 bits and 8-bit Check Bits will be recomputed and stored along with data.
+* For x16 device we will have 256 bits of data. Given device operates on 128 bits, there will be 2 Check Bit operations happening and they will happen separately and in parallel to generate 2 8-bit Check Bits.
+
 ![](../images/ecc/ondieeccwrite.drawio)
+
+#####Read Operation
+
+* During Read operation, On-Die ECC will correct any 1-bit error
 
 ![](../images/ecc/ondieeccread.drawio)
 
