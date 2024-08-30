@@ -100,6 +100,7 @@ nav:
     - Timings: Memory_Basics/Timings.md
     - LPDDRs are Low Power: Memory_Basics/LPDDRs.md
     - Need of DLL: Memory_Basics/DLLs.md
+    - DIMM: Memory_Basics/DIMM.md
   - DDR Features:
     - DDR_Features/index.md
     - Evolution: DDR_Features/Evolution.md

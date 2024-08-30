@@ -1,0 +1,2 @@
+
+![](../images/dimm/dimm.drawio)
