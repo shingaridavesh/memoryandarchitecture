@@ -38,11 +38,11 @@ DDR5 uses 8 bits ECC check bit which are generated for each 128 data bits. To un
 | x8 | 128 bit | 
 | x16 | 256 bit | 
 
+![](../images/ecc/inlineecc.drawio)
+
 * So from this you can understand that on x8 device, whenever we perform a operation, internally 128 bits are fetched and 8 bit ECC check bits will be computed and stored/checked depending on WR/RD operation. 
 * But when we have x4 device, internally only 64 bits are fetched, so we need additional 64 bits. DDR5 devices fetches additional section of device array to provide additional 64 bits and computes the 8 bit ECC check bits. 
 * In case of x16 devices, DDR5 internally fetches 256 bits, so 2 8-bit ECC check bits is generated and stored/checked. the 2 8-bit ECC check bits are checked separately and in parallel.
-
-![](../images/ecc/inlineecc.drawio)
 
 ####On-Die ECC Operation
 
@@ -60,7 +60,7 @@ To understand ECC operation, you need to understand what Parity and Syndrome is.
 #####Read Operation
 
 * During Read operation, On-Die ECC will correct any 1-bit error before sending data back to controller. It should be noted that corrected data wont be updated in memeory data array.
-* During Read, data being read and check bits are fed into Syndrome generator. Depending on the ECC logic implementation by DRAM vendor, Syndrome generated will be used to correct any single bit error, if any. 
+* During Read, data being read and check bits are fed into Syndrome generator. Depending on the ECC logic implementation by DRAM vendor, Syndrome generated will be used to correct any single bit error, if any. Sun
 * Just like how we saw for x4 devices above, we will fetch additional 64 bits to complete the 128 bits and then operation will be performed.
 * For x16 devices, there will be 2 operations happening simultaneously in parallel. One set of 128 bits will be mapped to DQ[0:7] and other 128 bits will be mapped to DQ[8:15].
 
