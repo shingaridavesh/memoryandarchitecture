@@ -11,6 +11,10 @@
 
 * CSTM can only be entered when all Bank are Idle.
 
+###Operation
+
+![](../images/commandbustraining/catmsignals.drawio)
+
 ###Output
 
 |Output|x16|x8|x4|
