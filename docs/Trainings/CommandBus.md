@@ -15,6 +15,8 @@
 
 ![](../images/commandbustraining/cstmsignals.drawio)
 
+![](../images/commandbustraining/cstmlogic.drawio)
+
 ###Output
 
 |Output|x16|x8|x4|
