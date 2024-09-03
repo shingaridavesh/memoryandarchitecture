@@ -19,6 +19,8 @@ To understand the operation, we need to understand some basic concept.
 
 ![](../images/commandbustraining/cstmlogic.drawio)
 
+![](../images/commandbustraining/cstmtimingdiagram.drawio)
+
 ###Output
 
 |Output|x16|x8|x4|
