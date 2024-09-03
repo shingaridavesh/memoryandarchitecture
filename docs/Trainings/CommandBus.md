@@ -13,7 +13,7 @@
 
 ###Operation
 
-![](../images/commandbustraining/catmsignals.drawio)
+![](../images/commandbustraining/cstmsignals.drawio)
 
 ###Output
 
@@ -54,3 +54,7 @@
     | Enter CA Training Mode | CATM |  0|0|0|0|0|0|1|1| 
 
 CATM can only be entered when all Bank are Idle.
+
+###Operation
+
+![](../images/commandbustraining/catmsignals.drawio)
