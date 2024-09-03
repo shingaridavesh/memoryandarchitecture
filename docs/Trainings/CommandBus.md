@@ -2,12 +2,24 @@
 
 ###Entry/Exit
 
-CSTM is entered and exited using MPC command.
+* CSTM is entered and exited using MPC command.
 
-|  Function  |      MPC Mode      |OP7|OP6|OP5|OP4|OP3|OP2|OP1|OP0| 
-| :------: |:--------:| :-:| :-:|  :-:| :-:|  :-:| :-:|  :-:| :-:| 
-| Exit CS Training Mode | CSTMX |  0|0|0|0|0|0|0|0| 
-| Enter CS Training Mode | CSTMN |  0|0|0|0|0|0|0|1| 
+    |  Function  |      MPC Mode      |OP7|OP6|OP5|OP4|OP3|OP2|OP1|OP0| 
+    | :------: |:--------:| :-:| :-:|  :-:| :-:|  :-:| :-:|  :-:| :-:| 
+    | Exit CS Training Mode | CSTMX |  0|0|0|0|0|0|0|0| 
+    | Enter CS Training Mode | CSTMN |  0|0|0|0|0|0|0|1| 
+
+* CSTM can only be entered when all Bank are Idle.
 
 
 ##CATM
+
+###Entry/Exit
+
+* CATM is entered using MPC command.
+
+    |  Function  |      MPC Mode      |OP7|OP6|OP5|OP4|OP3|OP2|OP1|OP0| 
+    | :------: |:--------:| :-:| :-:|  :-:| :-:|  :-:| :-:|  :-:| :-:| 
+    | Enter CA Training Mode | CATM |  0|0|0|0|0|0|1|1| 
+
+CATM can only be entered when all Bank are Idle.
