@@ -13,6 +13,8 @@
 
 ###Operation
 
+To understand the operation, we need to understand some basic concept.
+
 ![](../images/commandbustraining/cstmsignals.drawio)
 
 ![](../images/commandbustraining/cstmlogic.drawio)
