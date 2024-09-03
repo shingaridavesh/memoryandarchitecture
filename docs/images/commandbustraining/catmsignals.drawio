@@ -1249,6 +1249,12 @@
         <mxCell id="GIZqvgro0386pKt4__yg-318" value="tCSTM_Valid" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#bc5757;" vertex="1" parent="1">
           <mxGeometry x="383" y="437" width="60" height="30" as="geometry" />
         </mxCell>
+        <mxCell id="GIZqvgro0386pKt4__yg-319" value="" style="strokeWidth=1;html=1;shape=mxgraph.flowchart.annotation_2;align=left;labelPosition=right;pointerEvents=1;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="363" y="630" width="20" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="GIZqvgro0386pKt4__yg-320" value="PASSING&lt;div&gt;RANGE&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="310" y="670" width="60" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
