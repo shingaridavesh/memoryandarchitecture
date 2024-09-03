@@ -14,7 +14,7 @@
 ###Output
 
 |Output|x16|x8|x4|
-|:-:|:-:|:-:|
+|:-:|:-:|:-:|:-:|
 | DQ0 | CSTM Output | CSTM Output | CSTM Output |
 | DQ1 | CSTM Output | CSTM Output | CSTM Output |
 | DQ2 | CSTM Output | CSTM Output | CSTM Output |
