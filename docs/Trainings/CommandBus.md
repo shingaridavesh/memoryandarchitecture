@@ -49,6 +49,28 @@ To understand the operation, we need to understand some basic concept.
 | DQSU_t | NA | NA | NA |
 | DQSU_c | NA | NA | NA |
 
+##DCS Training Mode (DCSTM)
+
+Just like we have CSTM, we have DCSTM mode on RDIMMs/LRDIMMs. On RDIMMs, Clock/Command-Address/Control signals go to RCD and not to DRAM device directly, so RCD has DCSTM mode to align DCS_n signal to center of the RCD clock DCK.
+
+* Enable DCS Training: RW02[3:0]
+
+    |Channel(A or B)|Operation|OP7|OP6|OP5|OP4|OP3|OP2|OP1|OP0| 
+    | :------: |:--------:| :-:| :-:|  :-:| :-:|  :-:| :-:|  :-:| :-:| 
+    | Channel A | DCS0_A_n Training Mode |  x|x|x|x|x|x|1|0| 
+    | Channel A | DCS1_A_n Training Mode |  x|x|x|x|x|x|1|1| 
+    | Channel B | DCS0_B_n Training Mode |  x|x|x|x|1|0|x|x| 
+    | Channel B | DCS1_B_n Training Mode |  x|x|x|x|1|0|x|x| 
+
+* Select DCS Output Pin: RW01[5]
+
+    |Operation|OP7|OP6|OP5|OP4|OP3|OP2|OP1|OP0| 
+    |:--------:| :-:| :-:|  :-:| :-:|  :-:| :-:|  :-:| :-:| 
+    | Both Sub channels feedback on ALERT_n |  x|x|0|x|x|x|x|x|
+    | Sub CH_A feedback on QLBD, Sub CH_B feedback on QLBS |  x|x|1|x|x|x|x|x| 
+
+![](../images/commandbustraining/dcstraining.drawio)
+
 ##CATM
 
 ###Entry/Exit
