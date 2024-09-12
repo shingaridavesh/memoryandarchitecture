@@ -49,7 +49,9 @@ To understand the operation, we need to understand some basic concept.
 | DQSU_t | NA | NA | NA |
 | DQSU_c | NA | NA | NA |
 
-##DIMM CS Training
+##RDIMM CS Training
+
+On RDIMM, we have CK and CS signals going to RCD and then RCD generates/derives CS signals which gets further distributed over the DDR5 chips present on the DIMM. 
 
 ![](../images/commandbustraining/dimmcstraining.drawio)
 
@@ -96,3 +98,9 @@ CATM can only be entered when all Bank are Idle.
 ###Operation
 
 ![](../images/commandbustraining/catmsignals.drawio)
+
+##RDIMM CS Training
+
+On RDIMM, we have CK and CA signals going to RCD and then RCD generates/derives CA signals which gets further distributed over the DDR5 chips present on the DIMM.
+
+![](../images/commandbustraining/dimmcatraining.drawio)
