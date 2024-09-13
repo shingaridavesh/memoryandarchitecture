@@ -114,6 +114,7 @@ nav:
     - DFE: DDR_Features/DFE.md
     - Loopback Mode: DDR_Features/Loopback.md
     - ECC: DDR_Features/ECC.md
+    - 3DS: DDR_Features/3DS.md
   - DDR4:
     - DDR4/index.md
   - DDR5:
