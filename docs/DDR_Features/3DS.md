@@ -37,3 +37,5 @@ To support these many logical ranks, in traditional system we would need that ma
 | Logcal Rank 5 | 1| 0 | 1 | Low |
 | Logcal Rank 6 | 1| 1 | 0 | Low |
 | Logcal Rank 7 | 1| 1 | 1 | Low |
+
+** Pros and Cons
