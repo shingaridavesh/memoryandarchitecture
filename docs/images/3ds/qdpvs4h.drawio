@@ -22,6 +22,9 @@
         <mxCell id="1rAD9eOuxKX1nIsHF8ze-6" value="4H TSV Package" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=20;" vertex="1" parent="1">
           <mxGeometry x="60" y="640" width="170" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="1rAD9eOuxKX1nIsHF8ze-7" value="&lt;b&gt;Source&lt;/b&gt;: &quot;Next Big Thing: DDR4 3DS&quot; by JS Choi, Samsung" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="410" y="1000" width="370" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
