@@ -69,4 +69,6 @@ From this you can see that in Traditional QDP Package, external connection is co
 
 |  Pro  |      Cons     |   
 | :--------: |:-------------:| 
-| * Lower pj/bit i.e. lower energy per bit given we have shared logc between all the dies. <br> * Lower load will also save power. | * Complexity in fabrication as TSV is more involved and complex.|
+| * Lower pj/bit i.e. lower energy per bit given we have shared logc between all the dies. This means lower power consumption. <br> * Lower electrical loading helps in improving timing, bus speed and signal integrity. | * Complexity in fabrication as TSV is more involved and complex.|
+
+NOTE: If it is not clear how less loading improves timing, revisit concept of POD circuitry and play with various loading scenario and how it will affect rise and fall time.
