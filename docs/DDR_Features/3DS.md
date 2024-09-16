@@ -69,4 +69,4 @@ From this you can see that in Traditional QDP Package, external connection is co
 
 |  Pro  |      Cons     |   
 | :--------: |:-------------:| 
-| * Operate at faster speeds and lower pj/bit. <br> * Lower load | * COmplexity in designing|
+| * Lower pj/bit i.e. lower energy per bit given we have shared logc between all the dies. <br> * Lower load will also save power. | * Complexity in fabrication as TSV is more involved and complex.|
