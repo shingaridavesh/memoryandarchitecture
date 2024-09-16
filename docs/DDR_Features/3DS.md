@@ -1,4 +1,6 @@
 
+## Introduction
+
 Traditionally we have had DDR with multiple dies inside the package. This allowed to have higher density DRAM devices. These devices would be Dual Die Package or Quad Die Package, we would have die sitting next to each other but not stacked on each other. But starting with DDR4, we have 3DS which is 3 Dimensional Stacking of die in single package. 3DS devices uses TSV (Through Silicon Vias) to make connection between the dies.
 
 Side View of the QDP vs 4H 3DS (Source: JEDEC Presentation)
@@ -8,6 +10,8 @@ Side View of the QDP vs 4H 3DS (Source: JEDEC Presentation)
 Top View of the DDP vs 2H 3DS (Source: SK Hynix Newsroom )
 
     ![](../images/3ds/skhynix3ds)
+
+## Configuration
 
 DDR supports multiple package options:
 
@@ -21,14 +25,14 @@ DDR supports multiple package options:
 
 To support these many logical ranks, in traditional system we would need that many Chip Select signals i.e. for 8 Ranks we would need 8 indivdual Chip Selects pins, which is very costly. So unlike previous DDR generations, 3DS memory architecture was introduced on DDR4. DDR4/DDR5 uses new pins called CID i.e. Chip ID which is used along with Single Chip Select per package to select the logical rank within the package.
 
-## 2-High Configuration
+### 2-High Configuration
 
 |  Ranks  |      C2     |   C1    |      C0      | Chip Select (CS_n). |
 | :--------: |:-------------:| :---------:| :---------: | :---------: | 
 | Logical Rank 0 | Not Used| Not Used | 0 | Low |
 | Logical Rank 1 | Not Used| Not Used | 1 | Low |
 
-## 4-High Configuration
+### 4-High Configuration
 
 |  Ranks  |      C2     |   C1    |      C0      | Chip Select (CS_n). |
 | :--------: |:-------------:| :---------:| :---------: | :---------: | 
@@ -37,7 +41,7 @@ To support these many logical ranks, in traditional system we would need that ma
 | Logical Rank 2 | Not Used| 1 | 0 | Low |
 | Logical Rank 3 | Not Used| 1 | 1 | Low |
 
-## 8-High Configuration
+### 8-High Configuration
 
 |  Ranks  |      C2     |   C1    |      C0      | Chip Select (CS_n). |
 | :--------: |:-------------:| :---------:| :---------: | :---------: | 
@@ -50,8 +54,6 @@ To support these many logical ranks, in traditional system we would need that ma
 | Logical Rank 6 | 1| 1 | 0 | Low |
 | Logical Rank 7 | 1| 1 | 1 | Low |
 
-
-
 ## 3DS Architecture
 
 3DS architecture introduces concept of Master-Slave dies. In 3DS, there is only one die which act as a Master die, interacting with external world. Other dies are slave dies, which interact with Master die. In 3DS memory, only bottom most die is connected externally to Memory Controller + PHY. The remanining dies are interconnected through many TSVs internally providing Input/Output load isolation.
@@ -63,7 +65,7 @@ From this you can see that in Traditional QDP Package, external connection is co
 ![](../images/3ds/packaging.drawio)
 
 
-## Pros and Cons
+## 3DS Pros and Cons
 
 |  Pro  |      Cons     |   
 | :--------: |:-------------:| 
