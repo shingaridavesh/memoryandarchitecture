@@ -9,7 +9,7 @@ Traditionally we have had DDR with multiple dies inside the package. This allowe
 
 **Top View of the DDP vs 2H 3DS** (Source: SK Hynix Newsroom )
 
-![](../images/3ds/skhynix3ds)
+![](../images/3ds/skhynix3ds.png)
 
 ## Configuration
 
