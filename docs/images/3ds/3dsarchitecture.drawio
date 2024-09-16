@@ -1,9 +1,12 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36" version="24.7.14">
   <diagram name="Page-1" id="vLhDwqVnoquYKrkHTx9S">
-    <mxGraphModel dx="708" dy="432" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2313" dy="1310" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="RA46cub4TLhSKguxjnWI-127" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeWidth=4;" vertex="1" parent="1">
+          <mxGeometry x="120" y="80" width="630" height="290" as="geometry" />
+        </mxCell>
         <mxCell id="RA46cub4TLhSKguxjnWI-97" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="480" y="130" width="220" height="170" as="geometry" />
         </mxCell>
@@ -519,6 +522,9 @@
         </mxCell>
         <mxCell id="RA46cub4TLhSKguxjnWI-125" value="3DS PACKAGE" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" vertex="1" parent="1">
           <mxGeometry x="480" y="100" width="220" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="RA46cub4TLhSKguxjnWI-126" value="(c) shingaridavesh@gmail.com" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=36;fontColor=#f2eeee;rotation=-15;textOpacity=60;" vertex="1" parent="1">
+          <mxGeometry x="140" y="200" width="600" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
