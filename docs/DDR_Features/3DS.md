@@ -3,7 +3,7 @@ Traditionally we have had DDR with multiple dies inside the package. This allowe
 
 ![](../images/3ds/qdpvs4h.drawio)
 
-![](../images/3ds/packaging.drawio)
+
 
 DDR4 supports multiple package options:
 
@@ -44,5 +44,16 @@ To support these many logical ranks, in traditional system we would need that ma
 | Logcal Rank 5 | 1| 0 | 1 | Low |
 | Logcal Rank 6 | 1| 1 | 0 | Low |
 | Logcal Rank 7 | 1| 1 | 1 | Low |
+
+
+
+## 3DS Architecture
+
+3DS architecture introduces concept of Master-Slave dies. In 3DS, there is only one die which act as a Master die, interacting with external world. Other dies are slave dies, which interact with Master die. 
+
+![](../images/3ds/3dsarchitecture.drawio)
+
+![](../images/3ds/packaging.drawio)
+
 
 ## Pros and Cons
