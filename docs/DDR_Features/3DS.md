@@ -1,3 +1,10 @@
+
+Traditionally we have had DDR with multiple dies inside the package. This allowed to have higher density DRAM devices. These devices would be Dual Die Package or Quad Die Package, we would have die sitting next to each other but not stacked on each other. But starting with DDR4, we have 3DS which is 3 Dimensional Stacking of die in single package. 3DS devices uses TSV (Through Silicon Vias) to make connection between the dies.
+
+![](../images/3ds/qdpvs4h.drawio)
+
+![](../images/3ds/packaging.drawio)
+
 DDR4 supports multiple package options:
 
 * Monolithic Single Die Package (SPD)
