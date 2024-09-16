@@ -1,7 +1,7 @@
 
 ## Introduction
 
-Traditionally we have had DDR with multiple dies inside the package. This allowed to have higher density DRAM devices. These devices would be Dual Die Package or Quad Die Package, we would have die sitting next to each other but not stacked on each other. But starting with DDR4, we have 3DS which is 3 Dimensional Stacking of die in single package. 3DS devices uses TSV (Through Silicon Vias) to make connection between the dies.
+Traditionally we have had DDR with multiple dies inside the package. This allowed to have higher density DRAM devices. These devices would be Dual Die Package or Quad Die Package, we would have die using adhesived to mechanically connect stacked silicon dies, while wire bonding electrically connects them. But starting with DDR4, we have 3DS which is 3 Dimensional Stacking of die in single package. 3DS devices uses TSV (Through Silicon Vias) to make connection between the dies. TSV has the advantage that connection wiring length is extremely short compared to traditional stacking, and a large number of connection points (500 to 1000 points) can be created, making it suitable for high speed.
 
 **Side View of the QDP vs 4H 3DS** (Source: JEDEC Presentation)
 
@@ -69,6 +69,6 @@ From this you can see that in Traditional QDP Package, external connection is co
 
 |  Pro  |      Cons     |   
 | :--------: |:-------------:| 
-| * Lower pj/bit i.e. lower energy per bit given we have shared logc between all the dies. This means lower power consumption. <br> * Lower electrical loading helps in improving timing, bus speed and signal integrity. | * Complexity in fabrication as TSV is more involved and complex.|
+| * Lower pj/bit i.e. lower energy per bit given we have shared logc between all the dies. This means lower power consumption. <br> * Lower electrical loading helps in improving timing, bus speed and signal integrity. | * Complexity in fabrication as TSV is more involved and complex. This makes it more expensive. <br> * Thin wafer/die handling is challenging.|
 
 NOTE: If it is not clear how less loading improves timing, revisit concept of POD circuitry and play with various loading scenario and how it will affect rise and fall time.
