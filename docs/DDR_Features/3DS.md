@@ -1,7 +1,13 @@
 
 Traditionally we have had DDR with multiple dies inside the package. This allowed to have higher density DRAM devices. These devices would be Dual Die Package or Quad Die Package, we would have die sitting next to each other but not stacked on each other. But starting with DDR4, we have 3DS which is 3 Dimensional Stacking of die in single package. 3DS devices uses TSV (Through Silicon Vias) to make connection between the dies.
 
-![](../images/3ds/qdpvs4h.drawio)
+Side View of the QDP vs 4H 3DS (Source: JEDEC Presentation)
+
+    ![](../images/3ds/qdpvs4h.drawio)
+
+Top View of the DDP vs 2H 3DS (Source: SK Hynix Newsroom )
+
+    ![](../images/3ds/skhynix3ds)
 
 DDR supports multiple package options:
 
