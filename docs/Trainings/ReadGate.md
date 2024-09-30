@@ -9,7 +9,7 @@ Let us look at a system we have a MC+PHY connected to a DIMM. Overe here we see 
 ![](../images/rdgate/rdgateneed2.drawio)
 
 Now the next question is that what if we dont enable the receivers at correct time?
-Let us comsider this case. Let us say that we use the same RxEN delay for all receivers. 
+Let us comsider this case. Let us say that we use the same RxEN delay for all receivers. Also lets say that we are reading data all 0. COnsidering DDR4/DDR5 which uses POD, DQ signal will be by default High or 1. So if the receivers turn on at correct timing, we should see b'00000000. But we receiver turn on early then we will see b'11000000, and if receivers are turned on late, then we will see b'00000011. So it is important that read DQS is captured at correct time, so that we read correct valid data.
 
 ![](../images/rdgate/rdgateneed.drawio)
 
