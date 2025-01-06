@@ -7,6 +7,8 @@ With ultra-high-speed memory like DDR4 DRAM, even a small amount of noise betwee
 
 　The simplest, fastest, and most common error detection code is the 1-bit parity code, but it has the weakness of being unable to detect errors of 2 or more bits. CRC codes can detect 2-bit errors and odd-numbered bit errors of 2 or more bits, so although they are more complicated than parity codes, they have a wider range of error detection.
 
+![](../images/crc/crcvsecc.drawio)
+
 
 |  CRC Feature  |      Write CRC      |   Read CRC |
 | :--------: |:-------------:| :-------------:| 
