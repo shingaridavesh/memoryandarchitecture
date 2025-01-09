@@ -16,3 +16,7 @@ With ultra-high-speed memory like DDR4 DRAM, even a small amount of noise betwee
 | DDR5 | Present | Not Present |
 | DDR4 RDIMM/LRIMM | 256 bit | |
 | DDR5 RDIMM/LRIMM | 256 bit | |
+
+## CRC vs ECC
+
+When learning about CRC, I always had a question that why we need both i.e. CRC and ECC. So let us try to understand how they both are different and target different things. 
