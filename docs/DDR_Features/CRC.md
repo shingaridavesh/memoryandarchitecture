@@ -7,7 +7,7 @@ With ultra-high-speed memory like DDR4 DRAM, even a small amount of noise betwee
 
 　The simplest, fastest, and most common error detection code is the 1-bit parity code, but it has the weakness of being unable to detect errors of 2 or more bits. CRC codes can detect 2-bit errors and odd-numbered bit errors of 2 or more bits, so although they are more complicated than parity codes, they have a wider range of error detection.
 
-![](../images/crc/crcvsecc.drawio)
+![](../images/crc/ddr4_ddr5_crc.drawio)
 
 
 |  CRC Feature  |      Write CRC      |   Read CRC |
@@ -20,3 +20,5 @@ With ultra-high-speed memory like DDR4 DRAM, even a small amount of noise betwee
 ## CRC vs ECC
 
 When learning about CRC, I always had a question that why we need both i.e. CRC and ECC. So let us try to understand how they both are different and target different things. 
+
+Let us consider DDR4 as an example. Consider a DIMM which has 8 x8 devices which are for Data and 1 x8 device which is for ECC. If DIMM was non-ECC, there would be only be 8 x8 devices. As a refresher, DDR4 has a BL of 8, so when we perform a Write operation, we write data for 8 DQS cycles. So a x8 device will actually transfer 64 bits of data (8 DQ lines and each DQ performing BL8). So if we have 8 x8 devices on DIMM, total data transfer will be 512b (64 DQ lines and each DQ performing BL8). For this data transfer, Controller will also transmit ECC across 1 x8 device i.e. it will transmit 64b (8 ECC lines and each ECC performing BL8). So we have 64b-72b i.e. for 64b of data 8b of additional ECC data be send, so actuall transaction is 72b instead of 64b.
