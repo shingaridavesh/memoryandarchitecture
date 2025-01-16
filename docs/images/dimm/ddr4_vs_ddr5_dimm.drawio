@@ -4,6 +4,12 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="YjWWDXaZrfKZDx-xZvoM-494" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="670" width="1030" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="YjWWDXaZrfKZDx-xZvoM-493" value="" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry y="190" width="1030" height="420" as="geometry" />
+        </mxCell>
         <mxCell id="YjWWDXaZrfKZDx-xZvoM-2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#2e7956;" vertex="1" parent="1">
           <mxGeometry x="20" y="210" width="990" height="180" as="geometry" />
         </mxCell>
@@ -1260,6 +1266,18 @@
         </mxCell>
         <mxCell id="YjWWDXaZrfKZDx-xZvoM-492" value="" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#454744;fillColor=#464646;direction=south;" vertex="1" parent="1">
           <mxGeometry x="460" y="977" width="10" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="YjWWDXaZrfKZDx-xZvoM-495" value="DDR4 RDIMM FRONT" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="450" y="188" width="155" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YjWWDXaZrfKZDx-xZvoM-496" value="DDR4 RDIMM BACK" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="442.5" y="587" width="155" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YjWWDXaZrfKZDx-xZvoM-497" value="DDR5 RDIMM FRONT" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="446" y="663.5" width="155" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="YjWWDXaZrfKZDx-xZvoM-498" value="DDR5 RDIMM BACK" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="438.5" y="1065.5" width="155" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
