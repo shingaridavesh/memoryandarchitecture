@@ -125,13 +125,9 @@ nav:
   - LPDDR5:
     - LPDDR5/index.md
   - DIMM:
-    - DDR4 DIMM:
-      - DDR4_DIMM/index.md
-    - DDR5 DIMM:
-      - DIMM Components: DDR5_DIMM/DIMMComponents.md
-      - RCD: DDR5_DIMM/RCD.md
-      - SPD Hub: DDR5_DIMM/SPDHub.md
-      - PMIC: DDR5_DIMM/PMIC.md
+    - DIMM/index.md
+    - DDR4: DIMM/DDR4.md
+    - DDR5: DIMM/DDR5.md
   - Trainings:
     - Trainings/index.md
     - ZQ Calibration: Trainings/ZQCalibration.md
