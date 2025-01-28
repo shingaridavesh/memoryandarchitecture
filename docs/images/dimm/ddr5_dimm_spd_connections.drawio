@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.10">
   <diagram name="Page-1" id="GxQqCOsIQia73UriFO3D">
-    <mxGraphModel dx="4796" dy="2118" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1699" dy="1799" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -3473,6 +3473,30 @@
         </mxCell>
         <mxCell id="opD9SBLdFFXT0vZdqTyb-1126" value="" style="pointerEvents=1;verticalLabelPosition=bottom;shadow=0;dashed=0;align=center;html=1;verticalAlign=top;shape=mxgraph.electrical.signal_sources.signal_ground;strokeWidth=3;" vertex="1" parent="1">
           <mxGeometry x="563" y="3230" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="opD9SBLdFFXT0vZdqTyb-1128" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;10.0 K Ohm&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="614" y="415" width="96" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="opD9SBLdFFXT0vZdqTyb-1129" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;15.4 K Ohm&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="614" y="815" width="96" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="opD9SBLdFFXT0vZdqTyb-1131" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;23.2 K Ohm&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="611" y="1205" width="96" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="opD9SBLdFFXT0vZdqTyb-1132" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;35.7 K Ohm&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="611" y="1610" width="96" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="opD9SBLdFFXT0vZdqTyb-1133" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;54.9 K Ohm&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="608" y="1995" width="96" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="opD9SBLdFFXT0vZdqTyb-1134" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;84.5 K Ohm&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="602.5" y="2395" width="96" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="opD9SBLdFFXT0vZdqTyb-1135" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;127 K Ohm&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="608" y="2785" width="96" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="opD9SBLdFFXT0vZdqTyb-1136" value="&lt;b&gt;&lt;font style=&quot;font-size: 14px;&quot;&gt;196 K Ohm&lt;/font&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="611" y="3185" width="96" height="30" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
