@@ -30,9 +30,13 @@ There are 5 major components present on DIMMs other than the DDR dies.
 
 ##Temperature Sensors
 
-There are 2 sensors present on the DDR5 DIMM. There might be a temperature sensor present inside the SPD hub, but in this we talk about the TS0 and TS1 specifically. The temperature can be read from the TS in multiple of 0.25C ranging from -256.00C to +255.75C.  There are 2 registers (both 8 bits) which are used in conjuction to read the temperature. 
-High Byte: Top 3 bits [7:5] are reserved and are crossed out below. Next bit [4] is sign bit where 0 means positive and 1 means negative. Remaining 4 bits [3:0] are upper bits indicating temperature along with lower bits from Low Byte.
-Low Byte: Top 6 bits [7:2] are lower bits of temperature and remaining 2 bits [1:0] are reserved and are crossed out below.
+There are 2 sensors present on the DDR5 DIMM. There might be a temperature sensor present inside the SPD hub, but in this we talk about the TS0 and TS1 specifically. The temperature can be read from the TS in multiple of 0.25C ranging from -256.00C to +255.75C.  
+
+###Reading Temperature
+There are 2 registers (both 8 bits) which are used in conjuction to read the temperature. 
+
+* High Byte: Top 3 bits [7:5] are reserved and are crossed out below. Next bit [4] is sign bit where 0 means positive and 1 means negative. Remaining 4 bits [3:0] are upper bits indicating temperature along with lower bits from Low Byte.
+* Low Byte: Top 6 bits [7:2] are lower bits of temperature and remaining 2 bits [1:0] are reserved and are crossed out below.
 
 |High Byte| Low Byte | Temperature (C)|
 |:-:|:-:|:-:|
@@ -51,6 +55,11 @@ Low Byte: Top 6 bits [7:2] are lower bits of temperature and remaining 2 bits [1
 | ~~000~~ ==1== 1111 | 111100 ~~00~~ | -  1.00 |
 | ~~000~~ ==1== 1101 | 100000 ~~00~~ | - 40.00 |
 | ~~000~~ ==1== 0000 | 000000 ~~00~~ | -256.00 |
+
+###Interrupts
+Temperature sensor doesnt have a dedicated interrupt  or alert pin but supports interrupt generation using In Band Interrupts (IBI) on the SDA pin. It should be noted that IBI is supported only during I3C mode of operation. There are generally 2 events for which IBI is used:
+* Error Event: Event corresponding to Parity or PEC error.
+* Temperature Event: Event corresponding to temperature falling below Lower Temp limit or rising above Higher Temp limit.
 
 ##Communication to Components
 
