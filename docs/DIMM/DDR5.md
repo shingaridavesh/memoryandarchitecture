@@ -66,6 +66,16 @@ Temperature sensor doesnt have a dedicated interrupt  or alert pin but supports 
     * **Temperature above Crtical High Limit**: Threshold temperature set in **MR32** (Thermal Sensor Critical Temperature High Limit Configuration - Low Byte) and **MR33** (Thermal Sensor Critical Temperature High Limit Configuration- High Byte)
     * **Temperature below Critical Low Limit**: Threshold temperature set in **MR34** (Thermal Sensor Critical Temperature Low Limit Configuration - Low Byte) and **MR35** (Thermal Sensor Critical Temperature Low Limit Configuration- High Byte)
 
+####Enabling Interrupt/Event
+To enable the interrupt/event, there are multiple registers bits as follows:
+
+* MR18[6] PAR_DISB = 0, Parity Enable
+* MR18[7] PEC_EN = 1, PEC Enable
+* MR27[3] IBI_TS_CRIT_LOW_EN = 1, In Band Error Interrupt Enable for Temp Sensor Critical Low
+* MR27[2] IBI_TS_CRIT_HIGH_EN = 1, In Band Error Interrupt Enable for Temp Sensor Critical High
+* MR27[1] IBI_TS_LOW_EN = 1, In Band Error Interrupt Enable for Temp Sensor Low
+* MR27[0] IBI_TS_HIGH_EN = 1, In Band Error Interrupt Enable for Temp Sensor High
+
 ####Reading Interrupt/Event Cause
 To read the cause of the interrupt/event, there are multiple Read Only registers bits as follows:
 
