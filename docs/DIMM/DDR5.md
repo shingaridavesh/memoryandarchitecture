@@ -60,31 +60,39 @@ There are 2 registers (both 8 bits) which are used in conjuction to read the tem
 Temperature sensor doesnt have a dedicated interrupt  or alert pin but supports interrupt generation using In Band Interrupts (IBI) on the SDA pin. It should be noted that IBI is supported only during I3C mode of operation. There are generally 2 events for which IBI is used:
 
 * Error Event: Event corresponding to Parity or PEC error.
-* Temperature Event: Event corresponding to temperature falling below Lower Temp limit / Crtical Lower Temp limit or rising above Higher Temp limit / Crtical Higher Temp Limit. There are multiple registers to use this feature. There are 4 mode registers to set the threshold for these interrupts.
-    * **Temperature above High Limit**: Threshold temperature set in **MR28** ((Thermal Sensor High Limit Configuration - Low Byte) and **MR29** (Thermal Sensor High Limit Configuration - High Byte)
-    * **Temperature below Low Limit**: Threshold temperature set in **MR30** ((Thermal Sensor Low Limit Configuration - Low Byte) and **MR31** (Thermal Sensor Low Limit Configuration - High Byte)
-    * **Temperature above Crtical High Limit**: Threshold temperature set in **MR32** (Thermal Sensor Critical Temperature High Limit Configuration - Low Byte) and **MR33** (Thermal Sensor Critical Temperature High Limit Configuration- High Byte)
-    * **Temperature below Critical Low Limit**: Threshold temperature set in **MR34** (Thermal Sensor Critical Temperature Low Limit Configuration - Low Byte) and **MR35** (Thermal Sensor Critical Temperature Low Limit Configuration- High Byte)
+* Temperature Event: Event corresponding to temperature events. There are 4 events specifically:
+    * Temperature falling below Lower Temperature limit 
+    * Temperature falling below Crtical Lower Temperature limit 
+    * Temperature rising above Higher Temperature limit
+    * Temperature rising above Crtical Higher Temperature limit
 
 ####Enabling Interrupt/Event
 To enable the interrupt/event, there are multiple registers bits as follows:
 
-* MR18[6] PAR_DISB = 0, Parity Enable
-* MR18[7] PEC_EN = 1, PEC Enable
-* MR27[3] IBI_TS_CRIT_LOW_EN = 1, In Band Error Interrupt Enable for Temp Sensor Critical Low
-* MR27[2] IBI_TS_CRIT_HIGH_EN = 1, In Band Error Interrupt Enable for Temp Sensor Critical High
-* MR27[1] IBI_TS_LOW_EN = 1, In Band Error Interrupt Enable for Temp Sensor Low
-* MR27[0] IBI_TS_HIGH_EN = 1, In Band Error Interrupt Enable for Temp Sensor High
+* **MR18[6]** PAR_DISB = 0, Parity Enable
+* **MR18[7]** PEC_EN = 1, PEC Enable
+* **MR27[3]** IBI_TS_CRIT_LOW_EN = 1, In Band Error Interrupt Enable for Temp Sensor Critical Low
+* **MR27[2]** IBI_TS_CRIT_HIGH_EN = 1, In Band Error Interrupt Enable for Temp Sensor Critical High
+* **MR27[1]** IBI_TS_LOW_EN = 1, In Band Error Interrupt Enable for Temp Sensor Low
+* **MR27[0]** IBI_TS_HIGH_EN = 1, In Band Error Interrupt Enable for Temp Sensor High
+    
+####Setting Temperature Threshold for Temperature events
+There are multiple registers to use this feature. There are 4 mode registers to set the threshold for these interrupts.
+
+* **Temperature above High Limit**: Threshold temperature set in **MR28** ((Thermal Sensor High Limit Configuration - Low Byte) and **MR29** (Thermal Sensor High Limit Configuration - High Byte)
+* **Temperature below Low Limit**: Threshold temperature set in **MR30** ((Thermal Sensor Low Limit Configuration - Low Byte) and **MR31** (Thermal Sensor Low Limit Configuration - High Byte)
+* **Temperature above Crtical High Limit**: Threshold temperature set in **MR32** (Thermal Sensor Critical Temperature High Limit Configuration - Low Byte) and **MR33** (Thermal Sensor Critical Temperature High Limit Configuration- High Byte)
+* **Temperature below Critical Low Limit**: Threshold temperature set in **MR34** (Thermal Sensor Critical Temperature Low Limit Configuration - Low Byte) and **MR35** (Thermal Sensor Critical Temperature Low Limit Configuration- High Byte)
 
 ####Reading Interrupt/Event Cause
 To read the cause of the interrupt/event, there are multiple Read Only registers bits as follows:
 
-* MR51[0] TS_HIGH_STATUS = 1, Temperature is above the limit set in MR28 and MR29.
-* MR51[1] TS_LOW_STATUS = 1, Temperature is below the limit set in MR30 and MR31.
-* MR51[2] TS_CRIT_HIGH_STATUS = 1, Temperature is above the limit set in MR32 and MR33.
-* MR51[3] TS_CRIT_LOW_STATUS = 1, Temperature is below the limit set in MR34 and MR35.
-* MR52[0] PAR_ERROR_STATUS = 1, Parity error in one or more bytes.
-* MR52[1] PEC_ERROR_STATUS = 1, PEC Error in one or more packets.
+* If **MR51[0]** TS_HIGH_STATUS = 1, Temperature is above the limit set in MR28 and MR29.
+* If **MR51[1]** TS_LOW_STATUS = 1, Temperature is below the limit set in MR30 and MR31.
+* If **MR51[2]** TS_CRIT_HIGH_STATUS = 1, Temperature is above the limit set in MR32 and MR33.
+* If **MR51[3]** TS_CRIT_LOW_STATUS = 1, Temperature is below the limit set in MR34 and MR35.
+* If **MR52[0]** PAR_ERROR_STATUS = 1, Parity error in one or more bytes.
+* If **MR52[1]** PEC_ERROR_STATUS = 1, PEC Error in one or more packets.
 
 
 ##Communication to Components
