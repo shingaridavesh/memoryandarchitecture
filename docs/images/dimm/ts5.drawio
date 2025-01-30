@@ -1,9 +1,48 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.10">
   <diagram name="Page-1" id="W5vGCnVhVwVzvedQZ5nu">
-    <mxGraphModel>
+    <mxGraphModel dx="818" dy="1058" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-1" value="&lt;b&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;TS5&lt;/font&gt;&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="200" y="280" width="240" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-2" value="SCL" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="200" y="320" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-3" value="SDA" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="200" y="405" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-4" value="VSS" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="200" y="500" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-5" value="VDDIO" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="378" y="320" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-6" value="SA" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="380" y="405" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-7" value="VDDSPD" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="376" y="500" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-8" value="&lt;b&gt;Input&lt;/b&gt;: Serial Clock" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="320" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-10" value="&lt;b&gt;Input/Output&lt;/b&gt;: Serial Data Input and Output" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="392.5" width="120" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-11" value="Ground" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="70" y="500" width="110" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-12" value="&lt;b&gt;Input&lt;/b&gt;: Supply Voltage for Sensor I/O" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="320" width="130" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-13" value="&lt;b&gt;Input&lt;/b&gt;: Address Select (Connected to VDDSPD or GND)" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="392.5" width="130" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="WPGl5qjETKKjV6xaFtwX-14" value="&lt;b&gt;Input&lt;/b&gt;: Supply Voltage for Sensor Core" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="500" width="120" height="30" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
