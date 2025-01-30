@@ -25,20 +25,44 @@ There are 5 major components present on DIMMs other than the DDR dies.
 ##SPD Hub
 
 ##PMIC
-From DDR5 onwards, there is a PMIC present on the DIMM itself, which provides the power all the voltage rails of DDR devices and all the other peripheral devices on the DIMM (TS, SPD, RCD etc). 
+From DDR5 onwards, there is a PMIC present on the DIMM itself, which provides the power all the voltage rails of DDR devices and all the other peripheral devices on the DIMM (TS, SPD, RCD etc). There are variants of PMIC for RDIMMs and LRDIMMs namely PMIC5000 and PMIC5010. Some important features of PMIC are as follows:
+
+* Features 4 step down switching regulator and 3 LDO egulators. Supports ~15W of power.
+* Has input from VIN_Bulk for switching regulators and VIN_Mgmt for rest of the PMIC. PMIC do support automatic switchover from VIN_Mgmt to VIN_Bulk.
+* Uses I2C or I3C interface and can operate at 1MHz on I2C and 12.5MHz on I3C interface.
+* Programmable output voltages, power up and power down sequence for switch regulators.
+* Input and output power good status reporting mechanism.
+• VIN_Bulk input supply protection feature: Input over voltage.
+• Output switch regulators protection feature: Output over voltage, output under voltage, output current limiter.
+• Output current and power measurement, output current threshold mechanism.
+• Provides temperature measurement, temperature warning threshold, critical temperature shutdown.
 
 ![](../images/dimm/pmic.drawio)
+
+###Register Space
+
+###Measuring Current/Power
+To understand the measurement capability of SWs, we need to first see whether PMIC can provide current or power measurement. We can check that through 0x1B[6]. If it provides power measurement then we need to check whether it provides individual measurement or only supports sum of all SWs. This can be known by reading register 0x1A[1]. Both the bit fields are shown below.
+
+|Register| Bit | Attribute | Description |
+|:-:|:-:|:-:|:-:|
+| 0x1B | 6 | RW | CURRENT_OR_POWER_METER_SELECT <br> PMIC Output Regulator Measurement - Current or Power Meter <br> 0 = Report Current Measurements in registers <br> 1 = Report Power Measurements in registers|
+| 0x1A | 1 | RW | OUTPUT_POWER_SELECT <br> Switch Regulator Output Power Select <br> 0 = Report individual power for each rail in Reg 0x0C, Reg 0x0D, Reg 0x0E, and Reg 0x0F <br> 1 = Report total power of each rail in Reg 0x0C|
 
 
 ##RCD
 
 ##Temperature Sensors
-There are 2 sensors present on the DDR5 DIMM. There might be a temperature sensor present inside the SPD hub, but in this we talk about the TS0 and TS1 specifically. TS are I2C/I3C comptabile Temperature sensors which typically provide temperature measurement from -40C to +125C in granularity of 0.25C. When using I2C, it can support 1MHz operation and with I3C it can support upto 12.5MHz operation.
+There are 2 sensors present on the DDR5 DIMM. There might be a temperature sensor present inside the SPD hub, but in this we talk about the TS0 and TS1 specifically.  Some important features of the TS are as follows:
+
+* TS typically provide temperature measurement from -40C to 125C in granularity of 0.25C. 
+* Uses I2C or I3C interface and can operate at 1MHz on I2C and 12.5MHz on I3C interface.
+
 
 ![](../images/dimm/ts5.drawio)
 
 ###Reading Temperature
-The temperature can be read from the TS in multiple of 0.25C ranging from -256.00C to +255.75C. Even though this range is supported but actual device might support smaller temperayure range, typially -40C to 95C or 125C. 
+The temperature can be read from the TS in multiple of 0.25C ranging from -256.00C to +255.75C. Even though this range is supported but actual device might support smaller temperature range, typially -40C to 95C or 125C. 
 
 There are 2 registers (both 8 bits) which are used in conjuction to read the temperature. In the JEDEC spec it is RO register MR49 and MR50 titles "TS Current Sensed Tempertaure - Low Byte" and "TS Current Sensed Temperature - High Byte".
 
