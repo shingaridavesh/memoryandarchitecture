@@ -29,10 +29,11 @@ There are 5 major components present on DIMMs other than the DDR dies.
 ##RCD
 
 ##Temperature Sensors
-
-There are 2 sensors present on the DDR5 DIMM. There might be a temperature sensor present inside the SPD hub, but in this we talk about the TS0 and TS1 specifically. The temperature can be read from the TS in multiple of 0.25C ranging from -256.00C to +255.75C.  
+There are 2 sensors present on the DDR5 DIMM. There might be a temperature sensor present inside the SPD hub, but in this we talk about the TS0 and TS1 specifically. TS are I2C/I3C comptabile Temperature sensors which typically provide temperature measurement from -40C to +125C in granularity of 0.25C. When using I2C, it can support 1MHz operation and with I3C it can support upto 12.5MHz operation.
 
 ###Reading Temperature
+The temperature can be read from the TS in multiple of 0.25C ranging from -256.00C to +255.75C. Even though this range is supported but actual device might support smaller temperayure range, typially -40C to 95C or 125C. 
+
 There are 2 registers (both 8 bits) which are used in conjuction to read the temperature. In the JEDEC spec it is RO register MR49 and MR50 titles "TS Current Sensed Tempertaure - Low Byte" and "TS Current Sensed Temperature - High Byte".
 
 * High Byte: Top 3 bits [7:5] are reserved and are crossed out below. Next bit [4] is sign bit where 0 means positive and 1 means negative. Remaining 4 bits [3:0] are upper bits indicating temperature along with lower bits from Low Byte.
