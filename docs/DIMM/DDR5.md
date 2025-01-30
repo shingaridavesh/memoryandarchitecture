@@ -56,10 +56,19 @@ There are 2 registers (both 8 bits) which are used in conjuction to read the tem
 | ~~000~~ ==1== 1101 | 100000 ~~00~~ | - 40.00 |
 | ~~000~~ ==1== 0000 | 000000 ~~00~~ | -256.00 |
 
+###Interface
+
+* There are multiple Temperature Sensors on DDR5 DIMM, so each of them should have a unique address (LID). HID for the TS can be set through **MR7[3:1]**. As per JEDEC spec, TS0 LID = 0010 and TS1 LID = 0110.
+* Communication can be made via I2C or I3C. The link comes up in I2C by default and can be changed to I3C. You can read current interface through **MR18[5]** INF_SEL to see if it is I2C protocol or I3C protocol. 
+* At bringup when TS is in I2C mode, only 3 CCCs (DEVCTRL, SETHID and SETAASA) are allowed.
+* Controller can put the TS device into I3C mode by issuing SETAASA CCC.
+* Controller can set the HID of the TS device by issuing SETHID CCC.
+
+
 ###Interrupts
 Temperature sensor doesnt have a dedicated interrupt  or alert pin but supports interrupt generation using In Band Interrupts (IBI) on the SDA pin. It should be noted that IBI is supported only during I3C mode of operation. There are generally 2 events for which IBI is used:
 
-* Error Event: Event corresponding to Parity or PEC error.
+* Error Event: Event corresponding to Parity or PEC (Packet Error Check) error.
 * Temperature Event: Event corresponding to temperature events. There are 4 events specifically:
     * Temperature falling below Lower Temperature limit 
     * Temperature falling below Crtical Lower Temperature limit 
