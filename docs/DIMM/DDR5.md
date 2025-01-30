@@ -25,6 +25,10 @@ There are 5 major components present on DIMMs other than the DDR dies.
 ##SPD Hub
 
 ##PMIC
+From DDR5 onwards, there is a PMIC present on the DIMM itself, which provides the power all the voltage rails of DDR devices and all the other peripheral devices on the DIMM (TS, SPD, RCD etc). 
+
+![](../images/dimm/pmic.drawio)
+
 
 ##RCD
 
