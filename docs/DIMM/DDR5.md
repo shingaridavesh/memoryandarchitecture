@@ -39,7 +39,20 @@ From DDR5 onwards, there is a PMIC present on the DIMM itself, which provides th
 
 ![](../images/dimm/pmic.drawio)
 
+###Input & Output Voltage
+
 ###Register Space
+PMIC register space is divided into 3 broad categories:
+* Host Region Registers
+* DIMM Vendor Region Registers
+* PMIC Vendor Region Registers
+
+|Register Type| Register Address Range | Comments | 
+|:-:|:-:|:-|
+| Host Region Registers | 0x00 - 0x3F |  Host Accesible Registers <br> Some registers can only be modified when PMIC is not in Secure state but can be read anytime. |
+| DIMM Vendor Region Registers | 0x40 - 0x6F | DIMM Vendor Accesigble Registers <br> Allows DIMM vendor to program PMIC for their specif DIMM/DRAm device <br> Password protected and incorrect password will result in returned value of 0 |
+| PMIC Vendor Region Registers | 0x70 - 0xFF | PMIC Vendor Accesible Registers <br> Password protected and incorrect password will result in returned value of 0 <br> JEDEC doesnt even define what registers can/should be. |
+
 
 ###Measuring Current/Power
 To understand the measurement capability of SWs, we need to first see whether PMIC can provide current or power measurement. We can check that through 0x1B[6]. If it provides power measurement then we need to check whether it provides individual measurement or only supports sum of all SWs. This can be known by reading register 0x1A[1]. Both the bit fields are shown below.
