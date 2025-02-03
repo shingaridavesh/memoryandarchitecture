@@ -39,7 +39,12 @@ From DDR5 onwards, there is a PMIC present on the DIMM itself, which provides th
 
 ![](../images/dimm/pmic.drawio)
 
-###Input & Output Voltage
+###Voltage and Initialization
+
+* PMIC has 2 input supplies from platform: VIN_Bulk and VIN_Mgmt.
+* VIN_Bulk is used by PMIC for all output regulators except for VOUT_1.8V and VOUT_1.0V LDO output regulators (In switchover mode, even these are supplied by VIN_Bulk)
+* VIN_Mgmt is used to read out its internal non-volatile memory content adn to supply VOUT_1.8V and VOUT_1.0V to other devices such as SPD, TS and RCD on DIMM.
+* At first power on, VIN_Mgmt supply shall reach minimum of 2.8V before it can be detected as a valid input supply to PMIC. Once it reaches 2.8V, VOUT_1.8V and VOUT_1.0V is valid and CAMP signal is driven low by PMIC (it is floating before).
 
 ![](../images/dimm/pmic_init.drawio)
 
