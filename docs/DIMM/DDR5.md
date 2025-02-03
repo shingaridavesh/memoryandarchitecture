@@ -41,8 +41,12 @@ From DDR5 onwards, there is a PMIC present on the DIMM itself, which provides th
 
 ###Input & Output Voltage
 
+![](../images/dimm/pmic_init.drawio)
+
+
 ###Register Space
 PMIC register space is divided into 3 broad categories:
+
 * Host Region Registers
 * DIMM Vendor Region Registers
 * PMIC Vendor Region Registers
