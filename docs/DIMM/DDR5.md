@@ -156,6 +156,16 @@ All the above delays have granularity from (0/64)*t~CK~ to (63/64)*t~CK~.
 |OP7|OP6|OP5|OP4|OP3|OP2|OP1|OP0|Encoding| 
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-|
 |x|x|0|0|0|0|0|0| Delay outputs by +(0/64)*t~CK~|
+|x|x|0|0|0|0|0|1| Delay outputs by +(1/64)*t~CK~|
+|x|x|0|0|0|0|1|0| Delay outputs by +(2/64)*t~CK~|
+|x|x|.|.|.|.|.|.| ....|
+|x|x|0|0|0|0|0|0| Delay outputs by +(61/64)*t~CK~|
+|x|x|0|0|0|0|0|0| Delay outputs by +(62/64)*t~CK~|
+|x|x|0|0|0|0|0|0| Delay outputs by +(63/64)*t~CK~|
+|x|x|0|0|0|0|0|0| Reserved |
+|x|x|0|0|0|0|0|0| Reserved |
+|x|x|0|0|0|0|0|0| Default - Feature Disabled|
+|x|x|0|0|0|0|0|0| Feature Enabled|
 
 
 
