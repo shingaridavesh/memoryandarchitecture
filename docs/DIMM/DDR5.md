@@ -74,6 +74,11 @@ To understand the measurement capability of SWs, we need to first see whether PM
 
 ##RCD
 
+* DDR5RCD04 is a registering clock driver used on DDR5 RDIMMs.
+* Primary function of RCD is to buffet the Clock, Chip-Select and Command/Address bus between the MemoryController/PHY and DRAm device.
+* RCD contains 2 separate channels which have some common lopgic as clocking but otherwise operate indepdently of each other.
+* RCD has common clock input and PLL but produces separate clock outputs to the DRAM channels.
+
 ###Input/Output
 
 ![](../images/dimm/rcd_input_output_pins.drawio)
@@ -128,6 +133,31 @@ To understand the measurement capability of SWs, we need to first see whether PM
 |Power Input | VDDIO | Power input | Sideband Bus Power Input|
 |Input | SCL | CMOS input | Sideband Bus Clock|
 |Input/output | SDA | Open drain or push pull IO | Sideband Bus Datal|
+
+###Operations
+
+
+###Settinsg Delays
+
+There are multiple delay control for output signals of RCD:
+* RW12 - QACK Output Delay
+* RW13 - QBCK Output Delay
+* RW14 - QCCK Output Delay
+* RW15 - QDCK Output Delay
+* RW17 - QACS0 Output Delay
+* RW18 - QACS1 Output Delay
+* RW19 - QBCS0 Output Delay
+* RW1A - QBCS1 Output Delay
+* RW1B - QACA Output Delay
+* RW1C - QBCA Output Delay
+
+All the above delays have granularity from (0/64)*t~CK~ to (63/64)*t~CK~.
+
+|OP7|OP6|OP5|OP4|OP3|OP2|OP1|OP0|Encoding| 
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-|
+|x|x|0|0|0|0|0|0| Delay outputs by +(0/64)*t~CK~|
+
+
 
 ##Temperature Sensors
 There are 2 sensors present on the DDR5 DIMM. There might be a temperature sensor present inside the SPD hub, but in this we talk about the TS0 and TS1 specifically.  Some important features of the TS are as follows:
