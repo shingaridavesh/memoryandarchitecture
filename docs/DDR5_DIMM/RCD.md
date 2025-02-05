@@ -1,11 +1,11 @@
-#Introduction
+##Introduction
 
 * DDR5RCD04 is a registering clock driver used on DDR5 RDIMMs.
 * Primary function of RCD is to buffet the Clock, Chip-Select and Command/Address bus between the MemoryController/PHY and DRAm device.
 * RCD contains 2 separate channels which have some common lopgic as clocking but otherwise operate indepdently of each other.
 * RCD has common clock input and PLL but produces separate clock outputs to the DRAM channels.
 
-#Input/Output
+##Input/Output
 
 ![](../images/dimm/rcd_input_output_pins.drawio)
 
@@ -60,10 +60,10 @@
 |Input | SCL | CMOS input | Sideband Bus Clock|
 |Input/output | SDA | Open drain or push pull IO | Sideband Bus Datal|
 
-#Operations
+##Operations
 
 
-#Training Modes
+##Training Modes
 
 RCD supports multiple trainings:
 
@@ -77,7 +77,7 @@ RCD supports multiple trainings:
     * DCA Decision Feedback Equalization
     * DCS Decision Feedback Equalization
 
-##Settings Delays
+###Settings Delays
 
 There are multiple delay control for output signals of RCD:
 
@@ -108,7 +108,7 @@ All the above delays have granularity from (0/64)*t~CK~ to (63/64)*t~CK~.
 |0	x	x	x	x	x	x	x| Default - Feature Disabled|
 |1	x	x	x	x	x	x	x| Feature Enabled|
 
-#Control Words
+##Control Words
 
 
 
