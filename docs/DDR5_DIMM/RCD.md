@@ -77,9 +77,7 @@ RCD supports multiple trainings:
     * DCA Decision Feedback Equalization
     * DCS Decision Feedback Equalization
 
-#Control Words
-
-#Settings Delays
+##Settings Delays
 
 There are multiple delay control for output signals of RCD:
 
@@ -109,6 +107,10 @@ All the above delays have granularity from (0/64)*t~CK~ to (63/64)*t~CK~.
 |x	1	x	x	x	x	x	x| Reserved |
 |0	x	x	x	x	x	x	x| Default - Feature Disabled|
 |1	x	x	x	x	x	x	x| Feature Enabled|
+
+#Control Words
+
+
 
 
 
