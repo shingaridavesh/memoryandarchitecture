@@ -129,7 +129,7 @@ nav:
     - SPD Hub: DDR5_DIMM/SPDHub.md
     - RCD: DDR5_DIMM/RCD.md
     - PMIC: DDR5_DIMM/PMIC.md
-    - TS: DDR5_DIMM/RCD/TS.md
+    - TS: DDR5_DIMM/TS.md
   - Trainings:
     - Trainings/index.md
     - ZQ Calibration: Trainings/ZQCalibration.md
