@@ -76,19 +76,15 @@ To understand the measurement capability of SWs, we need to first see whether PM
 
 ###Input/Output
 
+![](../images/dimm/rcd_input_output_pins.drawio)
+
 |Input/Output| Signal Group Name | Signal Name | Type | Description | 
 |:-:|:-:|:-:|:-:|:-|
 |Input | Control Bus | DCS[1:0]_[B:A]_n | POD VREF based | Chip Select inputs to the RCD. Two inputs per DRAM channel.|
-|Input | Address and Command Bus | DCA[6:0]_[B:A] | POD VREF based Command/Address bus inputs to the RCD. Separate sets per channel.|
+|Input | Address and Command Bus | DCA[6:0]_[B:A] | POD VREF based | Command/Address bus inputs to the RCD. Separate sets per channel.|
 |Input | Parity| DPAR_[B:A] | POD VREF based | Command Address input parity is received on the DPAR pin and should maintain even parity across the CA inputs. DPAR is sampled  at the rising and falling edges of the input clock.|
-
-Clock inputs DCK_t/DCK_c POD differential Differential system clock input pair to the PLL. The clock is 
-common to both RCD channels, CH_A and CH_B.
-Loopback DLBD_[B:A]
-DLBS_[B:A]
-POD VREF based Loopback Inputs to RCD
-DLBD - loopback Data
-DLBS - loopback Strobe
+|Input | Clock | DCK_t/DCK_c | POD differential | Differential system clock input pair to the PLL. The clock is common to both RCD channels, CH_A and CH_B. |
+| Input | Loopback| DLBD_[B:A] <br> DLBS_[B:A] | POD VREF based | Loopback Inputs to RCD <br> DLBD - Loopback Data <br> DLBS - Loopback Strobe |
 Reset input DRST_n CMOS input Active LOW asynchronous reset input. When LOW, it causes a reset 
 of the internal latches and disables the outputs, thereby forcing the 
 outputs to float.
