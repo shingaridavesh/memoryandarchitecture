@@ -78,6 +78,19 @@ To understand the measurement capability of SWs, we need to first see whether PM
 
 ![](../images/dimm/rcd_input_output_pins.drawio)
 
+**Clocks**
+
+|Input/Output| Signal Name | Type | Description | 
+|:-:|:-:|:-:|:-|
+|Input | DCK_t/DCK_c | POD differential | Differential system clock input pair to the PLL. The clock is common to both RCD channels, CH_A and CH_B. |
+|Output | Q[D:A]CK_[B:A]_t <br> Q[D:A]CK_[B:A]_c  | POD differential | Clock outputs to the DRAMs. <br> 4 copies of Clock per channel. |
+
+**Control/Chip-Selects**
+
+**Command Address**
+
+
+
 |Input/Output| Signal Group Name | Signal Name | Type | Description | 
 |:-:|:-:|:-:|:-:|:-|
 |Input | Control Bus | DCS[1:0]_[B:A]_n | POD VREF based | Chip Select inputs to the RCD. Two inputs per DRAM channel.|
