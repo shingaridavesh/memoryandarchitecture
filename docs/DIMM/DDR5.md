@@ -168,20 +168,20 @@ All the above delays have granularity from (0/64)*t~CK~ to (63/64)*t~CK~.
 |0|x|x|x|x|x|x|x| Default - Feature Disabled|
 |1|x|x|x|x|x|x|x| Feature Enabled|
 
-|OP7/OP6/OP5/OP4/OP3/OP2/OP1/OP0|Encoding| 
+|OP7    OP6 OP5 OP4 OP3 OP2 OP1	OP0|Encoding| 
 |:-:|:-|
-|x/x/0/0/0/0/0/0| Delay outputs by +(0/64)*t~CK~|
-|x/x/0/0/0/0/0/1| Delay outputs by +(0/64)*t~CK~|
-|x/x/0/0/0/0/1/0| Delay outputs by +(0/64)*t~CK~|
-|x/x/./././././.| Delay outputs by +(0/64)*t~CK~|
-|x/x/0/0/0/0/0/0| Delay outputs by +(0/64)*t~CK~|
-|x/x/0/0/0/0/0/0| Delay outputs by +(0/64)*t~CK~|
-|x/x/0/0/0/0/0/0| Delay outputs by +(0/64)*t~CK~|
-|x/x/0/0/0/0/0/0| Delay outputs by +(0/64)*t~CK~|
-|x/0/x/x/x/x/x/x| Reserved |
-|x/1/x/x/x/x/x/x| Reserved |
-|0/x/x/x/x/x/x/x| Default - Feature Disabled|
-|1/x/x/x/x/x/x/x| Feature Enabled|
+|x	x	0	0	0	0	0	0| Delay outputs by +(0	64)*t~CK~|
+|x	x	0	0	0	0	0	1| Delay outputs by +(0	64)*t~CK~|
+|x	x	0	0	0	0	1	0| Delay outputs by +(0	64)*t~CK~|
+|x	x	.	.	.	.	.	.| Delay outputs by +(0	64)*t~CK~|
+|x	x	0	0	0	0	0	0| Delay outputs by +(0	64)*t~CK~|
+|x	x	0	0	0	0	0	0| Delay outputs by +(0	64)*t~CK~|
+|x	x	0	0	0	0	0	0| Delay outputs by +(0	64)*t~CK~|
+|x	x	0	0	0	0	0	0| Delay outputs by +(0	64)*t~CK~|
+|x	0	x	x	x	x	x	x| Reserved |
+|x	1	x	x	x	x	x	x| Reserved |
+|0	x	x	x	x	x	x	x| Default - Feature Disabled|
+|1	x	x	x	x	x	x	x| Feature Enabled|
 
 
 
