@@ -4,7 +4,9 @@ There are 5 major components present on DIMMs other than the DDR dies.
 * SPD Hub
 * PMIC
 * RCD
-* Temperature Sensors
+* Temperature Sensors (2)
+
+![](../images/dimm/ddr5_dimm_components.drawio)
 
 ##Specifications
 * SPD Hub

@@ -62,6 +62,7 @@
 
 ##Operations
 
+##Control Words
 
 ##Training Modes
 
@@ -108,7 +109,29 @@ All the above delays have granularity from (0/64)*t~CK~ to (63/64)*t~CK~.
 |0	x	x	x	x	x	x	x| Default - Feature Disabled|
 |1	x	x	x	x	x	x	x| Feature Enabled|
 
-##Control Words
+
+
+##Loopback Mode
+
+* Loopback Mode is used for debugging, testing or training, by feeding a received signal or internal data back to host for debugging.
+* Loopback Mode can be enabled in RW26.
+* There are multiple inputs (both internal or external signals to RCD) to the Loopback circuitry and 1 output to Loopback circuitry. You can select which input should be fed oput by RW26 as well.
+
+**RW26**
+|OP7    OP6 OP5 OP4 OP3 OP2 OP1	OP0|Encoding| 
+|:-:|:-|
+|x	x	0	0	0	0	0	0| Delay outputs by +(0/64)*t~CK~|
+|x	x	0	0	0	0	0	1| Delay outputs by +(1/64)*t~CK~|
+|x	x	0	0	0	0	1	0| Delay outputs by +(2/64)*t~CK~|
+|x	x	.	.	.	.	.	.| ..............................|
+|x	x	1	1	1	1	0	1| Delay outputs by +(61/64)*t~CK~|
+|x	x	1	1	1	1	1	0| Delay outputs by +(62/64)*t~CK~|
+|x	x	1	1	1	1	1	1| Delay outputs by +(63/64)*t~CK~|
+|x	0	x	x	x	x	x	x| Reserved |
+|x	1	x	x	x	x	x	x| Reserved |
+|0	x	x	x	x	x	x	x| Default - Feature Disabled|
+|1	x	x	x	x	x	x	x| Feature Enabled|
+
 
 
 
