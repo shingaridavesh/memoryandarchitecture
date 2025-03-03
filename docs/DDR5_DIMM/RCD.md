@@ -62,6 +62,34 @@
 
 ##Operations
 
+##Features
+
+###Delay Control
+RCD delay at per-group level and per-bit level for certain signals.
+
+* Group Level Delay Control
+    * The RCD supports output delay control for output signal groups defined and located in RW12 to RW1E. 
+    * The output delay settings are incremental CK fractions of 1/64 tCK. 
+    * Each signal group can be enabled or disable independently through RCD Control Words.
+    * Output Delay Control Words
+        * RW12 - QACK Output Delay Control Word
+        * RW13 - QBCK Output Delay Control Word
+        * RW14 - QCCK Output Delay Control Word
+        * RW15 - QDCK Output Delay Control Word
+        * RW17 - QACS0_n Output Delay Control Word
+        * RW18 - QACS1_n Output Delay Control Word
+        * RW19 - QBCS0_n Output Delay Control Word
+        * RW1A - QBCS1_n Output Delay Control Word
+        * RW1B - QACA Output Delay Control Word
+        * RW1C - QBCA Output Delay Control Word
+* Bit Level Delay Control
+In DDR5RCD04, fine adjustment of the phase of individual QCA bit lanes relative to QCK is required. For this
+purpose, the host controller can utilize the per-bit QCA output delay control words in PG[5]RW[7B:60] to control the
+phase of A-copy and B-copy QCA bits respectively. Since all bits within a copy are generally aligned by routing, only
+a small range of [0, 40ps] is provided for fine-grained adjustment of individual bit lane delay differences. A positive
+delay in these control words means that the particular lane requires slightly more delay than the previously
+established QCA delay in RW1B and RW1C for the entire copy.
+
 ##Control Words
 
 ##Training Modes
