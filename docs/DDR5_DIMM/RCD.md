@@ -66,6 +66,7 @@
 
 ###Signal Distribution
 Primarily there are 3 main signals which are associated with RCD:
+
 * Clock
 * Chip Select
 * Command & Address Bus
@@ -77,6 +78,14 @@ Primarily there are 3 main signals which are associated with RCD:
 * As per the JEDEC spec, CA lines going to the DRAM die is SDR i.e. when CS is asserted, CA line is sampled at rising edge of the clock. But the CA lines going to the RCD can follow both SDR or DDR, depending on what is selected.
 
 ![](../images/dimm/rcd_sdr_ddr.drawio)
+
+* Settings is chosen through RW00[1:0] and supports 3 values. This is specific for CA lines and CS is SDR for all the configurations.
+
+    |RW00[1:0]| DCA | QCA | 
+    |:-:|:-:|:-:|
+    | 00 | SDR1 | 2N timing (Extra Setup Time) | 
+    | 01 | DDR | 1N timing | 
+    | 10 | SDR2 | 2N timing (Extra Hold Time) | 
 
 ###Delay Control
 RCD delay at per-group level and per-bit level for certain signals.
