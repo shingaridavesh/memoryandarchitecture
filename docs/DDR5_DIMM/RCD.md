@@ -64,6 +64,12 @@
 
 ##Features
 
+###Command Address Bus
+* DDR5 RCD takes 7 bit input CA lines and outputs 14 bit CA lines going to the DRAM die. 
+* As per the JEDEC spec, CA lines going to the DRAM die is SDR i.e. when CS is asserted, CA line is sampled at rising edge of the clock. But the CA lines going to the RCD can follow both SDR or DDR, depending on what is selected.
+
+![](../images/dimm/rcd_sdr_ddr.drawio)
+
 ###Delay Control
 RCD delay at per-group level and per-bit level for certain signals.
 
