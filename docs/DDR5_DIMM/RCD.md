@@ -83,12 +83,39 @@ RCD delay at per-group level and per-bit level for certain signals.
         * RW1B - QACA Output Delay Control Word
         * RW1C - QBCA Output Delay Control Word
 * Bit Level Delay Control
-In DDR5RCD04, fine adjustment of the phase of individual QCA bit lanes relative to QCK is required. For this
-purpose, the host controller can utilize the per-bit QCA output delay control words in PG[5]RW[7B:60] to control the
-phase of A-copy and B-copy QCA bits respectively. Since all bits within a copy are generally aligned by routing, only
-a small range of [0, 40ps] is provided for fine-grained adjustment of individual bit lane delay differences. A positive
-delay in these control words means that the particular lane requires slightly more delay than the previously
-established QCA delay in RW1B and RW1C for the entire copy.
+    * RCD provides per-bit level delay control for QACA and QBCA signals in addition to the QACA and QBCA group level delay (RW1B and RW1C).
+    * All the bits within a group are generally aligned by routing, only small range of fine granularity delay is controlled through Bit level delay control. This delay has a range of 0-40ps with granularity of 2.5ps.
+    * Fine granularity delay adds the delay to the previosuly eastablished QACA and QBCA delay set in RW1B and RW1C.
+    * Per-Bit Output Delay Control Word
+        * PG[5]RW60 - QACA0 Output Delay
+        * PG[5]RW61 - QACA1 Output Delay
+        * PG[5]RW62 - QACA2 Output Delay
+        * PG[5]RW63 - QACA3 Output Delay
+        * PG[5]RW64 - QACA4 Output Delay
+        * PG[5]RW65 - QACA5 Output Delay
+        * PG[5]RW66 - QACA6 Output Delay
+        * PG[5]RW67 - QACA7 Output Delay
+        * PG[5]RW68 - QACA8 Output Delay
+        * PG[5]RW69 - QACA9 Output Delay
+        * PG[5]RW6A - QACA10 Output Delay
+        * PG[5]RW6B - QACA11 Output Delay
+        * PG[5]RW6C - QACA12 Output Delay
+        * PG[5]RW6D - QACA13 Output Delay
+        * PG[5]RW6E - QBCA0 Output Delay
+        * PG[5]RW6F - QBCA1 Output Delay
+        * PG[5]RW70 - QBCA2 Output Delay
+        * PG[5]RW71 - QBCA3 Output Delay
+        * PG[5]RW72 - QBCA4 Output Delay
+        * PG[5]RW73 - QBCA5 Output Delay
+        * PG[5]RW74 - QBCA6 Output Delay
+        * PG[5]RW75 - QBCA7 Output Delay
+        * PG[5]RW76 - QBCA8 Output Delay
+        * PG[5]RW77 - QBCA9 Output Delay
+        * PG[5]RW78 - QBCA10 Output Delay
+        * PG[5]RW79 - QBCA11 Output Delay
+        * PG[5]RW7A - QBCA12 Output Delay
+        * PG[5]RW7B - QBCA13 Output Delay
+
 
 ##Control Words
 
