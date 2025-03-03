@@ -64,6 +64,14 @@
 
 ##Features
 
+###Signal Distribution
+Primarily there are 3 main signals which are associated with RCD:
+* Clock
+* Chip Select
+* Command & Address Bus
+
+![](../images/dimm/dimm_rcd_signals.drawio)
+
 ###Command Address Bus
 * DDR5 RCD takes 7 bit input CA lines and outputs 14 bit CA lines going to the DRAM die. 
 * As per the JEDEC spec, CA lines going to the DRAM die is SDR i.e. when CS is asserted, CA line is sampled at rising edge of the clock. But the CA lines going to the RCD can follow both SDR or DDR, depending on what is selected.
