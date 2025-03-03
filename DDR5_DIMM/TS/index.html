@@ -1,0 +1,1038 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Davesh Shingari" name="author"/>
+<link href="https://shingaridavesh.github.io/memoryandarchitecture/DDR5_DIMM/TS/" rel="canonical"/>
+<link href="../PMIC/" rel="prev"/>
+<link href="../../Trainings/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.6.7" name="generator"/>
+<title>TS - Memory and Architecture</title>
+<link href="../../assets/stylesheets/main.8608ea7d.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+ <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="purple" data-md-color-primary="grey" data-md-color-scheme="default" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#temperature-sensors">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Memory and Architecture" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Memory and Architecture">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Memory and Architecture
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              TS
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="purple" data-md-color-media="" data-md-color-primary="grey" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="lime" data-md-color-media="" data-md-color-primary="grey" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+</label>
+</form>
+<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+    
+  
+  Home
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Memory_Basics/">
+          
+  
+    
+  
+  Memory Basics
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../DDR_Features/">
+          
+  
+    
+  
+  DDR Features
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../DDR4/">
+          
+  
+    
+  
+  DDR4
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../DDR5/">
+          
+  
+    
+  
+  DDR5
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../LPDDR4/">
+          
+  
+    
+  
+  LPDDR4
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../LPDDR5/">
+          
+  
+    
+  
+  LPDDR5
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../">
+          
+  
+    
+  
+  DDR5 DIMM
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../Trainings/">
+          
+  
+    
+  
+  Trainings
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../About Me.md">
+          
+  
+    
+  
+  About Me
+
+        </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Memory and Architecture" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Memory and Architecture">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Memory and Architecture
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    Home
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../Memory_Basics/">
+<span class="md-ellipsis">
+    Memory Basics
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            Memory Basics
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Memory_Basics/Organization/">
+<span class="md-ellipsis">
+    Memory Organization
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Memory_Basics/Operation/">
+<span class="md-ellipsis">
+    Memory Operation
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Memory_Basics/RASCASWE/">
+<span class="md-ellipsis">
+    RAS, CAS, WE and ACT
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Memory_Basics/Timings/">
+<span class="md-ellipsis">
+    Timings
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Memory_Basics/LPDDRs/">
+<span class="md-ellipsis">
+    LPDDRs are Low Power
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Memory_Basics/DLLs/">
+<span class="md-ellipsis">
+    Need of DLL
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Memory_Basics/DIMM/">
+<span class="md-ellipsis">
+    DIMM
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../DDR_Features/">
+<span class="md-ellipsis">
+    DDR Features
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            DDR Features
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/Evolution/">
+<span class="md-ellipsis">
+    Evolution
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/Organization/">
+<span class="md-ellipsis">
+    Organization
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/BurstLength/">
+<span class="md-ellipsis">
+    Burst Length
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/Pins/">
+<span class="md-ellipsis">
+    Pins
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/PrePostInteramble/">
+<span class="md-ellipsis">
+    Preamble, Postamble &amp; Interamble
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/Refresh/">
+<span class="md-ellipsis">
+    Refresh
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/PowerModes/">
+<span class="md-ellipsis">
+    Power Modes
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/Training/">
+<span class="md-ellipsis">
+    Training
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/DFE/">
+<span class="md-ellipsis">
+    DFE
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/Loopback/">
+<span class="md-ellipsis">
+    Loopback Mode
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/ECC/">
+<span class="md-ellipsis">
+    ECC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/CRC/">
+<span class="md-ellipsis">
+    CRC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../DDR_Features/3DS/">
+<span class="md-ellipsis">
+    3DS
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_4" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../DDR4/">
+<span class="md-ellipsis">
+    DDR4
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            DDR4
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../DDR5/">
+<span class="md-ellipsis">
+    DDR5
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            DDR5
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_6" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../LPDDR4/">
+<span class="md-ellipsis">
+    LPDDR4
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            LPDDR4
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_7" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../LPDDR5/">
+<span class="md-ellipsis">
+    LPDDR5
+    
+  </span>
+</a>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+            LPDDR5
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../">
+<span class="md-ellipsis">
+    DDR5 DIMM
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="true" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+            DDR5 DIMM
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../SPDHub/">
+<span class="md-ellipsis">
+    SPD Hub
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../RCD/">
+<span class="md-ellipsis">
+    RCD
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../PMIC/">
+<span class="md-ellipsis">
+    PMIC
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    TS
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    TS
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#temperature-sensors">
+<span class="md-ellipsis">
+      Temperature Sensors
+    </span>
+</a>
+<nav aria-label="Temperature Sensors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-temperature">
+<span class="md-ellipsis">
+      Reading Temperature
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interface">
+<span class="md-ellipsis">
+      Interface
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interrupts">
+<span class="md-ellipsis">
+      Interrupts
+    </span>
+</a>
+<nav aria-label="Interrupts" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enabling-interruptevent">
+<span class="md-ellipsis">
+      Enabling Interrupt/Event
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-temperature-threshold-for-temperature-events">
+<span class="md-ellipsis">
+      Setting Temperature Threshold for Temperature events
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-interruptevent-cause">
+<span class="md-ellipsis">
+      Reading Interrupt/Event Cause
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_9" type="checkbox"/>
+<div class="md-nav__link md-nav__container">
+<a class="md-nav__link" href="../../Trainings/">
+<span class="md-ellipsis">
+    Trainings
+    
+  </span>
+</a>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+<span class="md-nav__icon md-icon"></span>
+</label>
+</div>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+            Trainings
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Trainings/ZQCalibration/">
+<span class="md-ellipsis">
+    ZQ Calibration
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Trainings/CommandBus/">
+<span class="md-ellipsis">
+    Command Bus Training
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Trainings/WriteLeveling/">
+<span class="md-ellipsis">
+    Write Leveling
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Trainings/ReadGate/">
+<span class="md-ellipsis">
+    Read Gate/Preamble Training
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Trainings/ReadTraining/">
+<span class="md-ellipsis">
+    Read Training
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Trainings/VrefRead/">
+<span class="md-ellipsis">
+    Vref Read
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Trainings/VrefWrite/">
+<span class="md-ellipsis">
+    Vref Write
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Trainings/DFE/">
+<span class="md-ellipsis">
+    DFE
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Trainings/ReadLatency/">
+<span class="md-ellipsis">
+    Read Latency
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+<span class="md-ellipsis">
+    About Me
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+            About Me
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../About Me.md">
+<span class="md-ellipsis">
+    None
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#temperature-sensors">
+<span class="md-ellipsis">
+      Temperature Sensors
+    </span>
+</a>
+<nav aria-label="Temperature Sensors" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-temperature">
+<span class="md-ellipsis">
+      Reading Temperature
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interface">
+<span class="md-ellipsis">
+      Interface
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#interrupts">
+<span class="md-ellipsis">
+      Interrupts
+    </span>
+</a>
+<nav aria-label="Interrupts" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#enabling-interruptevent">
+<span class="md-ellipsis">
+      Enabling Interrupt/Event
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#setting-temperature-threshold-for-temperature-events">
+<span class="md-ellipsis">
+      Setting Temperature Threshold for Temperature events
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#reading-interruptevent-cause">
+<span class="md-ellipsis">
+      Reading Interrupt/Event Cause
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>TS</h1>
+<h2 id="temperature-sensors">Temperature Sensors</h2>
+<p>There are 2 sensors present on the DDR5 DIMM. There might be a temperature sensor present inside the SPD hub, but in this we talk about the TS0 and TS1 specifically.  Some important features of the TS are as follows:</p>
+<ul>
+<li>TS typically provide temperature measurement from -40C to 125C in granularity of 0.25C. </li>
+<li>Uses I2C or I3C interface and can operate at 1MHz on I2C and 12.5MHz on I3C interface.</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="../../images/dimm/ts5.drawio"><div class="mxgraph" data-mxgraph='{"toolbar": "zoom", "tooltips": "1", "border": 5, "resize": "1", "edit": "_blank", "xml": "&lt;mxfile host=\"app.diagrams.net\" agent=\"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36\" version=\"26.0.10\"&gt;\n  &lt;diagram name=\"Page-1\" id=\"W5vGCnVhVwVzvedQZ5nu\"&gt;\n    &lt;mxGraphModel dx=\"818\" dy=\"1058\" grid=\"1\" gridSize=\"10\" guides=\"1\" tooltips=\"1\" connect=\"1\" arrows=\"1\" fold=\"1\" page=\"1\" pageScale=\"1\" pageWidth=\"850\" pageHeight=\"1100\" math=\"0\" shadow=\"0\"&gt;\n      &lt;root&gt;\n        &lt;mxCell id=\"0\"/&gt;\n        &lt;mxCell id=\"1\" parent=\"0\"/&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-1\" value=\"&amp;lt;b&amp;gt;&amp;lt;font style=&amp;quot;font-size: 24px;&amp;quot;&amp;gt;TS5&amp;lt;/font&amp;gt;&amp;lt;/b&amp;gt;\" style=\"rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"200\" y=\"280\" width=\"240\" height=\"280\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-2\" value=\"SCL\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"200\" y=\"320\" width=\"60\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-3\" value=\"SDA\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"200\" y=\"405\" width=\"60\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-4\" value=\"VSS\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"200\" y=\"500\" width=\"60\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-5\" value=\"VDDIO\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"378\" y=\"320\" width=\"60\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-6\" value=\"SA\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"380\" y=\"405\" width=\"60\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-7\" value=\"VDDSPD\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontStyle=1;fontSize=14;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"376\" y=\"500\" width=\"60\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-8\" value=\"&amp;lt;b&amp;gt;Input&amp;lt;/b&amp;gt;: Serial Clock\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"70\" y=\"320\" width=\"110\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-10\" value=\"&amp;lt;b&amp;gt;Input/Output&amp;lt;/b&amp;gt;: Serial Data Input and Output\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"70\" y=\"392.5\" width=\"120\" height=\"55\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-11\" value=\"Ground\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"70\" y=\"500\" width=\"110\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-12\" value=\"&amp;lt;b&amp;gt;Input&amp;lt;/b&amp;gt;: Supply Voltage for Sensor I/O\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"450\" y=\"320\" width=\"130\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-13\" value=\"&amp;lt;b&amp;gt;Input&amp;lt;/b&amp;gt;: Address Select (Connected to VDDSPD or GND)\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"450\" y=\"392.5\" width=\"130\" height=\"55\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n        &lt;mxCell id=\"WPGl5qjETKKjV6xaFtwX-14\" value=\"&amp;lt;b&amp;gt;Input&amp;lt;/b&amp;gt;: Supply Voltage for Sensor Core\" style=\"text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;\" vertex=\"1\" parent=\"1\"&gt;\n          &lt;mxGeometry x=\"450\" y=\"500\" width=\"120\" height=\"30\" as=\"geometry\"/&gt;\n        &lt;/mxCell&gt;\n      &lt;/root&gt;\n    &lt;/mxGraphModel&gt;\n  &lt;/diagram&gt;\n&lt;/mxfile&gt;"}' style="max-width:100%;border:1px solid transparent;"></div></a></p>
+<h3 id="reading-temperature">Reading Temperature</h3>
+<p>The temperature can be read from the TS in multiple of 0.25C ranging from -256.00C to +255.75C. Even though this range is supported but actual device might support smaller temperature range, typially -40C to 95C or 125C. </p>
+<p>There are 2 registers (both 8 bits) which are used in conjuction to read the temperature. In the JEDEC spec it is RO register MR49 and MR50 titles "TS Current Sensed Tempertaure - Low Byte" and "TS Current Sensed Temperature - High Byte".</p>
+<ul>
+<li>High Byte: Top 3 bits [7:5] are reserved and are crossed out below. Next bit [4] is sign bit where 0 means positive and 1 means negative. Remaining 4 bits [3:0] are upper bits indicating temperature along with lower bits from Low Byte.</li>
+<li>Low Byte: Top 6 bits [7:2] are lower bits of temperature and remaining 2 bits [1:0] are reserved and are crossed out below.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">High Byte</th>
+<th style="text-align: center;">Low Byte</th>
+<th style="text-align: center;">Temperature (C)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>0</mark> 1111</td>
+<td style="text-align: center;">111111 <del>00</del></td>
+<td style="text-align: center;">+255.75</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>0</mark> 0101</td>
+<td style="text-align: center;">111100 <del>00</del></td>
+<td style="text-align: center;">+ 95.00</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>0</mark> 0101</td>
+<td style="text-align: center;">010100 <del>00</del></td>
+<td style="text-align: center;">+ 85.00</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>0</mark> 0100</td>
+<td style="text-align: center;">101100 <del>00</del></td>
+<td style="text-align: center;">+ 75.00</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>0</mark> 0000</td>
+<td style="text-align: center;">000100 <del>00</del></td>
+<td style="text-align: center;">+  1.00</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>0</mark> 0000</td>
+<td style="text-align: center;">000011 <del>00</del></td>
+<td style="text-align: center;">+  0.75</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>0</mark> 0000</td>
+<td style="text-align: center;">000010 <del>00</del></td>
+<td style="text-align: center;">+  0.50</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>0</mark> 0000</td>
+<td style="text-align: center;">000001 <del>00</del></td>
+<td style="text-align: center;">+  0.25</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>0</mark> 0000</td>
+<td style="text-align: center;">000000 <del>00</del></td>
+<td style="text-align: center;">0.00</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>1</mark> 1111</td>
+<td style="text-align: center;">111111 <del>00</del></td>
+<td style="text-align: center;">-  0.25</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>1</mark> 1111</td>
+<td style="text-align: center;">111110 <del>00</del></td>
+<td style="text-align: center;">-  0.50</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>1</mark> 1111</td>
+<td style="text-align: center;">111101 <del>00</del></td>
+<td style="text-align: center;">-  0.75</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>1</mark> 1111</td>
+<td style="text-align: center;">111100 <del>00</del></td>
+<td style="text-align: center;">-  1.00</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>1</mark> 1101</td>
+<td style="text-align: center;">100000 <del>00</del></td>
+<td style="text-align: center;">- 40.00</td>
+</tr>
+<tr>
+<td style="text-align: center;"><del>000</del> <mark>1</mark> 0000</td>
+<td style="text-align: center;">000000 <del>00</del></td>
+<td style="text-align: center;">-256.00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="interface">Interface</h3>
+<ul>
+<li>There are multiple Temperature Sensors on DDR5 DIMM, so each of them should have a unique address (LID). HID for the TS can be set through <strong>MR7[3:1]</strong>. As per JEDEC spec, TS0 LID = 0010 and TS1 LID = 0110.</li>
+<li>Communication can be made via I2C or I3C. The link comes up in I2C by default and can be changed to I3C. You can read current interface through <strong>MR18[5]</strong> INF_SEL to see if it is I2C protocol or I3C protocol. </li>
+<li>At bringup when TS is in I2C mode, only 3 CCCs (DEVCTRL, SETHID and SETAASA) are allowed.</li>
+<li>Controller can put the TS device into I3C mode by issuing SETAASA CCC.</li>
+<li>Controller can set the HID of the TS device by issuing SETHID CCC.</li>
+</ul>
+<h3 id="interrupts">Interrupts</h3>
+<p>Temperature sensor doesnt have a dedicated interrupt  or alert pin but supports interrupt generation using In Band Interrupts (IBI) on the SDA pin. It should be noted that IBI is supported only during I3C mode of operation. There are generally 2 events for which IBI is used:</p>
+<ul>
+<li>Error Event: Event corresponding to Parity or PEC (Packet Error Check) error.</li>
+<li>Temperature Event: Event corresponding to temperature events. There are 4 events specifically:<ul>
+<li>Temperature falling below Lower Temperature limit </li>
+<li>Temperature falling below Crtical Lower Temperature limit </li>
+<li>Temperature rising above Higher Temperature limit</li>
+<li>Temperature rising above Crtical Higher Temperature limit</li>
+</ul>
+</li>
+</ul>
+<h4 id="enabling-interruptevent">Enabling Interrupt/Event</h4>
+<p>To enable the interrupt/event, there are multiple registers bits as follows:</p>
+<ul>
+<li><strong>MR18[6]</strong> PAR_DISB = 0, Parity Enable</li>
+<li><strong>MR18[7]</strong> PEC_EN = 1, PEC Enable</li>
+<li><strong>MR27[3]</strong> IBI_TS_CRIT_LOW_EN = 1, In Band Error Interrupt Enable for Temp Sensor Critical Low</li>
+<li><strong>MR27[2]</strong> IBI_TS_CRIT_HIGH_EN = 1, In Band Error Interrupt Enable for Temp Sensor Critical High</li>
+<li><strong>MR27[1]</strong> IBI_TS_LOW_EN = 1, In Band Error Interrupt Enable for Temp Sensor Low</li>
+<li><strong>MR27[0]</strong> IBI_TS_HIGH_EN = 1, In Band Error Interrupt Enable for Temp Sensor High</li>
+</ul>
+<h4 id="setting-temperature-threshold-for-temperature-events">Setting Temperature Threshold for Temperature events</h4>
+<p>There are multiple registers to use this feature. There are 4 mode registers to set the threshold for these interrupts.</p>
+<ul>
+<li><strong>Temperature above High Limit</strong>: Threshold temperature set in <strong>MR28</strong> ((Thermal Sensor High Limit Configuration - Low Byte) and <strong>MR29</strong> (Thermal Sensor High Limit Configuration - High Byte)</li>
+<li><strong>Temperature below Low Limit</strong>: Threshold temperature set in <strong>MR30</strong> ((Thermal Sensor Low Limit Configuration - Low Byte) and <strong>MR31</strong> (Thermal Sensor Low Limit Configuration - High Byte)</li>
+<li><strong>Temperature above Crtical High Limit</strong>: Threshold temperature set in <strong>MR32</strong> (Thermal Sensor Critical Temperature High Limit Configuration - Low Byte) and <strong>MR33</strong> (Thermal Sensor Critical Temperature High Limit Configuration- High Byte)</li>
+<li><strong>Temperature below Critical Low Limit</strong>: Threshold temperature set in <strong>MR34</strong> (Thermal Sensor Critical Temperature Low Limit Configuration - Low Byte) and <strong>MR35</strong> (Thermal Sensor Critical Temperature Low Limit Configuration- High Byte)</li>
+</ul>
+<h4 id="reading-interruptevent-cause">Reading Interrupt/Event Cause</h4>
+<p>To read the cause of the interrupt/event, there are multiple Read Only registers bits as follows:</p>
+<ul>
+<li>If <strong>MR51[0]</strong> TS_HIGH_STATUS = 1, Temperature is above the limit set in MR28 and MR29.</li>
+<li>If <strong>MR51[1]</strong> TS_LOW_STATUS = 1, Temperature is below the limit set in MR30 and MR31.</li>
+<li>If <strong>MR51[2]</strong> TS_CRIT_HIGH_STATUS = 1, Temperature is above the limit set in MR32 and MR33.</li>
+<li>If <strong>MR51[3]</strong> TS_CRIT_LOW_STATUS = 1, Temperature is below the limit set in MR34 and MR35.</li>
+<li>If <strong>MR52[0]</strong> PAR_ERROR_STATUS = 1, Parity error in one or more bytes.</li>
+<li>If <strong>MR52[1]</strong> PEC_ERROR_STATUS = 1, PEC Error in one or more packets.</li>
+</ul>
+<form class="md-feedback" hidden="" name="feedback">
+<fieldset>
+<legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+<div class="md-feedback__inner">
+<div class="md-feedback__list">
+<button class="md-feedback__icon md-icon" data-md-value="1" title="This page was helpful" type="submit">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"></path></svg>
+</button>
+<button class="md-feedback__icon md-icon" data-md-value="0" title="This page could be improved" type="submit">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"></path></svg>
+</button>
+</div>
+<div class="md-feedback__note">
+<div data-md-value="1" hidden="">
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+<div data-md-value="0" hidden="">
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="..." rel="noopener" target="_blank">feedback form</a>.      
+            </div>
+</div>
+</div>
+</fieldset>
+</form>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      © 2024 <a href="https://github.com/shingaridavesh" rel="noopener" target="_blank">Davesh Shingari</a>
+</div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="https://github.com/shingaridavesh" rel="noopener" target="_blank" title="github.com">
+<svg viewbox="0 0 480 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"></path></svg>
+</a>
+<a class="md-social__link" href="https://www.linkedin.com/in/davesh-shingari-68800053/" rel="noopener" target="_blank" title="www.linkedin.com">
+<svg viewbox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.indexes", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+<script src="https://viewer.diagrams.net/js/viewer-static.min.js"></script><script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

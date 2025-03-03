@@ -1,0 +1,2733 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Davesh Shingari">
+      
+      
+        <link rel="canonical" href="https://shingaridavesh.github.io/memoryandarchitecture/DDR_Features/Pins/">
+      
+      
+        <link rel="prev" href="../BurstLength/">
+      
+      
+        <link rel="next" href="../PrePostInteramble/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>Pins - Memory and Architecture</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8608ea7d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#power-and-vref" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Memory and Architecture" class="md-header__button md-logo" aria-label="Memory and Architecture" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Memory and Architecture
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Pins
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="grey" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="grey" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Memory_Basics/" class="md-tabs__link">
+          
+  
+    
+  
+  Memory Basics
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+    
+  
+  DDR Features
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../DDR4/" class="md-tabs__link">
+          
+  
+    
+  
+  DDR4
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../DDR5/" class="md-tabs__link">
+          
+  
+    
+  
+  DDR5
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../LPDDR4/" class="md-tabs__link">
+          
+  
+    
+  
+  LPDDR4
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../LPDDR5/" class="md-tabs__link">
+          
+  
+    
+  
+  LPDDR5
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../DDR5_DIMM/" class="md-tabs__link">
+          
+  
+    
+  
+  DDR5 DIMM
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../Trainings/" class="md-tabs__link">
+          
+  
+    
+  
+  Trainings
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../About Me.md" class="md-tabs__link">
+          
+  
+    
+  
+  About Me
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Memory and Architecture" class="md-nav__button md-logo" aria-label="Memory and Architecture" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Memory and Architecture
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Memory_Basics/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Memory Basics
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Memory Basics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Memory_Basics/Organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Organization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Memory_Basics/Operation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Memory Operation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Memory_Basics/RASCASWE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RAS, CAS, WE and ACT
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Memory_Basics/Timings/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Timings
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Memory_Basics/LPDDRs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    LPDDRs are Low Power
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Memory_Basics/DLLs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Need of DLL
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Memory_Basics/DIMM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DIMM
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    DDR Features
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            DDR Features
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Evolution/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Evolution
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Organization/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Organization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../BurstLength/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Burst Length
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Pins
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Pins
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#power-and-vref" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power and VREF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power and VREF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vdd-vss-dram-core-power-supply-and-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      VDD, VSS - DRAM Core Power Supply and Ground.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vddq-vssq-dram-dq-power-supply-and-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      VDDQ, VSSQ - DRAM DQ Power Supply and Ground.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vddl-vssdl-dll-power-supplu-and-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      VDDL, VSSDL - DLL Power Supplu and Ground
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpp-dram-activation-power-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPP - DRAM Activation Power Supply.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vref-vrefdq-and-vrefca" class="md-nav__link">
+    <span class="md-ellipsis">
+      VREF, VREFDQ and VREFCA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clock-command-and-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clock, Command and Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clock, Command and Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ck_tck_c-or-ckck-differential-clocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      CK_t,CK_c (or CK,CK#) - Differential Clocks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cke-clock-enable" class="md-nav__link">
+    <span class="md-ellipsis">
+      CKE - Clock Enable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cs_n-or-cs-chip-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      CS_n (or CS#) - Chip Select
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ras-cas-we-row-address-strobe-column-address-strobe-write-enable" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAS, CAS, WE - Row Address Strobe, Column Address Strobe, Write Enable
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-data-strobes-data-mask" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data, Data Strobes, Data Mask
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miscellaneous
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimm-pins" class="md-nav__link">
+    <span class="md-ellipsis">
+      DIMM Pins
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PrePostInteramble/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Preamble, Postamble & Interamble
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Refresh/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Refresh
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PowerModes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Power Modes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Training/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Training
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DFE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DFE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Loopback/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Loopback Mode
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ECC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ECC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CRC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CRC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../3DS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3DS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../DDR4/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    DDR4
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            DDR4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../DDR5/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    DDR5
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            DDR5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../LPDDR4/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    LPDDR4
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            LPDDR4
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../LPDDR5/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    LPDDR5
+    
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            LPDDR5
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../DDR5_DIMM/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    DDR5 DIMM
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            DDR5 DIMM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DDR5_DIMM/SPDHub/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SPD Hub
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DDR5_DIMM/RCD/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DDR5_DIMM/PMIC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    PMIC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DDR5_DIMM/TS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../Trainings/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Trainings
+    
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Trainings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Trainings/ZQCalibration/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ZQ Calibration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Trainings/CommandBus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Command Bus Training
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Trainings/WriteLeveling/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Write Leveling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Trainings/ReadGate/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Read Gate/Preamble Training
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Trainings/ReadTraining/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Read Training
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Trainings/VrefRead/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vref Read
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Trainings/VrefWrite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vref Write
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Trainings/DFE/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DFE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Trainings/ReadLatency/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Read Latency
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    About Me
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            About Me
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../About Me.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#power-and-vref" class="md-nav__link">
+    <span class="md-ellipsis">
+      Power and VREF
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Power and VREF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vdd-vss-dram-core-power-supply-and-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      VDD, VSS - DRAM Core Power Supply and Ground.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vddq-vssq-dram-dq-power-supply-and-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      VDDQ, VSSQ - DRAM DQ Power Supply and Ground.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vddl-vssdl-dll-power-supplu-and-ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      VDDL, VSSDL - DLL Power Supplu and Ground
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vpp-dram-activation-power-supply" class="md-nav__link">
+    <span class="md-ellipsis">
+      VPP - DRAM Activation Power Supply.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vref-vrefdq-and-vrefca" class="md-nav__link">
+    <span class="md-ellipsis">
+      VREF, VREFDQ and VREFCA
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clock-command-and-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clock, Command and Control
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Clock, Command and Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ck_tck_c-or-ckck-differential-clocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      CK_t,CK_c (or CK,CK#) - Differential Clocks
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cke-clock-enable" class="md-nav__link">
+    <span class="md-ellipsis">
+      CKE - Clock Enable
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cs_n-or-cs-chip-select" class="md-nav__link">
+    <span class="md-ellipsis">
+      CS_n (or CS#) - Chip Select
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ras-cas-we-row-address-strobe-column-address-strobe-write-enable" class="md-nav__link">
+    <span class="md-ellipsis">
+      RAS, CAS, WE - Row Address Strobe, Column Address Strobe, Write Enable
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-data-strobes-data-mask" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data, Data Strobes, Data Mask
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#miscellaneous" class="md-nav__link">
+    <span class="md-ellipsis">
+      Miscellaneous
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dimm-pins" class="md-nav__link">
+    <span class="md-ellipsis">
+      DIMM Pins
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Pins</h1>
+
+<h4 id="power-and-vref">Power and VREF</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Pins</th>
+<th style="text-align: center;">DDR1</th>
+<th style="text-align: center;">DDR2</th>
+<th style="text-align: center;">DDR3</th>
+<th style="text-align: center;">DDR4</th>
+<th style="text-align: center;">DDR5</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">VDD</td>
+<td style="text-align: center;">2.5V</td>
+<td style="text-align: center;">1.8V</td>
+<td style="text-align: center;">1.5V</td>
+<td style="text-align: center;">1.2V</td>
+<td style="text-align: center;">1.1V</td>
+<td style="text-align: center;">Core Power Supply</td>
+</tr>
+<tr>
+<td style="text-align: center;">VSS</td>
+<td style="text-align: center;">GND</td>
+<td style="text-align: center;">GND</td>
+<td style="text-align: center;">GND</td>
+<td style="text-align: center;">GND</td>
+<td style="text-align: center;">GND</td>
+<td style="text-align: center;">Ground</td>
+</tr>
+<tr>
+<td style="text-align: center;">VDDQ</td>
+<td style="text-align: center;">2.5V</td>
+<td style="text-align: center;">1.8V</td>
+<td style="text-align: center;">1.5V</td>
+<td style="text-align: center;">1.2V</td>
+<td style="text-align: center;">1.1V</td>
+<td style="text-align: center;">DQ Power Supply</td>
+</tr>
+<tr>
+<td style="text-align: center;">VSSQ</td>
+<td style="text-align: center;">GND</td>
+<td style="text-align: center;">GND</td>
+<td style="text-align: center;">GND</td>
+<td style="text-align: center;">GND</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">DQ Ground</td>
+</tr>
+<tr>
+<td style="text-align: center;">VDDL</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">1.8V</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">DLL Power Supply</td>
+</tr>
+<tr>
+<td style="text-align: center;">VSSDL</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">GND</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">DLL Ground</td>
+</tr>
+<tr>
+<td style="text-align: center;">VPP</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">2.5V</td>
+<td style="text-align: center;">1.8V</td>
+<td style="text-align: center;">DRAM Activating Power Supply</td>
+</tr>
+<tr>
+<td style="text-align: center;">VREF</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Reference Voltage used for both CA and DQ lines</td>
+</tr>
+<tr>
+<td style="text-align: center;">VREFCA</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Reference Volatge for Control, Command and Address lines</td>
+</tr>
+<tr>
+<td style="text-align: center;">VREFDQ</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Reference Volatge for Data lines</td>
+</tr>
+</tbody>
+</table>
+<h5 id="vdd-vss-dram-core-power-supply-and-ground">VDD, VSS - DRAM Core Power Supply and Ground.</h5>
+<ol>
+<li>This is used to power the core block logic in the DRAM for eg. Address Decoder, Banks etc.<br></li>
+<li>As you can observe that with each generation, Voltage has been decreased leading to better power saving.</li>
+</ol>
+<h5 id="vddq-vssq-dram-dq-power-supply-and-ground">VDDQ, VSSQ - DRAM DQ Power Supply and Ground.</h5>
+<ol>
+<li>This is separate from VDD and VSS because isolating them improves noise immunity.<br></li>
+<li>This is used to power the IO blocks which include the receiver, drivers etc.</li>
+</ol>
+<p>Following image shows the Core vs IO block on DDR4</p>
+<blockquote>
+<p><strong>Taken from Micron DDR4 MT40A512M16 - 512 Meg x 16 Functional Block Diagram</strong>
+<a class="glightbox" href="../../images/Core_vs_IO.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="zoomify" small_="small&quot;" src="../../images/Core_vs_IO.png" /></a></p>
+</blockquote>
+<h5 id="vddl-vssdl-dll-power-supplu-and-ground">VDDL, VSSDL - DLL Power Supplu and Ground</h5>
+<ol>
+<li>These pins are only used on DDR2. I am not shure why they were explicitly created on DDR2 and then removed on DDR3. But they are used for DLL and is 1.8V on DDR2.</li>
+</ol>
+<h5 id="vpp-dram-activation-power-supply">VPP - DRAM Activation Power Supply.</h5>
+<ol>
+<li>Up until DDR3, we had charge pump inside the DRAM devices but they were inefficient. So from DDR4 onwards, we have charge pump inside the DDR devices which are used to supply power when activation command is issued.</li>
+<li>VPP is the power supply used by the charge pump when it received activation command.</li>
+</ol>
+<h5 id="vref-vrefdq-and-vrefca">VREF, VREFDQ and VREFCA</h5>
+<ol>
+<li>DDR1 uses SSTL_2 for both CA and DQ, and external VREF pin provides SSTL_2 reference volatge for both CA and DQ.</li>
+<li>DDR2 uses SSTL_18 for both CA and DQ, and external VREF pin provides SSTL_18 reference voltage for both CA and DQ.</li>
+<li>DDR3 uses SSTL_15 for both CA and DQ lines, and  external VREFCA and VREFDQ pins provide SSTL_15 reference voltage for CA and DQ respectively.</li>
+<li>DDR4 use SSTL_12 for CA and POD_12 for DQ lines. VREFCA is external physical pin and provides SSTL_12 reference voltage for CA lines. Reference voltage for POD_12 used by DQ lines is generated internally and is selected through Mode Register.</li>
+<li>DDR5 uses POD for both CA and DQ, and VREFCA and VREFDQ is internally generated and is selected through Mode Register.</li>
+<li>VREF/VREFCA when used for CA lines is used for all Control, Command and Address signals.</li>
+<li>It should be noted that when VREFCA is externally provided then it should be maintained at all times (including Self Refresh) and when VREFDQ is externally provided then it should be maintained at all times (excluding Self Refresh). If there is single external VREF pin then it should always be maintained since it is shared by CA and DQ.</li>
+</ol>
+<h4 id="clock-command-and-control">Clock, Command and Control</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Pins</th>
+<th style="text-align: center;">DDR1</th>
+<th style="text-align: center;">DDR2</th>
+<th style="text-align: center;">DDR3</th>
+<th style="text-align: center;">DDR4</th>
+<th style="text-align: center;">DDR5</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">CK_t/CK, CK_c/CK#</td>
+<td style="text-align: center;">CK, CK#</td>
+<td style="text-align: center;">CK, CK#</td>
+<td style="text-align: center;">CK, CK#</td>
+<td style="text-align: center;">CK_t, CK_c</td>
+<td style="text-align: center;">CK_t, CK_c</td>
+<td style="text-align: center;">Differential Clocks</td>
+</tr>
+<tr>
+<td style="text-align: center;">CKE</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Clock Enable</td>
+</tr>
+<tr>
+<td style="text-align: center;">CS#/CS_n</td>
+<td style="text-align: center;">CS#</td>
+<td style="text-align: center;">CS#</td>
+<td style="text-align: center;">CS#</td>
+<td style="text-align: center;">CS_n</td>
+<td style="text-align: center;">CS_n</td>
+<td style="text-align: center;">Chip Select</td>
+</tr>
+<tr>
+<td style="text-align: center;">Address/Command Address</td>
+<td style="text-align: center;">A0-A12</td>
+<td style="text-align: center;">A0-A12</td>
+<td style="text-align: center;">A0-A15</td>
+<td style="text-align: center;">A0-A17</td>
+<td style="text-align: center;">CA0-CA13</td>
+<td style="text-align: center;">Address Inputs, Command Address Inputs</td>
+</tr>
+<tr>
+<td style="text-align: center;">RAS#/RAS_n</td>
+<td style="text-align: center;">RAS#</td>
+<td style="text-align: center;">RAS#</td>
+<td style="text-align: center;">RAS#</td>
+<td style="text-align: center;">RAS_n/A16</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Row Address Strobe</td>
+</tr>
+<tr>
+<td style="text-align: center;">CAS#/CAS_n</td>
+<td style="text-align: center;">CAS#</td>
+<td style="text-align: center;">CAS#</td>
+<td style="text-align: center;">CAS#</td>
+<td style="text-align: center;">CAS_n/A15</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Column Address Strobe</td>
+</tr>
+<tr>
+<td style="text-align: center;">WE#/WE_n</td>
+<td style="text-align: center;">WE#</td>
+<td style="text-align: center;">WE#</td>
+<td style="text-align: center;">WE#</td>
+<td style="text-align: center;">WE_n/A14</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Write Enable</td>
+</tr>
+<tr>
+<td style="text-align: center;">ACT_n</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Activation Command Input</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Bank Group</td>
+<td style="text-align: center;">BG0-BG1</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Bank Group</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Bank Address</td>
+<td style="text-align: center;">BA0-BA1</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Bank Address</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">CAI</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Command Address Mirroring</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">ODT</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">On-Die Termination Pin</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h5 id="ck_tck_c-or-ckck-differential-clocks">CK_t,CK_c (or CK,CK#) - Differential Clocks</h5>
+<ol>
+<li>On DDR1, DDR2, DDR3 they use CK,CK# but DDR4, DDR5 uses CK_t,CK_c (True and Complement).</li>
+<li>They are differential clock inputs and all address and control signals are sampled on crossing of the positive edge of CK_t(CK) and negative edge of CK_c(CK#).</li>
+<li>On DDR1, DDR2 - output data (DQ and DQS) is referenced to crossing of CK &amp; CK#. On DDR3 - output data strobe (DQS) is referebced to crossing of CK &amp; CK#.</li>
+<li>Data is not referenced to clocks but is referenced to the Data Strobe (DQS_t,DQS_c)</li>
+</ol>
+<h5 id="cke-clock-enable">CKE - Clock Enable</h5>
+<ol>
+<li>CKE is not present on DDR5 but is presnet on all previous generations of DDRs.</li>
+<li>CKE HIGH activates and CKE LOW deactivates the internal clock, input buffers and output drivers. So you can understand that on DDRs where CKE is used, it should remain high throughout the Read, Write operations.</li>
+<li>CKE is also used for Power Down and Self Refresh operations. Taking CKE LOW provides Precharge PD, Active PD, Self Refresh operations.</li>
+<li>CKE is synchrnous for PDE and PDX and SRE. CKE is asynchronous for SRX.</li>
+</ol>
+<h5 id="cs_n-or-cs-chip-select">CS_n (or CS#) - Chip Select</h5>
+<ol>
+<li>On DDR1, DDR2, DDR3 they use CS# but DDR4, DDR5 uses CS_n.</li>
+<li>Chip Select enable (registered LOW) the Command Decoder. All commands are masked when Chip Select is registered HIGH i.e. is disable.</li>
+<li>On DDR1 and DDR2, Chip Select was used for external bank selection on system with multiple banks. However, Chip Select has been used for rank selection on DDR3, DDR4 and DDR5.</li>
+</ol>
+<h5 id="ras-cas-we-row-address-strobe-column-address-strobe-write-enable">RAS, CAS, WE - Row Address Strobe, Column Address Strobe, Write Enable</h5>
+<ol>
+<li>These signals are interesting because they share a unique history and their usage has changed over years.</li>
+<li>On DDR1, DDR2, DDR3 RAS# and CAS#  were used for single purpose i.e. defining when address  was carrying Row Address or Column Address. On DDR1, DDR2, DDR3 WE# was also used for single purpose i.e. defining when command being issued is Read or Write command.</li>
+<li>However, things changed from DDR4 onwards. DDR4 does has RAS_n, CAS_n, WE_n are multiplexed with Address lines respectively A16, A15 and A14.</li>
+<li>DDR5 doesn't have these pin all together and CA lines are used to specify the functionality of RAS, CAS and WE.</li>
+<li>I would highly recommend reading the article which I wrote on its history.</li>
+</ol>
+<h4 id="data-data-strobes-data-mask">Data, Data Strobes, Data Mask</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Pins</th>
+<th style="text-align: center;">DDR4</th>
+<th style="text-align: center;">DDR5</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">DQ</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Data</td>
+</tr>
+<tr>
+<td style="text-align: center;">DQS_t, DQS_c, <br> DQSU_t, DQSU_c <br> DQSL_t, DQSL_c</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Data Strobe</td>
+</tr>
+<tr>
+<td style="text-align: center;">TDQS_t, TDQS_c</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Termination Data Strobe</td>
+</tr>
+<tr>
+<td style="text-align: center;">DM_n</td>
+<td style="text-align: center;">A0-A17</td>
+<td style="text-align: center;">CA0-CA13</td>
+<td style="text-align: center;">Data Mask</td>
+</tr>
+<tr>
+<td style="text-align: center;">DBI_n</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Data Bus Inversion</td>
+</tr>
+</tbody>
+</table>
+<h4 id="miscellaneous">Miscellaneous</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Pins</th>
+<th style="text-align: center;">DDR4</th>
+<th style="text-align: center;">DDR5</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">ZQ</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Data</td>
+</tr>
+<tr>
+<td style="text-align: center;">LBDQ</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Loopback Data Output</td>
+</tr>
+<tr>
+<td style="text-align: center;">LBDQS</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Loopback Data Strobe</td>
+</tr>
+<tr>
+<td style="text-align: center;">TEN</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Connectivity Test Mode</td>
+</tr>
+<tr>
+<td style="text-align: center;">ALERT_n</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Not Present</td>
+<td style="text-align: center;">Data Bus Inversion</td>
+</tr>
+<tr>
+<td style="text-align: center;">RESET_n</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<h4 id="dimm-pins">DIMM Pins</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Pins</th>
+<th style="text-align: center;">DDR4</th>
+<th style="text-align: center;">DDR5</th>
+<th style="text-align: center;">Comments</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">VTT</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">VDDSPD</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">V_12, V_BULK</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">SCL</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">SDA</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">SA</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;">Present</td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        Was this page helpful?
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page was helpful" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"/></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="This page could be improved" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"/></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              Thanks for your feedback!
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              Thanks for your feedback! Help us improve this page by using our <a href="..." target="_blank" rel="noopener">feedback form</a>.      
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      &copy; 2024 <a href="https://github.com/shingaridavesh"  target="_blank" rel="noopener">Davesh Shingari</a>
+
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/shingaridavesh" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1M480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2m-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3m-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.linkedin.com/in/davesh-shingari-68800053/" target="_blank" rel="noopener" title="www.linkedin.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5m282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "navigation.path", "navigation.indexes", "navigation.expand", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
